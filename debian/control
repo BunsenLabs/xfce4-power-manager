@@ -18,8 +18,11 @@ Description: power manager for Xfce desktop
  Power manager for the Xfce desktop, laptop users can set up a power profile
  for two different modes “on battery power” and “on ac power”, desktop users
  still can change DPMS settings and CPU frequency using the settings dialog. 
- It's able to put the laptop to sleep when requested or on certain events like
- LID close.
  .
- It's HAL and Dbus based and can replace daemons like gnome-power-manager,
- powersaved or pmud.
+ It features:
+   * battery monitoring
+   * cpu frequency settings
+   * monitor DPMS settings
+   * suspend/Hibernate
+   * LCD brightness control
+   * Lid, sleep and power switches control
