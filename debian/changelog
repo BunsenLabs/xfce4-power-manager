@@ -1,0 +1,5 @@
+xfce4-power-manager (0.6.0beta1-1) UNRELEASED; urgency=low
+
+  * Initial release.                                            closes: #503636
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 05 Oct 2008 12:43:09 +0200
