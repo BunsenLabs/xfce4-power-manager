@@ -1,5 +1,5 @@
-xfce4-power-manager (0.6.0~rc1-1) UNRELEASED; urgency=low
+xfce4-power-manager (0.6.0-1) UNRELEASED; urgency=low
 
   * Initial release.                                            closes: #503636
 
- -- Yves-Alexis Perez <corsac@debian.org>  Fri, 07 Nov 2008 07:31:15 +0100
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 26 Jan 2009 16:04:40 +0100

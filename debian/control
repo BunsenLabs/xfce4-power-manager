@@ -16,8 +16,8 @@ Architecture: any
 Depends: ${shlibs:Depends}
 Description: power manager for Xfce desktop
  Power manager for the Xfce desktop, laptop users can set up a power profile
- for two different modes “on battery power” and “on ac power”, desktop users
- still can change DPMS settings and CPU frequency using the settings dialog. 
+ for two different modes "on battery power" and "on ac power", desktop users
+ still can change DPMS settings and CPU frequency using the settings dialog.
  .
  It features:
    * battery monitoring
