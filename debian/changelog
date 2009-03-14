@@ -1,8 +1,16 @@
-xfce4-power-manager (0.6.4-1) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.0~svn+r6905-1) UNRELEASED; urgency=low
 
-  * New upstream release.
+  * New upstream snapshot.
+  * debian/control:
+    - update standards version to 3.8.1.
+    - add build-dep on libglade2-dev.
+    - add build-dep on xfce4-panel-dev for panel plugin. 
+    - add a new package for the panel plugin.
+  * debian/rules:
+    - run dh_install with --fail-missing.
+  * debian/copyright: update dates and copyright holders.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Wed, 04 Mar 2009 07:49:59 +0100
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 14 Mar 2009 23:41:21 +0100
 
 xfce4-power-manager (0.6.2-1) experimental; urgency=low
 
