@@ -32,7 +32,7 @@ Description: power manager for Xfce desktop
 Package: xfce4-power-manager-plugin
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, 
- xfce4-power-manager (>= 0.8.0~svn+r6905)
+ xfce4-power-manager (>= 0.8.0~)
 Description: power manager for Xfce panel
  Power manager for the Xfce desktop, laptop users can set up a power profile
  for two different modes "on battery power" and "on ac power", desktop users

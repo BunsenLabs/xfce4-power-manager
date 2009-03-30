@@ -1,5 +1,6 @@
-xfce4-power-manager (0.8.0~svn+r6905-1) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.0~alpha-1) UNRELEASED; urgency=low
 
+  [ Yves-Alexis Perez ]
   * New upstream snapshot.
   * debian/control:
     - update standards version to 3.8.1.
@@ -10,7 +11,12 @@ xfce4-power-manager (0.8.0~svn+r6905-1) UNRELEASED; urgency=low
     - run dh_install with --fail-missing.
   * debian/copyright: update dates and copyright holders.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Sat, 14 Mar 2009 23:41:21 +0100
+  [ Evgeni Golov ]
+  * debian/control:
+    - fix depends of -plugin
+  * New upstream alpha.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 30 Mar 2009 23:59:10 +0200
 
 xfce4-power-manager (0.6.2-1) experimental; urgency=low
 
