@@ -5,9 +5,11 @@ xfce4-power-manager (0.8.0~alpha-1) UNRELEASED; urgency=low
   * debian/control:
     - update standards version to 3.8.1.
     - add build-dep on libglade2-dev.
-    - add build-dep on xfce4-panel-dev for panel plugin. 
-    - add a new package for the panel plugin.
+    - add build-dep on xfce4-panel-dev for panel plugins.
+    - add a new package for the panel plugins.
     - move to xfce section.
+    - drop libhal-dev build-dep, now useless.
+    - add dep on hal.
   * debian/rules:
     - run dh_install with --fail-missing.
     - add -Wl,-z,defs -Wl,--as-needed to LDFLAGS.
@@ -15,10 +17,10 @@ xfce4-power-manager (0.8.0~alpha-1) UNRELEASED; urgency=low
 
   [ Evgeni Golov ]
   * debian/control:
-    - fix depends of -plugin
+    - fix depends of -plugins
   * New upstream alpha.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Mon, 30 Mar 2009 23:59:10 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 01 Apr 2009 22:56:58 +0200
 
 xfce4-power-manager (0.6.2-1) experimental; urgency=low
 

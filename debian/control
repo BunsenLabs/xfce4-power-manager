@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian Xfce Maintainers <pkg-xfce-devel@lists.alioth.debian.org>
 Uploaders: Yves-Alexis Perez <corsac@debian.org>, Emanuele Rocca <ema@debian.org>, Simon Huggins <huggie@earth.li>
 Build-Depends: debhelper (>= 7.0.50), intltool, pkg-config, libgtk2.0-dev,
- libdbus-1-dev, libhal-dev, libdbus-glib-1-dev, libxfconf-0-dev (>= 4.6.0),
+ libdbus-1-dev, libdbus-glib-1-dev, libxfconf-0-dev (>= 4.6.0),
  libxfcegui4-dev (>= 4.6.0), libnotify-dev, libglade2-dev, 
   xfce4-panel-dev (>= 4.6.0)
 Standards-Version: 3.8.1
@@ -15,8 +15,8 @@ Homepage: http://goodies.xfce.org/projects/applications/xfce4-power-manager
 Package: xfce4-power-manager
 Section: xfce
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: xfce4-power-manager-plugin
+Depends: ${shlibs:Depends}, ${misc:Depends}, hal
+Suggests: xfce4-power-manager-plugins
 Description: power manager for Xfce desktop
  Power manager for the Xfce desktop, laptop users can set up a power profile
  for two different modes "on battery power" and "on ac power", desktop users
@@ -30,14 +30,14 @@ Description: power manager for Xfce desktop
    * LCD brightness control
    * Lid, sleep and power switches control
 
-Package: xfce4-power-manager-plugin
+Package: xfce4-power-manager-plugins
 Section: xfce
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, 
  xfce4-power-manager (>= 0.8.0~)
-Description: power manager for Xfce panel
+Description: power manager plugins for Xfce panel
  Power manager for the Xfce desktop, laptop users can set up a power profile
  for two different modes "on battery power" and "on ac power", desktop users
  still can change DPMS settings and CPU frequency using the settings dialog.
  .
- This package contains the panel plugin.
+ This package contains two panel plugins, inhibit and brightness.
