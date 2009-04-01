@@ -7,8 +7,10 @@ xfce4-power-manager (0.8.0~alpha-1) UNRELEASED; urgency=low
     - add build-dep on libglade2-dev.
     - add build-dep on xfce4-panel-dev for panel plugin. 
     - add a new package for the panel plugin.
+    - move to xfce section.
   * debian/rules:
     - run dh_install with --fail-missing.
+    - add -Wl,-z,defs -Wl,--as-needed to LDFLAGS.
   * debian/copyright: update dates and copyright holders.
 
   [ Evgeni Golov ]
