@@ -1,7 +1,7 @@
-xfce4-power-manager (0.8.0~alpha-1) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.0~alpha2-1) UNRELEASED; urgency=low
 
   [ Yves-Alexis Perez ]
-  * New upstream snapshot.
+  * New upstream alpha release.
   * debian/control:
     - update standards version to 3.8.1.
     - add build-dep on libglade2-dev.
@@ -14,13 +14,15 @@ xfce4-power-manager (0.8.0~alpha-1) UNRELEASED; urgency=low
     - run dh_install with --fail-missing.
     - add -Wl,-z,defs -Wl,--as-needed to LDFLAGS.
   * debian/copyright: update dates and copyright holders.
+  * debian/xfce4-power-manager.install:
+    - install manpages in xfpm package.
+  * debian/xfce4-power-manager.1 dropped, included upstream.
 
   [ Evgeni Golov ]
   * debian/control:
     - fix depends of -plugins
-  * New upstream alpha.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Wed, 01 Apr 2009 22:56:58 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 04 Apr 2009 15:13:32 +0200
 
 xfce4-power-manager (0.6.2-1) experimental; urgency=low
 
