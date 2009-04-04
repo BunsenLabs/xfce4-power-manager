@@ -17,12 +17,13 @@ xfce4-power-manager (0.8.0~alpha2-1) UNRELEASED; urgency=low
   * debian/xfce4-power-manager.install:
     - install manpages in xfpm package.
   * debian/xfce4-power-manager.1 dropped, included upstream.
+  * debian/xfce4-power-manager.manpages dropped, useless.
 
   [ Evgeni Golov ]
   * debian/control:
     - fix depends of -plugins
 
- -- Yves-Alexis Perez <corsac@debian.org>  Sat, 04 Apr 2009 15:13:32 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 04 Apr 2009 18:32:54 +0200
 
 xfce4-power-manager (0.6.2-1) experimental; urgency=low
 
