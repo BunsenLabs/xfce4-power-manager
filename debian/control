@@ -13,6 +13,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/pkg-xfce/goodies/xfce4-power-manager
 Homepage: http://goodies.xfce.org/projects/applications/xfce4-power-manager
 
 Package: xfce4-power-manager
+Section: xfce
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, hal
 Suggests: xfce4-power-manager-plugins
@@ -30,6 +31,7 @@ Description: power manager for Xfce desktop
    * Lid, sleep and power switches control
 
 Package: xfce4-power-manager-plugins
+Section: xfce
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, 
  xfce4-power-manager (>= 0.8.0~)
