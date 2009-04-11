@@ -1,7 +1,7 @@
-xfce4-power-manager (0.8.0~alpha2-1) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.0~beta1-1) UNRELEASED; urgency=low
 
   [ Yves-Alexis Perez ]
-  * New upstream alpha release.
+  * New upstream beta release.
   * debian/control:
     - update standards version to 3.8.1.
     - add build-dep on libglade2-dev.
@@ -23,7 +23,7 @@ xfce4-power-manager (0.8.0~alpha2-1) UNRELEASED; urgency=low
   * debian/control:
     - fix depends of -plugins
 
- -- Yves-Alexis Perez <corsac@debian.org>  Sat, 04 Apr 2009 18:32:54 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 11 Apr 2009 12:52:05 +0200
 
 xfce4-power-manager (0.6.2-1) experimental; urgency=low
 
