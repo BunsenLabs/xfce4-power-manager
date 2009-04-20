@@ -7,6 +7,7 @@ xfce4-power-manager (0.8.0~beta2-1) UNRELEASED; urgency=low
     - add build-dep on libglade2-dev.
     - add build-dep on xfce4-panel-dev for panel plugins.
     - add a new package for the panel plugins.
+    - add a new package for arch-indep files.
     - move to xfce section.
     - drop libhal-dev build-dep, now useless.
     - add dep on hal.
@@ -23,7 +24,7 @@ xfce4-power-manager (0.8.0~beta2-1) UNRELEASED; urgency=low
   * debian/control:
     - fix depends of -plugins
 
- -- Yves-Alexis Perez <corsac@debian.org>  Tue, 14 Apr 2009 09:28:54 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 19 Apr 2009 21:07:37 +0200
 
 xfce4-power-manager (0.6.2-1) experimental; urgency=low
 

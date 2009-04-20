@@ -15,7 +15,8 @@ Homepage: http://goodies.xfce.org/projects/applications/xfce4-power-manager
 Package: xfce4-power-manager
 Section: xfce
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, hal
+Depends: ${shlibs:Depends}, ${misc:Depends}, hal, 
+ xfce4-power-manager-data (=${source:Version})
 Suggests: xfce4-power-manager-plugins
 Description: power manager for Xfce desktop
  Power manager for the Xfce desktop, laptop users can set up a power profile
@@ -29,6 +30,19 @@ Description: power manager for Xfce desktop
    * suspend/Hibernate
    * LCD brightness control
    * Lid, sleep and power switches control
+
+Package: xfce4-power-manager-data
+Section: xfce
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: xfce4-power-manager
+Replaces: xfce4-power-manager (< 0.8.0~beta2-1)
+Description: power manager for Xfce desktop, arch-indep files
+ Power manager for the Xfce desktop, laptop users can set up a power profile
+ for two different modes "on battery power" and "on ac power", desktop users
+ still can change DPMS settings and CPU frequency using the settings dialog.
+ .
+ This package contains architecture-independant files.
 
 Package: xfce4-power-manager-plugins
 Section: xfce
