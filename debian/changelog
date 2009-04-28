@@ -1,4 +1,4 @@
-xfce4-power-manager (0.8.0~beta2-1) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.0~rc1-1) UNRELEASED; urgency=low
 
   [ Yves-Alexis Perez ]
   * New upstream beta release.
@@ -24,7 +24,7 @@ xfce4-power-manager (0.8.0~beta2-1) UNRELEASED; urgency=low
   * debian/control:
     - fix depends of -plugins
 
- -- Yves-Alexis Perez <corsac@debian.org>  Mon, 20 Apr 2009 08:16:27 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 28 Apr 2009 23:17:35 +0200
 
 xfce4-power-manager (0.6.2-1) experimental; urgency=low
 
