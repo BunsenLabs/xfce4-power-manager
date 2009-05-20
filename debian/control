@@ -54,4 +54,4 @@ Description: power manager plugins for Xfce panel
  for two different modes "on battery power" and "on ac power", desktop users
  still can change DPMS settings and CPU frequency using the settings dialog.
  .
- This package contains two panel plugins, inhibit and brightness.
+ This package contains the brightness plugin.
