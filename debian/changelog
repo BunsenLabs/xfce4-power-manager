@@ -1,10 +1,11 @@
 xfce4-power-manager (0.8.0~rc2-2) UNRELEASED; urgency=low
 
+  * Upload to unstable.
   * debian/control:
     - update -plugins description now that inhibit was moved to the main
       program.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Wed, 20 May 2009 07:31:44 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 21 May 2009 01:17:35 +0200
 
 xfce4-power-manager (0.8.0~rc2-1) experimental; urgency=low
 
