@@ -1,3 +1,9 @@
+xfce4-power-manager (0.8.0~rc2-3) unstable; urgency=low
+
+  * *really* upload to unstable this time.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 21 May 2009 12:10:21 +0200
+
 xfce4-power-manager (0.8.0~rc2-2) experimental; urgency=low
 
   * Upload to unstable.
