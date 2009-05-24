@@ -1,3 +1,11 @@
+xfce4-power-manager (0.8.0~rc2-4) UNRELEASED; urgency=low
+
+  * debian/rules:
+    - don't use --fail-missing in dh_install since we have an arch:all
+      package. Fixes FTBFS on all arches.                       closes: #530399
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 24 May 2009 18:29:14 +0200
+
 xfce4-power-manager (0.8.0~rc2-3) unstable; urgency=low
 
   * *really* upload to unstable this time.
