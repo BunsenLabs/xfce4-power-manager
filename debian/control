@@ -19,9 +19,10 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, hal,
  xfce4-power-manager-data (=${source:Version})
 Suggests: xfce4-power-manager-plugins
 Description: power manager for Xfce desktop
- Power manager for the Xfce desktop, laptop users can set up a power profile
- for two different modes "on battery power" and "on ac power", desktop users
- still can change DPMS settings and CPU frequency using the settings dialog.
+ This power manager for the Xfce desktop enables laptop users to set up
+ a power profile for two different modes "on battery power" and "on ac
+ power" while still allowing desktop users to at least change the DPMS
+ settings and CPU frequency using the settings dialogue..
  .
  It features:
    * battery monitoring
@@ -38,9 +39,10 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: xfce4-power-manager
 Replaces: xfce4-power-manager (< 0.8.0~beta2-1)
 Description: power manager for Xfce desktop, arch-indep files
- Power manager for the Xfce desktop, laptop users can set up a power profile
- for two different modes "on battery power" and "on ac power", desktop users
- still can change DPMS settings and CPU frequency using the settings dialog.
+ This power manager for the Xfce desktop enables laptop users to set up
+ a power profile for two different modes "on battery power" and "on ac
+ power" while still allowing desktop users to at least change the DPMS
+ settings and CPU frequency using the settings dialogue..
  .
  This package contains architecture-independant files.
 
@@ -50,8 +52,9 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, 
  xfce4-power-manager (>= 0.8.0~)
 Description: power manager plugins for Xfce panel
- Power manager for the Xfce desktop, laptop users can set up a power profile
- for two different modes "on battery power" and "on ac power", desktop users
- still can change DPMS settings and CPU frequency using the settings dialog.
+ This power manager for the Xfce desktop enables laptop users to set up
+ a power profile for two different modes "on battery power" and "on ac
+ power" while still allowing desktop users to at least change the DPMS
+ settings and CPU frequency using the settings dialogue..
  .
  This package contains the brightness plugin.
