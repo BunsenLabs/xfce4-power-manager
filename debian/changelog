@@ -1,3 +1,9 @@
+xfce4-power-manager (0.8.0-2) UNRELEASED; urgency=low
+
+  * Fix Vcs-* fields, they were missing 'trunk' in the path.
+
+ -- Evgeni Golov <evgeni@debian.org>  Thu, 11 Jun 2009 10:14:09 +0200
+
 xfce4-power-manager (0.8.0-1) unstable; urgency=low
 
   * New upstream release.
