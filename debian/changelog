@@ -1,16 +1,15 @@
-xfce4-power-manager (0.8.1-1) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.1.1-1) UNRELEASED; urgency=low
 
   [ Evgeni Golov ]
   * Fix Vcs-* fields, they were missing 'trunk' in the path.
 
   [ Yves-Alexis Perez ]
   * New upstream release.
-  * debian/xfce4-power-manager-data.install:
-    - install GtkBuilder ui file.
   * debian/control:
     - drop build-dep on libglade.
+    - update standards version to 3.8.2. 
 
- -- Yves-Alexis Perez <corsac@debian.org>  Thu, 02 Jul 2009 23:02:24 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 07 Jul 2009 00:23:06 +0200
 
 xfce4-power-manager (0.8.0-1) unstable; urgency=low
 
