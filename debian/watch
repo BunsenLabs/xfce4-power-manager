@@ -1,2 +1,3 @@
 version=3
-http://goodies.xfce.org/releases/xfce4-power-manager/ xfce4-power-manager-([\d\.]*)\.tar\.bz2
+http://archive.xfce.org/src/apps/xfce4-power-manager/([\d\.]+)/ \
+	xfce4-power-manager-([\d\.]+)\.tar\.(?:gz|bz2)
