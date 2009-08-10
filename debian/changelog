@@ -1,8 +1,9 @@
-xfce4-power-manager (0.8.3-2) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.3.1-1) UNRELEASED; urgency=low
 
+  * New upstream bugfix release.
   * debian/watch edited to track Xfce archive reorganisation.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Mon, 03 Aug 2009 18:37:33 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 10 Aug 2009 08:03:22 +0200
 
 xfce4-power-manager (0.8.3-1) unstable; urgency=low
 
