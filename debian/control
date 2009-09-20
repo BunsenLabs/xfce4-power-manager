@@ -35,7 +35,7 @@ Package: xfce4-power-manager-data
 Section: xfce
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: xfce4-power-manager
+Recommends: xfce4-power-manager, librsvg2-common
 Replaces: xfce4-power-manager (< 0.8.0~beta2-1)
 Description: power manager for Xfce desktop, arch-indep files
  This power manager for the Xfce desktop enables laptop users to set up
