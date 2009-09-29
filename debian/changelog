@@ -1,9 +1,11 @@
-xfce4-power-manager (0.8.3.1-2) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.4-1) UNRELEASED; urgency=low
 
+  * New upstream release.
   * debian/control:
     - add Recommends on librsvg2-common, all icons are svg.
+    - update standards version to 3.8.3. 
 
- -- Yves-Alexis Perez <corsac@debian.org>  Sun, 20 Sep 2009 21:50:21 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 29 Sep 2009 09:50:59 +0200
 
 xfce4-power-manager (0.8.3.1-1) unstable; urgency=low
 
