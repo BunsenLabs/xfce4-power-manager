@@ -1,4 +1,4 @@
-xfce4-power-manager (0.8.4.1-1) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.4.1-1) unstable; urgency=low
 
   * New upstream release.
     - fix xfpm crashing when closing LID.                       closes: #552692
@@ -7,7 +7,7 @@ xfce4-power-manager (0.8.4.1-1) UNRELEASED; urgency=low
   * debian/xfce4-power-manager.xml: ship a default config to ask user when
     pressing the power button.                                  closes: #544858
 
- -- Yves-Alexis Perez <corsac@debian.org>  Mon, 02 Nov 2009 22:19:21 +0100
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 02 Nov 2009 22:20:58 +0100
 
 xfce4-power-manager (0.8.4-1) unstable; urgency=low
 
