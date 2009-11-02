@@ -1,3 +1,4 @@
 etc/
 usr/bin
 usr/share/applications
+debian/xfce4-power-manager.xml /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/
