@@ -1,8 +1,8 @@
-xfce4-power-manager (0.8.4.2-1) UNRELEASED; urgency=low
+xfce4-power-manager (0.8.4.2-1) unstable; urgency=low
 
   * New upstream release.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Sat, 21 Nov 2009 14:28:11 +0100
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 21 Nov 2009 14:37:32 +0100
 
 xfce4-power-manager (0.8.4.1-1) unstable; urgency=low
 
