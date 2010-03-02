@@ -1,3 +1,12 @@
+xfce4-power-manager (0.8.5-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - update standards version to 3.8.4.
+    - update obsolete relation form < to <<.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 02 Mar 2010 23:16:56 +0100
+
 xfce4-power-manager (0.8.4.2-1) unstable; urgency=low
 
   * New upstream release.
