@@ -1,3 +1,11 @@
+xfce4-power-manager (0.8.5-2) UNRELEASED; urgency=low
+
+  * debian/control:
+    - add recommends on consolekit so user gets the authorization to
+      suspend/hibernate.                                        closes: #603325
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 13 Nov 2010 10:01:43 +0100
+
 xfce4-power-manager (0.8.5-1) unstable; urgency=low
 
   * New upstream release.
