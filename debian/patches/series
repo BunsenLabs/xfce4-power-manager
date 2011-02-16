@@ -1,1 +1,2 @@
 01_assume-hal-is-available.patch
+02_fix-indirect-dso-linking.patch
