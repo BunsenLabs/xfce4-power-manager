@@ -1,3 +1,15 @@
+xfce4-power-manager (0.8.5-3) UNRELEASED; urgency=low
+
+  * debian/patches:
+    - 01_assume-hal-is-available.patch: do not check for hal presence on
+      the bus, it'll be spawned automatically on demand.        Closes: #612611
+    - series: added.
+  * debian/control:
+    - bump hal dep to (>= 0.5.14-4~) for the dbus activation.
+    - add myself to Uploaders.
+
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Wed, 16 Feb 2011 08:38:53 +0100
+
 xfce4-power-manager (0.8.5-2) unstable; urgency=low
 
   * debian/control:

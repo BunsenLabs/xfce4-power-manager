@@ -2,7 +2,8 @@ Source: xfce4-power-manager
 Section: xfce
 Priority: optional
 Maintainer: Debian Xfce Maintainers <pkg-xfce-devel@lists.alioth.debian.org>
-Uploaders: Yves-Alexis Perez <corsac@debian.org>, Emanuele Rocca <ema@debian.org>, Simon Huggins <huggie@earth.li>
+Uploaders: Yves-Alexis Perez <corsac@debian.org>, Emanuele Rocca <ema@debian.org>,
+ Simon Huggins <huggie@earth.li>, Lionel Le Folgoc <mrpouit@gmail.com>
 Build-Depends: debhelper (>= 7.0.50), intltool, pkg-config, libgtk2.0-dev,
  libdbus-1-dev, libdbus-glib-1-dev, libxfconf-0-dev (>= 4.6.0),
  libxfcegui4-dev (>= 4.6.0), libnotify-dev, xfce4-panel-dev (>= 4.6.0)
@@ -14,7 +15,7 @@ Homepage: http://goodies.xfce.org/projects/applications/xfce4-power-manager
 Package: xfce4-power-manager
 Section: xfce
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, hal, 
+Depends: ${shlibs:Depends}, ${misc:Depends}, hal (>= 0.5.14-4~), 
  xfce4-power-manager-data (=${source:Version})
 Recommends: consolekit
 Suggests: xfce4-power-manager-plugins
