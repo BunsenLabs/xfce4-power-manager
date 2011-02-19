@@ -1,5 +1,6 @@
 xfce4-power-manager (0.8.5-3) UNRELEASED; urgency=low
 
+  [ Lionel Le Folgoc ]
   * Switch to 3.0 (quilt) source format.
   * debian/patches:
     - 01_assume-hal-is-available.patch: do not check for hal presence on
@@ -12,6 +13,10 @@ xfce4-power-manager (0.8.5-3) UNRELEASED; urgency=low
     - build-depends on automake, autoconf, libtool and xfce4-dev-tools.
     - bump hal dep to (>= 0.5.14-4~) for the dbus activation.
     - add myself to Uploaders.
+
+  [ Yves-Alexis Perez ]
+  * debian/control:
+    - update standards version to 3.9.1.
 
  -- Lionel Le Folgoc <mrpouit@gmail.com>  Wed, 16 Feb 2011 08:38:53 +0100
 
