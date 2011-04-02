@@ -1,3 +1,27 @@
+xfce4-power-manager (1.0.10-1) experimental; urgency=low
+
+  [ Yves-Alexis Perez ]
+  * New upstream release.
+  * debian/control:
+    - switch libxfcegui4 build-dep to libxfce4ui.
+    - add build-dep on libpolkit-gobject-1-dev, libxext-dev and libx11-dev.
+    - replace dep on hal by upower.
+    - add suggest on udisks for disk spinning.
+    - add build-dep on hardening-includes.
+  * debian/rules:
+    - add -O1, -z,defs and --as-needed to LDFLAGS.
+    - add hardening flags to {C,LD}FLAGS.
+
+  [ Lionel Le Folgoc ]
+  * debian/control:
+    - add myself to Uploaders
+    - bump Standards-Version to 3.9.1, no changes required.
+  * Switch to 3.0 (quilt).
+  * debian/rules:
+    - use dpkg-buildflags for cflags/ldflags handling.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 20 Feb 2011 14:56:52 +0100
+
 xfce4-power-manager (0.8.5-3) unstable; urgency=low
 
   [ Lionel Le Folgoc ]

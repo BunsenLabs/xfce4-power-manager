@@ -1,17 +1,16 @@
 #!/usr/bin/make -f
 
-LDFLAGS+=-Wl,-z,defs -Wl,--as-needed
+include /usr/share/hardening-includes/hardening.make
+
+CFLAGS=$(shell dpkg-buildflags --get CFLAGS)
+LDFLAGS=$(shell dpkg-buildflags --get LDFLAGS)
+LDFLAGS+=$(HARDENING_LDFLAGS) -Wl,-z,defs -Wl,--as-needed -Wl,-O1
+CFLAGS+=$(HARDENING_CFLAGS)
+
+export CFLAGS LDFLAGS
+
 override_dh_install:
 	dh_install --list-missing
-
-override_dh_auto_configure:
-	NOCONFIGURE=1 xdt-autogen
-	dh_auto_configure
-
-override_dh_auto_clean:
-	dh_auto_clean
-	rm -f $$(find -name 'Makefile.in')
-	rm -f aclocal.m4 config.* configure ltmain.sh
 
 %:
 	dh $@

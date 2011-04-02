@@ -6,8 +6,8 @@ Uploaders: Yves-Alexis Perez <corsac@debian.org>, Emanuele Rocca <ema@debian.org
  Simon Huggins <huggie@earth.li>, Lionel Le Folgoc <mrpouit@gmail.com>
 Build-Depends: debhelper (>= 7.0.50), intltool, pkg-config, libgtk2.0-dev,
  libdbus-1-dev, libdbus-glib-1-dev, libxfconf-0-dev (>= 4.6.0),
- libxfcegui4-dev (>= 4.6.0), libnotify-dev, xfce4-panel-dev (>= 4.6.0),
- automake, autoconf, libtool, xfce4-dev-tools
+ libxfce4ui-1-dev (>= 4.7.0), libnotify-dev, xfce4-panel-dev (>= 4.6.0),
+ libpolkit-gobject-1-dev, libxext-dev, libx11-dev, hardening-includes
 Standards-Version: 3.9.1
 Vcs-Svn: svn://svn.debian.org/pkg-xfce/goodies/trunk/xfce4-power-manager/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-xfce/goodies/trunk/xfce4-power-manager/
@@ -16,10 +16,10 @@ Homepage: http://goodies.xfce.org/projects/applications/xfce4-power-manager
 Package: xfce4-power-manager
 Section: xfce
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, hal (>= 0.5.14-4~), 
+Depends: ${shlibs:Depends}, ${misc:Depends}, upower,
  xfce4-power-manager-data (=${source:Version})
 Recommends: consolekit
-Suggests: xfce4-power-manager-plugins
+Suggests: xfce4-power-manager-plugins, udisks
 Description: power manager for Xfce desktop
  This power manager for the Xfce desktop enables laptop users to set up
  a power profile for two different modes "on battery power" and "on ac
@@ -51,7 +51,7 @@ Description: power manager for Xfce desktop, arch-indep files
 Package: xfce4-power-manager-plugins
 Section: xfce
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Depends: ${shlibs:Depends}, ${misc:Depends},
  xfce4-power-manager (>= 0.8.0~)
 Description: power manager plugins for Xfce panel
  This power manager for the Xfce desktop enables laptop users to set up
