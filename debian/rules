@@ -10,7 +10,7 @@ CFLAGS+=$(HARDENING_CFLAGS)
 export CFLAGS LDFLAGS
 
 override_dh_install:
-	dh_install --list-missing
+	dh_install --fail-missing
 
 %:
 	dh $@
