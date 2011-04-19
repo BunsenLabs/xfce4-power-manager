@@ -1,7 +1,7 @@
-xfce4-power-manager (1.0.10-2) UNRELEASED; urgency=low
+xfce4-power-manager (1.0.10-2) unstable; urgency=low
 
   [ Lionel Le Folgoc ]
-  * Upload to unstable.
+  * Upload to unstable.                                         closes: #623392
   * debian/control:
     - remove Simon and Emanuele from uploaders, thanks to them.
     - bump b-deps for Xfce 4.8.
@@ -13,7 +13,7 @@ xfce4-power-manager (1.0.10-2) UNRELEASED; urgency=low
   * debian/control:
     - update standards version to 3.9.2.
 
- -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 03 Apr 2011 00:25:08 +0200
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Tue, 19 Apr 2011 23:19:53 +0200
 
 xfce4-power-manager (1.0.10-1) experimental; urgency=low
 
