@@ -1,5 +1,6 @@
 xfce4-power-manager (1.0.10-2) UNRELEASED; urgency=low
 
+  [ Lionel Le Folgoc ]
   * Upload to unstable.
   * debian/control:
     - remove Simon and Emanuele from uploaders, thanks to them.
@@ -7,6 +8,10 @@ xfce4-power-manager (1.0.10-2) UNRELEASED; urgency=low
   * debian/rules: switch to --fail-missing.
   * debian/xfce4-power-manager.install: add missing sysfs backlight
     helper and its pk policy.
+
+  [ Yves-Alexis Perez ]
+  * debian/control:
+    - update standards version to 3.9.2.
 
  -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 03 Apr 2011 00:25:08 +0200
 
