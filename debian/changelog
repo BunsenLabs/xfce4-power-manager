@@ -1,3 +1,12 @@
+xfce4-power-manager (1.0.10-3) UNRELEASED; urgency=low
+
+  * debian/patches:
+    - 0001-Solaris-specific-code-for-determining-the-start-time cherry-picked
+      from master. We don't have solaris but it should fix the build-failure
+      on GNU/Hurd anyway.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 22 Apr 2011 17:40:48 +0200
+
 xfce4-power-manager (1.0.10-2) unstable; urgency=low
 
   [ Lionel Le Folgoc ]
