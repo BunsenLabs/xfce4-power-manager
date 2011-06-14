@@ -1,9 +1,9 @@
-xfce4-power-manager (1.0.10-4) UNRELEASED; urgency=low
+xfce4-power-manager (1.0.10-4) unstable; urgency=low
 
   * debian/patches:
     - 02_fix-notify-detect added, fix libnotify detection.      closes: #630309
 
- -- Yves-Alexis Perez <corsac@debian.org>  Mon, 13 Jun 2011 19:38:50 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 14 Jun 2011 21:44:04 +0200
 
 xfce4-power-manager (1.0.10-3) unstable; urgency=low
 
