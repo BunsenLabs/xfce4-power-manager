@@ -1,4 +1,4 @@
-xfce4-power-manager (1.0.10-5) UNRELEASED; urgency=low
+xfce4-power-manager (1.0.10-5) unstable; urgency=low
 
   [ Lionel Le Folgoc ]
   * debian/patches:
@@ -19,7 +19,7 @@ xfce4-power-manager (1.0.10-5) UNRELEASED; urgency=low
   [ Yves-Alexis Perez ]
   * debian/watch updated, xfpm has moved to xfce section.
 
- -- Lionel Le Folgoc <mrpouit@gmail.com>  Mon, 06 Feb 2012 20:43:46 +0100
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Mon, 06 Feb 2012 21:38:26 +0100
 
 xfce4-power-manager (1.0.10-4) unstable; urgency=low
 
