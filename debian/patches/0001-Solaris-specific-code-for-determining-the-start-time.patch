@@ -6,6 +6,8 @@ Subject: [PATCH] Solaris-specific code for determining the start time of a
 
 Solaris also allows to obtain this information through procfs,
 however design and implementation differ vastly from Linux.
+
+Origin: upstream, http://git.xfce.org/xfce/xfce4-power-manager/commit/src/xfpm-polkit.c?id=47b7e20d7acd2cc64caf379eb6cd385705d3e90d
 ---
  src/xfpm-polkit.c |   40 +++++++++++++++++++++++++++++++++++-----
  1 files changed, 35 insertions(+), 5 deletions(-)

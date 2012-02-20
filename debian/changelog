@@ -1,3 +1,9 @@
+xfce4-power-manager (1.0.10-6) UNRELEASED; urgency=low
+
+  * debian/patches: add missing DEP3 headers.
+
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Mon, 20 Feb 2012 22:35:06 +0100
+
 xfce4-power-manager (1.0.10-5) unstable; urgency=low
 
   [ Lionel Le Folgoc ]
