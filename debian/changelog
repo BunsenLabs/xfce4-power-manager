@@ -1,4 +1,4 @@
-xfce4-power-manager (1.0.11-1) UNRELEASED; urgency=low
+xfce4-power-manager (1.0.11-1) unstable; urgency=low
 
   [ Lionel Le Folgoc ]
   * debian/patches: add missing DEP3 headers.
@@ -12,7 +12,7 @@ xfce4-power-manager (1.0.11-1) UNRELEASED; urgency=low
   * debian/control:
     - update standards version to 3.9.3.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Thu, 29 Mar 2012 07:45:19 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 29 Mar 2012 10:49:47 +0200
 
 xfce4-power-manager (1.0.10-5) unstable; urgency=low
 
