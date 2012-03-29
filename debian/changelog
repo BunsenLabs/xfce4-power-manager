@@ -9,6 +9,8 @@ xfce4-power-manager (1.0.11-1) UNRELEASED; urgency=low
     - 0001-Solaris-specific-code-for-determining-the-start-time dropped,
     included upstream.
     - 02_fix-notify-detect as well.
+  * debian/control:
+    - update standards version to 3.9.3.
 
  -- Yves-Alexis Perez <corsac@debian.org>  Thu, 29 Mar 2012 07:45:19 +0200
 
