@@ -1,5 +1,3 @@
-0001-Solaris-specific-code-for-determining-the-start-time.patch
-02_fix-notify-detect.patch
 03_trap-x-errors.patch
 04_clear-idles-for-removed-batteries.patch
 05_fix-brightness-key-modifiers.patch

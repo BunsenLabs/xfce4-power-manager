@@ -1,8 +1,16 @@
-xfce4-power-manager (1.0.10-6) UNRELEASED; urgency=low
+xfce4-power-manager (1.0.11-1) UNRELEASED; urgency=low
 
+  [ Lionel Le Folgoc ]
   * debian/patches: add missing DEP3 headers.
 
- -- Lionel Le Folgoc <mrpouit@gmail.com>  Mon, 20 Feb 2012 22:35:06 +0100
+  [ Yves-Alexis Perez ]
+  * New upstream release.
+  * debian/patches:
+    - 0001-Solaris-specific-code-for-determining-the-start-time dropped,
+    included upstream.
+    - 02_fix-notify-detect as well.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 29 Mar 2012 07:45:19 +0200
 
 xfce4-power-manager (1.0.10-5) unstable; urgency=low
 
