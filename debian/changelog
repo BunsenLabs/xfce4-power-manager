@@ -1,4 +1,4 @@
-xfce4-power-manager (1.0.11-2) UNRELEASED; urgency=low
+xfce4-power-manager (1.0.11-2) unstable; urgency=low
 
   [ Lionel Le Folgoc ]
   * debian/patches:
@@ -10,7 +10,7 @@ xfce4-power-manager (1.0.11-2) UNRELEASED; urgency=low
   * debian/rules:
     - build with --parallel.
 
- -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 08 Apr 2012 16:55:50 +0200
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 08 Apr 2012 22:25:40 +0200
 
 xfce4-power-manager (1.0.11-1) unstable; urgency=low
 
