@@ -1,3 +1,12 @@
+xfce4-power-manager (1.0.11-2) UNRELEASED; urgency=low
+
+  * debian/patches:
+    - 02_translations-fix-invalid-format-strings.patch: drop translated
+      strings when format strings don't match the original ones. This leads
+      to hard to reproduce random crashes depending on the locale used…
+
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 08 Apr 2012 16:55:50 +0200
+
 xfce4-power-manager (1.0.11-1) unstable; urgency=low
 
   [ Lionel Le Folgoc ]
