@@ -1,10 +1,14 @@
 xfce4-power-manager (1.1.0-1) UNRELEASED; urgency=low
 
+  [ Yves-Alexis Perez ]
   * New upstream development release.
   * debian/patches:
-    - 02_translations-fix-invalid-format-strings, 03_trap-x-errors,
-      04_clear-idles-for-removed-batteries, 05_fix-brightness-key-modifiers,
-      dropped, included upstream.
+    - 03_trap-x-errors, 04_clear-idles-for-removed-batteries,
+      05_fix-brightness-key-modifiers: dropped, included upstream.
+
+  [ Lionel Le Folgoc ]
+  * debian/patches:
+    - 02_translations-fix-invalid-format-strings: refreshed to apply cleanly.
 
  -- Yves-Alexis Perez <corsac@debian.org>  Sat, 14 Apr 2012 14:42:09 +0200
 
