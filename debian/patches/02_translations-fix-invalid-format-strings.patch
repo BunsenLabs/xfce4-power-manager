@@ -1,7 +1,7 @@
 Description: Fix incorrect usage of format strings in translations
 Author: Lionel Le Folgoc <lionel@lefolgoc.net>
 Bug-Ubuntu: https://bugs.launchpad.net/bugs/975880
-Forwarded: no
+Forwarded: yes, to the coordinator/last translator of each affected language
 
 --- xfce4-power-manager-1.0.11.orig/po/kk.po
 +++ xfce4-power-manager-1.0.11/po/kk.po
