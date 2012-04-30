@@ -1,3 +1,14 @@
+xfce4-power-manager (1.2.0-1) UNRELEASED; urgency=low
+
+  * New upstream stable release.
+  * debian/control:
+    - bump b-deps for Xfce 4.10.
+  * debian/patches:
+    - 02_translations-fix-invalid-format-strings.patch: refreshed, some
+      translations have been fixed.
+
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Mon, 30 Apr 2012 16:03:00 +0200
+
 xfce4-power-manager (1.1.0-1) experimental; urgency=low
 
   [ Yves-Alexis Perez ]
