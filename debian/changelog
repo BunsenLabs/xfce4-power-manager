@@ -1,4 +1,4 @@
-xfce4-power-manager (1.2.0-1) UNRELEASED; urgency=low
+xfce4-power-manager (1.2.0-1) experimental; urgency=low
 
   * New upstream stable release.
   * debian/control:
@@ -7,7 +7,7 @@ xfce4-power-manager (1.2.0-1) UNRELEASED; urgency=low
     - 02_translations-fix-invalid-format-strings.patch: refreshed, some
       translations have been fixed.
 
- -- Lionel Le Folgoc <mrpouit@gmail.com>  Mon, 30 Apr 2012 16:03:00 +0200
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Sat, 05 May 2012 14:24:30 +0200
 
 xfce4-power-manager (1.1.0-1) experimental; urgency=low
 
