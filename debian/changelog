@@ -1,3 +1,11 @@
+xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
+
+  * debian/patches:
+    - 02_translations-fix-invalid-format-strings.patch: updated to fix
+      crashes because of en_GB.po and tr.po.
+
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 21 Oct 2012 23:17:45 +0200
+
 xfce4-power-manager (1.2.0-1) experimental; urgency=low
 
   * New upstream stable release.

@@ -1,6 +1,8 @@
 Description: Fix incorrect usage of format strings in translations
 Author: Lionel Le Folgoc <lionel@lefolgoc.net>
 Bug-Ubuntu: https://bugs.launchpad.net/bugs/975880
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1054907
+Bug: https://bugzilla.xfce.org/show_bug.cgi?id=8992
 Forwarded: yes, to the coordinator/last translator of each affected language
 
 --- xfce4-power-manager-1.0.11.orig/po/te.po
@@ -35,6 +37,64 @@ Forwarded: yes, to the coordinator/last translator of each affected language
 -"%s\n"
 -"మీ %s డిస్చార్జ్ అవుతున్నది (%i%%)\n"
 -"ఇంకా మిగిలివున్న సమయం %s."
+-
+ #: ../src/xfpm-battery.c:248 ../src/xfpm-battery.c:269
+ #, c-format
+ msgid "Your %s is empty"
+--- xfce4-power-manager-1.2.0.orig/po/en_GB.po
++++ xfce4-power-manager-1.2.0/po/en_GB.po
+@@ -548,8 +548,7 @@ msgid ""
+ "%s (%i%%)\n"
+ "%s until is fully charged."
+ msgstr ""
+-"%s\n"
+-"Your %s is charging (%i%%)\n"
++"%s (%i%%)\n"
+ "%s until is fully charged."
+ 
+ #: ../src/xfpm-battery.c:232 ../src/xfpm-battery.c:268
+@@ -568,8 +567,7 @@ msgid ""
+ "%s (%i%%)\n"
+ "Estimated time left is %s."
+ msgstr ""
+-"%s\n"
+-"Your %s is discharging (%i%%)\n"
++"%s (%i%%)\n"
+ "Estimated time left is %s."
+ 
+ #: ../src/xfpm-battery.c:250 ../src/xfpm-battery.c:271
+--- xfce4-power-manager-1.2.0.orig/po/tr.po
++++ xfce4-power-manager-1.2.0/po/tr.po
+@@ -408,16 +408,6 @@ msgstr ""
+ msgid "System is running on low power"
+ msgstr "Sistem düşük güçte çalışıyor"
+ 
+-#: ../src/xfpm-power.c:955
+-#, c-format
+-msgid ""
+-"Your %s charge level is low\n"
+-"Estimated time left %s"
+-msgstr ""
+-"%s\n"
+-"%s deşarj oluyor (%i%%)\n"
+-"tahmini kalan süre %s."
+-
+ #: ../src/xfpm-power.c:1158 ../src/xfpm-power.c:1163
+ msgid "Adaptor is offline"
+ msgstr "Adaptör takılı değil"
+@@ -558,16 +548,6 @@ msgstr "%s deşarj oluyor."
+ msgid "System is running on %s power"
+ msgstr "Sistem, %s gücüyle çalışıyor."
+ 
+-#: ../src/xfpm-battery.c:242
+-#, c-format
+-msgid ""
+-"%s (%i%%)\n"
+-"Estimated time left is %s."
+-msgstr ""
+-"%s\n"
+-"%s deşarj oluyor (%i%%)\n"
+-"tahmini kalan süre %s."
 -
  #: ../src/xfpm-battery.c:248 ../src/xfpm-battery.c:269
  #, c-format
