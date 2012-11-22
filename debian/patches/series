@@ -2,3 +2,4 @@
 03_trap-x-errors.patch
 04_clear-idles-for-removed-batteries.patch
 05_fix-brightness-key-modifiers.patch
+06_fix-insert-battery.patch
