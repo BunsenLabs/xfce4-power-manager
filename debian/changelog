@@ -11,6 +11,8 @@ xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
       libnotify for brightness notifications.
     - 03_fix-insert-battery added, fix spurious space appearing when
       removing/adding battery.                                  closes: #626224
+  * debian/rules:
+    - enable all hardening options.
 
  -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 21 Oct 2012 23:17:45 +0200
 
