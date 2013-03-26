@@ -1,0 +1,44 @@
+From 6f87cc775b4c72f5708d6582173077b856ba01f5 Mon Sep 17 00:00:00 2001
+From: Henry Gebhardt <hsggebhardt@googlemail.com>
+Date: Wed, 29 Feb 2012 14:14:33 +0100
+Subject: [PATCH] Fix empty systray icon in some panels on battery removal and
+ addition
+
+Unreferencing a GtkStatusIcon is not enough to get rid of it entirely.
+
+This fixes these bugs:
+
+    https://bugzilla.xfce.org/show_bug.cgi?id=7603
+    http://bugzilla.xfce.org/show_bug.cgi?id=8424
+    https://bugs.launchpad.net/ubuntu/+source/lxpanel/+bug/846878
+    https://bugzilla.redhat.com/show_bug.cgi?id=765726
+---
+ src/xfpm-battery.c |    2 ++
+ src/xfpm-power.c   |    1 +
+ 2 files changed, 3 insertions(+), 0 deletions(-)
+
+Index: xfce4-power-manager/src/xfpm-battery.c
+===================================================================
+--- xfce4-power-manager/src/xfpm-battery.c	2012-03-02 19:25:29.000000000 +0100
++++ xfce4-power-manager/src/xfpm-battery.c	2012-03-02 19:31:07.000000000 +0100
+@@ -782,6 +782,8 @@
+     g_object_unref (battery->priv->notify);
+     g_object_unref (battery->priv->button);
+ 
++    gtk_status_icon_set_visible(GTK_STATUS_ICON(battery), FALSE);
++
+     G_OBJECT_CLASS (xfpm_battery_parent_class)->finalize (object);
+ }
+ 
+Index: xfce4-power-manager/src/xfpm-power.c
+===================================================================
+--- xfce4-power-manager/src/xfpm-power.c	2012-03-02 19:25:29.000000000 +0100
++++ xfce4-power-manager/src/xfpm-power.c	2012-03-02 19:31:07.000000000 +0100
+@@ -1118,6 +1118,7 @@
+      
+     if ( power->priv->adapter_icon )
+     {
++        gtk_status_icon_set_visible (power->priv->adapter_icon, FALSE);
+         g_object_unref (power->priv->adapter_icon);
+         power->priv->adapter_icon = NULL;
+     }

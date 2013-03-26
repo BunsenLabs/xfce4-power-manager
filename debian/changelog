@@ -1,8 +1,16 @@
 xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
 
+  [ Lionel Le Folgoc ]
   * debian/patches:
     - 02_translations-fix-invalid-format-strings.patch: updated to fix
       crashes because of en_GB.po and tr.po.
+
+  [ Yves-Alexis Perez ]
+  * debian/patches:
+    - 01_Remove_custom_OSD_brightness_popup,_use_libnotify_instead added, use
+      libnotify for brightness notifications.
+    - 03_fix-insert-battery added, fix spurious space appearing when
+      removing/adding battery.                                  closes: #626224
 
  -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 21 Oct 2012 23:17:45 +0200
 
