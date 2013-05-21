@@ -1,4 +1,4 @@
-xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
+xfce4-power-manager (1.2.0-2) unstable; urgency=low
 
   [ Lionel Le Folgoc ]
   * debian/patches:
@@ -6,6 +6,7 @@ xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
       crashes because of en_GB.po and tr.po.
 
   [ Yves-Alexis Perez ]
+  * Upload to unstable.
   * debian/patches:
     - 01_Remove_custom_OSD_brightness_popup,_use_libnotify_instead added, use
       libnotify for brightness notifications.
@@ -14,7 +15,7 @@ xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
   * debian/rules:
     - enable all hardening options.
 
- -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 21 Oct 2012 23:17:45 +0200
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Wed, 22 May 2013 00:46:08 +0200
 
 xfce4-power-manager (1.2.0-1) experimental; urgency=low
 
