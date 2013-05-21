@@ -1,10 +1,45 @@
-xfce4-power-manager (1.0.11-3) UNRELEASED; urgency=low
+xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
 
+  [ Lionel Le Folgoc ]
   * debian/patches:
-    - 06_fix-insert-battery added, correctly handle icon when adding/removing
-      batteries.                                                closes: #626224
+    - 02_translations-fix-invalid-format-strings.patch: updated to fix
+      crashes because of en_GB.po and tr.po.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Thu, 22 Nov 2012 22:53:33 +0100
+  [ Yves-Alexis Perez ]
+  * debian/patches:
+    - 01_Remove_custom_OSD_brightness_popup,_use_libnotify_instead added, use
+      libnotify for brightness notifications.
+    - 03_fix-insert-battery added, fix spurious space appearing when
+      removing/adding battery.                                  closes: #626224
+  * debian/rules:
+    - enable all hardening options.
+
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 21 Oct 2012 23:17:45 +0200
+
+xfce4-power-manager (1.2.0-1) experimental; urgency=low
+
+  * New upstream stable release.
+  * debian/control:
+    - bump b-deps for Xfce 4.10.
+  * debian/patches:
+    - 02_translations-fix-invalid-format-strings.patch: refreshed, some
+      translations have been fixed.
+
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Sat, 05 May 2012 14:24:30 +0200
+
+xfce4-power-manager (1.1.0-1) experimental; urgency=low
+
+  [ Yves-Alexis Perez ]
+  * New upstream development release.
+  * debian/patches:
+    - 03_trap-x-errors, 04_clear-idles-for-removed-batteries,
+      05_fix-brightness-key-modifiers: dropped, included upstream.
+
+  [ Lionel Le Folgoc ]
+  * debian/patches:
+    - 02_translations-fix-invalid-format-strings: refreshed to apply cleanly.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 15 Apr 2012 20:23:42 +0200
 
 xfce4-power-manager (1.0.11-2) unstable; urgency=low
 

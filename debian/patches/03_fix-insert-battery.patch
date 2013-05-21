@@ -17,9 +17,11 @@ This fixes these bugs:
  src/xfpm-power.c   |    1 +
  2 files changed, 3 insertions(+), 0 deletions(-)
 
---- a/src/xfpm-battery.c
-+++ b/src/xfpm-battery.c
-@@ -782,6 +782,8 @@ xfpm_battery_finalize (GObject *object)
+Index: xfce4-power-manager/src/xfpm-battery.c
+===================================================================
+--- xfce4-power-manager/src/xfpm-battery.c	2012-03-02 19:25:29.000000000 +0100
++++ xfce4-power-manager/src/xfpm-battery.c	2012-03-02 19:31:07.000000000 +0100
+@@ -782,6 +782,8 @@
      g_object_unref (battery->priv->notify);
      g_object_unref (battery->priv->button);
  
@@ -28,9 +30,11 @@ This fixes these bugs:
      G_OBJECT_CLASS (xfpm_battery_parent_class)->finalize (object);
  }
  
---- a/src/xfpm-power.c
-+++ b/src/xfpm-power.c
-@@ -1114,6 +1114,7 @@ xfpm_power_hide_adapter_icon (XfpmPower
+Index: xfce4-power-manager/src/xfpm-power.c
+===================================================================
+--- xfce4-power-manager/src/xfpm-power.c	2012-03-02 19:25:29.000000000 +0100
++++ xfce4-power-manager/src/xfpm-power.c	2012-03-02 19:31:07.000000000 +0100
+@@ -1118,6 +1118,7 @@
       
      if ( power->priv->adapter_icon )
      {
