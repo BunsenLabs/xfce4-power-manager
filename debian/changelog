@@ -1,8 +1,13 @@
 xfce4-power-manager (1.2.0-3) UNRELEASED; urgency=low
 
+  [ Evgeni Golov ]
   * Correct Vcs-* URLs to point to anonscm.debian.org
 
- -- Evgeni Golov <evgeni@debian.org>  Mon, 15 Jul 2013 21:55:58 +0200
+  [ Jackson Doak ]
+  * debian/control: 
+    - Bump standards-version to 3.9.4
+
+ -- Jackson Doak <noskcaj@ubuntu.com>  Sun, 18 Aug 2013 19:48:55 +1000
 
 xfce4-power-manager (1.2.0-2) unstable; urgency=low
 
