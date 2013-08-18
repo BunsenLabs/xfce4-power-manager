@@ -6,6 +6,10 @@ xfce4-power-manager (1.2.0-3) UNRELEASED; urgency=low
   [ Jackson Doak ]
   * debian/control: 
     - Bump standards-version to 3.9.4
+    - Build-depend on dh-autoreconf
+    - Drop redandant "Section" category
+  * debian/rules: --with autoreconf
+  * Created debian/source/options
 
  -- Jackson Doak <noskcaj@ubuntu.com>  Sun, 18 Aug 2013 19:48:55 +1000
 
