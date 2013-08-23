@@ -10,6 +10,8 @@ xfce4-power-manager (1.2.0-3) UNRELEASED; urgency=low
     - Drop redandant "Section" category
   * debian/rules: --with autoreconf
   * Created debian/source/options
+  * Create manpages for xfce4-power-information 
+    and xfpm-power-backlight-helper
 
  -- Jackson Doak <noskcaj@ubuntu.com>  Sun, 18 Aug 2013 19:48:55 +1000
 
