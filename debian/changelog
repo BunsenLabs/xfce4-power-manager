@@ -1,4 +1,4 @@
-xfce4-power-manager (1.2.0-3) UNRELEASED; urgency=low
+xfce4-power-manager (1.2.0-3) unstable; urgency=medium
 
   [ Evgeni Golov ]
   * Correct Vcs-* URLs to point to anonscm.debian.org
@@ -18,7 +18,7 @@ xfce4-power-manager (1.2.0-3) UNRELEASED; urgency=low
     - 04_fix-missing-icons-for-non-system-batteries added, fix icon missing in
       the system tray for non system batteries.                 closes: #728257
 
- -- Jackson Doak <noskcaj@ubuntu.com>  Sun, 18 Aug 2013 19:48:55 +1000
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 09 Dec 2013 07:50:25 +0100
 
 xfce4-power-manager (1.2.0-2) unstable; urgency=low
 
