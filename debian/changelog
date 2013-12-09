@@ -13,6 +13,11 @@ xfce4-power-manager (1.2.0-3) UNRELEASED; urgency=low
   * Create manpages for xfce4-power-information 
     and xfpm-power-backlight-helper
 
+  [ Yves-Alexis Perez ]
+  * debian/patches:
+    - 04_fix-missing-icons-for-non-system-batteries added, fix icon missing in
+      the system tray for non system batteries.                 closes: #728257
+
  -- Jackson Doak <noskcaj@ubuntu.com>  Sun, 18 Aug 2013 19:48:55 +1000
 
 xfce4-power-manager (1.2.0-2) unstable; urgency=low
