@@ -1,3 +1,6 @@
 01_Remove_custom_OSD_brightness_popup,_use_libnotify_instead.patch
 02_translations-fix-invalid-format-strings.patch
 03_fix-insert-battery.patch
+04_add-systemd-logind-support-for-suspend_hibernate.patch
+05_dont-allow-systemd-to-handle-suspend-hibernate-events.patch
+06_add-shutdown-reboot-functionality-for-systemd.patch

@@ -1,4 +1,32 @@
-xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
+xfce4-power-manager (1.2.0-3) UNRELEASED; urgency=low
+
+  [ Evgeni Golov ]
+  * Correct Vcs-* URLs to point to anonscm.debian.org
+
+  [ Jackson Doak ]
+  * debian/control: 
+    - Bump standards-version to 3.9.4
+    - Build-depend on dh-autoreconf
+    - Drop redandant "Section" category
+  * debian/rules: --with autoreconf
+  * Created debian/source/options
+  * Create manpages for xfce4-power-information 
+    and xfpm-power-backlight-helper
+
+  [ Yves-Alexis Perez ]
+  * debian/patches:
+    - 04_add-systemd-logind-support-for-suspend_hibernate added, switch from
+      upower to logind for suspend and hibernate.
+    - 05_dont-allow-systemd-to-handle-suspend-hibernate-events added, inhibit
+      systemd doing suspend/hibernate by itself, to let xfpm do its job (like
+      locking the screen)
+    - 06_add-shutdown-reboot-functionality-for-systemd added, handle
+      shutdown/reboot when running under systemd.
+
+
+ -- Jackson Doak <noskcaj@ubuntu.com>  Sun, 18 Aug 2013 19:48:55 +1000
+
+xfce4-power-manager (1.2.0-2) unstable; urgency=low
 
   [ Lionel Le Folgoc ]
   * debian/patches:
@@ -6,6 +34,7 @@ xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
       crashes because of en_GB.po and tr.po.
 
   [ Yves-Alexis Perez ]
+  * Upload to unstable.
   * debian/patches:
     - 01_Remove_custom_OSD_brightness_popup,_use_libnotify_instead added, use
       libnotify for brightness notifications.
@@ -14,7 +43,7 @@ xfce4-power-manager (1.2.0-2) UNRELEASED; urgency=low
   * debian/rules:
     - enable all hardening options.
 
- -- Lionel Le Folgoc <mrpouit@gmail.com>  Sun, 21 Oct 2012 23:17:45 +0200
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Wed, 22 May 2013 00:46:08 +0200
 
 xfce4-power-manager (1.2.0-1) experimental; urgency=low
 
