@@ -18,7 +18,7 @@ Package: xfce4-power-manager
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, upower (>= 0.99),
  xfce4-power-manager-data (=${source:Version})
-Recommends: consolekit
+Recommends: libpam-systemd
 Suggests: xfce4-power-manager-plugins, udisks
 Description: power manager for Xfce desktop
  This power manager for the Xfce desktop enables laptop users to set up
