@@ -1,4 +1,4 @@
-xfce4-power-manager (1.2.0-4) UNRELEASED; urgency=medium
+xfce4-power-manager (1.2.0-4) unstable; urgency=medium
 
   * debian/control:
     - replace consolekit recommends by libpam-systemd, and add systemd-shim |
@@ -7,7 +7,7 @@ xfce4-power-manager (1.2.0-4) UNRELEASED; urgency=medium
   * debian/control:
     - update standards version to 3.9.5.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Wed, 11 Jun 2014 13:14:12 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 11 Jun 2014 21:22:22 +0200
 
 xfce4-power-manager (1.2.0-3) unstable; urgency=medium
 
