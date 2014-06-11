@@ -4,6 +4,8 @@ xfce4-power-manager (1.2.0-4) UNRELEASED; urgency=medium
     - replace consolekit recommends by libpam-systemd, and add systemd-shim |
       system-sysv as well in order to not force systemd as init to users for
       now.
+  * debian/control:
+    - update standards version to 3.9.5.
 
  -- Yves-Alexis Perez <corsac@debian.org>  Wed, 11 Jun 2014 13:14:12 +0200
 
