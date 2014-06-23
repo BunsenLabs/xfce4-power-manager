@@ -7,7 +7,7 @@ xfce4-power-manager (1.3.0-1) UNRELEASED; urgency=low
   * debian/control: 
     - Bump standards-version to 3.9.4
     - Build-depend on dh-autoreconf
-    - Drop redandant "Section" category
+    - Drop redondant "Section" category
   * debian/rules: --with autoreconf
   * Created debian/source/options
   * Create manpages for xfce4-power-information 
