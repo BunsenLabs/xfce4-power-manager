@@ -5,10 +5,11 @@ export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
 override_dh_auto_configure:
 	NOCONFIGURE=1 xdt-autogen
-	dh_auto_configure
+	dh_auto_configure -- --disable-silent-rules
 
 override_dh_install:
+	find debian/tmp/usr/lib -name 'lib*.la' -delete
 	dh_install --fail-missing
 
 %:
-	dh $@ --parallel --with autoreconf
+	dh $@ --parallel
