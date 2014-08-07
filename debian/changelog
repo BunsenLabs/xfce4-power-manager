@@ -3,7 +3,7 @@ xfce4-power-manager (1.2.0-5) unstable; urgency=medium
   * Add patch to support upower 0.99. Closes: #752428
   * Bump upower depend to >= 0.99
 
- -- Jackson Doak <noskcaj@ubuntu.com>  Wed, 16 Jul 2014 18:30:06 +1000
+ -- Jackson Doak <noskcaj@ubuntu.com>  Thu, 17 Jul 2014 06:20:22 +1000
 
 xfce4-power-manager (1.2.0-4) unstable; urgency=medium
 
