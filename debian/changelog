@@ -1,8 +1,9 @@
-xfce4-power-manager (1.3.2-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.3.2-1) experimental; urgency=medium
 
+  [ Jackson Doak ]
   * New upstream release
 
- -- Jackson Doak <noskcaj@ubuntu.com>  Thu, 21 Aug 2014 18:23:12 +1000
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 25 Aug 2014 21:38:14 +0200
 
 xfce4-power-manager (1.3.1-1) experimental; urgency=medium
 
