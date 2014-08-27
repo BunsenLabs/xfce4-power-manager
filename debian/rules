@@ -4,7 +4,6 @@ export DEB_LDFLAGS_MAINT_APPEND=-Wl,-z,defs -Wl,--as-needed -Wl,-O1
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
 override_dh_auto_configure:
-	NOCONFIGURE=1 xdt-autogen
 	dh_auto_configure -- --disable-silent-rules
 
 override_dh_install:

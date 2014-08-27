@@ -4,6 +4,10 @@ xfce4-power-manager (1.3.2-2) UNRELEASED; urgency=medium
     - 01_fix-logind-handle-xfconf-keys.patch added, fix backward logic when
       handling the logind inhibit keys and set the default to FALSE, meaning
       xfce4-power-manager will handle the keys and lid itself.
+  * debian/rules:
+    - stop calling xdt-autogen, not needed anymore.
+  * debian/control:
+    - drop build-dep on dh-autoreconf, xfce4-dev-tools and libtool.
 
  -- Yves-Alexis Perez <corsac@debian.org>  Wed, 27 Aug 2014 21:51:01 +0200
 
