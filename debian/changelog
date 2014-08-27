@@ -1,3 +1,16 @@
+xfce4-power-manager (1.3.2-2) UNRELEASED; urgency=medium
+
+  * debian/patches:
+    - 01_fix-logind-handle-xfconf-keys.patch added, fix backward logic when
+      handling the logind inhibit keys.
+  * debian/xfce4-power-manager.xml:
+    - add configuration to inhibit logind handling the various actions (LID
+      switch and suspend/power/hibernate keys), so configuration done in
+      xfce4-power-manager will work. Users can still override that by setting
+      the keys to true.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 27 Aug 2014 21:51:01 +0200
+
 xfce4-power-manager (1.3.2-1) experimental; urgency=medium
 
   [ Jackson Doak ]
