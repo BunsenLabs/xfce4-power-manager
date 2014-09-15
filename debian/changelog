@@ -5,6 +5,8 @@ xfce4-power-manager (1.4.0-1) UNRELEASED; urgency=medium
     - stop calling xdt-autogen, not needed anymore.
   * debian/control:
     - drop build-dep on dh-autoreconf, xfce4-dev-tools and libtool.
+  * debian/xfce4-power-manager-plugins.install:
+    - update plugin install path.
 
  -- Yves-Alexis Perez <corsac@debian.org>  Mon, 15 Sep 2014 10:35:39 +0200
 
