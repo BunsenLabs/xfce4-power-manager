@@ -1,4 +1,4 @@
-xfce4-power-manager (1.4.0-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.4.0-1) experimental; urgency=medium
 
   * New upstream stable release.
   * debian/rules:
@@ -8,7 +8,7 @@ xfce4-power-manager (1.4.0-1) UNRELEASED; urgency=medium
   * debian/xfce4-power-manager-plugins.install:
     - update plugin install path.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Mon, 15 Sep 2014 10:35:39 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 15 Sep 2014 19:09:13 +0200
 
 xfce4-power-manager (1.3.2-1) experimental; urgency=medium
 
