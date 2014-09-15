@@ -1,10 +1,6 @@
 xfce4-power-manager (1.4.0-1) UNRELEASED; urgency=medium
 
   * New upstream stable release.
-  * debian/patches:
-    - 01_fix-logind-handle-xfconf-keys.patch added, fix backward logic when
-      handling the logind inhibit keys and set the default to FALSE, meaning
-      xfce4-power-manager will handle the keys and lid itself.
   * debian/rules:
     - stop calling xdt-autogen, not needed anymore.
   * debian/control:
