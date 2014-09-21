@@ -1,5 +1,1 @@
-01_Remove_custom_OSD_brightness_popup,_use_libnotify_instead.patch
-02_translations-fix-invalid-format-strings.patch
-03_fix-insert-battery.patch
-04_fix-missing-icons-for-non-system-batteries.patch
-05_upower-0.99.patch
+0001-Fix-handle-lid-switch-with-loginD-Bug-11160.patch
