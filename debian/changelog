@@ -1,3 +1,73 @@
+xfce4-power-manager (1.4.0-2) UNRELEASED; urgency=medium
+
+  * debian/patches:
+    - 0001-Fix-handle-lid-switch-with-loginD-Bug-11160 added, fix incomplete
+      patch reverting the logind xfconf hidden variables.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 17 Sep 2014 21:51:57 +0200
+
+xfce4-power-manager (1.4.0-1) experimental; urgency=medium
+
+  * New upstream stable release.
+  * debian/rules:
+    - stop calling xdt-autogen, not needed anymore.
+  * debian/control:
+    - drop build-dep on dh-autoreconf, xfce4-dev-tools and libtool.
+  * debian/xfce4-power-manager-plugins.install:
+    - update plugin install path.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 15 Sep 2014 19:09:13 +0200
+
+xfce4-power-manager (1.3.2-1) experimental; urgency=medium
+
+  [ Jackson Doak ]
+  * New upstream release
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 25 Aug 2014 21:38:14 +0200
+
+xfce4-power-manager (1.3.1-1) experimental; urgency=medium
+
+  * debian/NEWS:
+    - inform users about the tray icon replacement by the Xfce panel plugin so
+      they get a chance to install it.
+  * New upstream release.
+  * debian/control:
+    - drop suggestion on udisks, not used anymore.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 14 Aug 2014 14:50:52 +0200
+
+xfce4-power-manager (1.3.0-1) experimental; urgency=low
+
+  [ Evgeni Golov ]
+  * Correct Vcs-* URLs to point to anonscm.debian.org
+
+  [ Jackson Doak ]
+  * debian/control: 
+    - Bump standards-version to 3.9.5
+    - Build-depend on dh-autoreconf
+    - Drop redondant "Section" category
+  * debian/rules: --with autoreconf
+  * Created debian/source/options
+  * Create manpages for xfce4-power-information 
+    and xfpm-power-backlight-helper
+
+  [ Yves-Alexis Perez ]
+  * New upstream release.
+  * debian/control:
+    - add build-dep on libupower-glib-dev.
+    - version upower dependency to >= 0.99. 
+    - replace consolekit recommends by libpam-systemd on linux-any since we
+      need logind support. 
+    - promote xfce4-power-manager-plugins to recommends since the tray icon is
+      now gone and the panel plugin is the preferred way to interact with the
+      daemon.
+    - remove spurious Sections:
+    - update VCS links since xfpm got moved from goodies to desktop. 
+  * debian/rules:
+    - remove .la files.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 23 Jun 2014 23:26:09 +0200
+
 xfce4-power-manager (1.2.0-5) unstable; urgency=medium
 
   * Add patch to support upower 0.99. Closes: #752428
