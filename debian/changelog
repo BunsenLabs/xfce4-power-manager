@@ -1,5 +1,6 @@
 xfce4-power-manager (1.4.0-2) UNRELEASED; urgency=medium
 
+  * Upload to unstable
   * debian/patches:
     - 0001-Fix-handle-lid-switch-with-loginD-Bug-11160 added, fix incomplete
       patch reverting the logind xfconf hidden variables.
