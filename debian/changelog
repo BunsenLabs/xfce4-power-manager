@@ -1,11 +1,11 @@
-xfce4-power-manager (1.4.1-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.4.1-1) unstable; urgency=medium
 
   * New upstream release.
   * debian/patches:
     - 0001-Fix-handle-lid-switch-with-loginD-Bug-11160 dropped, included
       upstream.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Thu, 25 Sep 2014 18:56:21 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 30 Sep 2014 21:49:35 +0200
 
 xfce4-power-manager (1.4.0-2) unstable; urgency=medium
 
