@@ -4,6 +4,8 @@ xfce4-power-manager (1.4.1-2) UNRELEASED; urgency=medium
     - 0001-Use-translated-device-type-for-unknown-devices-bug-1 added,
     cherry-picked from upstream to fix extra long battery names when the
     battery is not recognized by the system.                    closes: #763713
+  * debian/control:
+    - update standards version to 3.9.6.
 
  -- Yves-Alexis Perez <corsac@debian.org>  Thu, 30 Oct 2014 13:25:32 +0100
 
