@@ -1,0 +1,45 @@
+From ac0335d18eb041a870d573130e3c1858de2dd048 Mon Sep 17 00:00:00 2001
+From: Harald Judt <h.judt@gmx.at>
+Date: Tue, 28 Oct 2014 18:57:38 +0100
+Subject: [PATCH] Use translated device type for unknown devices (bug #11217)
+
+If the device is unknown to the kernel (maybe no-name stuff or
+whatever), then vendor and model will have a hex ID of 31
+characters each. We do not want to show them, they are neither
+useful nor human-readable, so translate and use the device
+type instead of the hex IDs.
+
+This fixes the negative side-effect that the settings window
+width is too large.
+---
+ common/xfpm-power-common.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/common/xfpm-power-common.c b/common/xfpm-power-common.c
+index 7130497..20f8e2c 100644
+--- a/common/xfpm-power-common.c
++++ b/common/xfpm-power-common.c
+@@ -349,6 +349,20 @@ get_device_description (UpClient *upower, UpDevice *device)
+     if (g_strcmp0(vendor, "") == 0 && g_strcmp0(model, "") == 0)
+         vendor = g_strdup_printf ("%s", xfpm_power_translate_device_type (type));
+ 
++    /* If the device is unknown to the kernel (maybe no-name stuff or
++     * whatever), then vendor and model will have a hex ID of 31
++     * characters each. We do not want to show them, they are neither
++     * useful nor human-readable, so translate and use the device
++     * type instead of the hex IDs (see bug #11217).
++     */
++    else if (strlen(vendor) == 31 && strlen(model) == 31)
++    {
++        g_free (vendor);
++        g_free (model);
++        vendor = g_strdup_printf ("%s", xfpm_power_translate_device_type (type));
++        model = g_strdup("");
++    }
++
+     if ( state == UP_DEVICE_STATE_FULLY_CHARGED )
+     {
+         if ( time_to_empty > 0 )
+-- 
+2.1.1
+
