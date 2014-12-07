@@ -1,6 +1,7 @@
 xfce4-power-manager (1.4.2-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+    - add symlinks for UPS icons.                               closes: #762500
   * debian/patches:
     - 0001-Use-translated-device-type-for-unknown-devices-bug-1 dropped,
       included upstream.
