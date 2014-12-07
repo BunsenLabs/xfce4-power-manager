@@ -1,3 +1,9 @@
+xfce4-power-manager (1.4.2-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 07 Dec 2014 11:56:09 +0100
+
 xfce4-power-manager (1.4.1-2) unstable; urgency=medium
 
   * debian/patches:
