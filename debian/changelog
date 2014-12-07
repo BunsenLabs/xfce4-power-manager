@@ -1,6 +1,9 @@
 xfce4-power-manager (1.4.2-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * debian/patches:
+    - 0001-Use-translated-device-type-for-unknown-devices-bug-1 dropped,
+      included upstream.
 
  -- Yves-Alexis Perez <corsac@debian.org>  Sun, 07 Dec 2014 11:56:09 +0100
 
