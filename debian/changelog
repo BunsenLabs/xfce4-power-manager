@@ -1,4 +1,4 @@
-xfce4-power-manager (1.4.2-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.4.3-1) UNRELEASED; urgency=medium
 
   * New upstream release.
     - add symlinks for UPS icons.                               closes: #762500
