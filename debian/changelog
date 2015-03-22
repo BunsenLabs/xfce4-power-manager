@@ -1,10 +1,10 @@
-xfce4-power-manager (1.4.4-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.4.4-1) experimental; urgency=medium
 
   * New upstream release.
     - the tray icon is back.                                    closes: #755551
   * debian/NEWS: add a note about the re-introduction of the tray icon. 
 
- -- Yves-Alexis Perez <corsac@debian.org>  Sun, 22 Mar 2015 15:16:15 +0100
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 22 Mar 2015 15:29:32 +0100
 
 xfce4-power-manager (1.4.3-1) experimental; urgency=medium
 
