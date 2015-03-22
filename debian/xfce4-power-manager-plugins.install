@@ -1,2 +1,3 @@
-usr/lib
+usr/lib/*/xfce4
+usr/lib/*/lxpanel/plugins
 usr/share/xfce4/panel/plugins
