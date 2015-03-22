@@ -1,16 +1,3 @@
-xfce4-power-manager (1.4.4-2) UNRELEASED; urgency=medium
-
-  * Enable building lxpanel plugin. (Closes: #762519)
-  * debian/control:
-    - Add to build depends: lxpanel (>= 0.7.1), libmenu-cache-dev.
-    - Update depends for xfce4-power-manager-plugins to xfce4-panel | lxpanel
-  * debian/rules:
-    - Do not include xfce4-panel in shlibs.
-  * debian/xfce4-power-manager-plugins.install:
-    - Update for new plugin.
-
- -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 22 Mar 2015 19:08:51 +0100
-
 xfce4-power-manager (1.4.4-1) experimental; urgency=medium
 
   * New upstream release.
