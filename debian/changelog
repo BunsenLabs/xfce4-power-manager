@@ -1,3 +1,11 @@
+xfce4-power-manager (1.4.4-2) UNRELEASED; urgency=medium
+
+  * debian/patches:
+    - 01_fix-light-locker-schema-loading added, make schema search recursive,
+      fix detection of light-locker settings.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 23 Apr 2015 22:58:20 +0200
+
 xfce4-power-manager (1.4.4-1) experimental; urgency=medium
 
   * New upstream release.
