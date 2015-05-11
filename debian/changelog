@@ -1,3 +1,11 @@
+xfce4-power-manager (1.4.4-4) UNRELEASED; urgency=medium
+
+  * debian/rules:
+    - use linux suspend/hibernate backend on Linux and Hurd, and freebsd on
+    kFreeBSD.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 11 May 2015 21:04:50 +0200
+
 xfce4-power-manager (1.4.4-3) unstable; urgency=medium
 
   * Upload to unstable.
