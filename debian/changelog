@@ -1,6 +1,7 @@
 xfce4-power-manager (1.5.0-1) UNRELEASED; urgency=medium
 
-  * New upstream release.
+  * New upstream release:
+    - Use GTK+3 from now.
   * Drop 01_fix-light-locker-schema-loading.patch -- included upstream.
 
  -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 31 May 2015 22:25:49 +0200
