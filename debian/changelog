@@ -1,10 +1,79 @@
-xfce4-power-manager (1.4.0-2) UNRELEASED; urgency=medium
+xfce4-power-manager (1.5.0-1) UNRELEASED; urgency=medium
 
+  * New upstream release.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 31 May 2015 22:25:49 +0200
+
+xfce4-power-manager (1.4.4-4) unstable; urgency=medium
+
+  * debian/rules:
+    - use linux suspend/hibernate backend on Linux and Hurd, and freebsd on
+    kFreeBSD.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 16 May 2015 10:32:12 +0200
+
+xfce4-power-manager (1.4.4-3) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 06 May 2015 18:15:26 +0200
+
+xfce4-power-manager (1.4.4-2) experimental; urgency=medium
+
+  * debian/patches:
+    - 01_fix-light-locker-schema-loading added, make schema search recursive,
+      fix detection of light-locker settings.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 23 Apr 2015 23:13:34 +0200
+
+xfce4-power-manager (1.4.4-1) experimental; urgency=medium
+
+  * New upstream release.
+    - the tray icon is back.                                    closes: #755551
+  * debian/NEWS: add a note about the re-introduction of the tray icon. 
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 22 Mar 2015 15:29:32 +0100
+
+xfce4-power-manager (1.4.3-1) experimental; urgency=medium
+
+  * New upstream release.
+    - add symlinks for UPS icons.                               closes: #762500
+  * debian/patches:
+    - 0001-Use-translated-device-type-for-unknown-devices-bug-1 dropped,
+      included upstream.
+  * debian/control:
+    - drop libsystemd-daemon-dev build-dep, obsolete.           closes: #779778
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 08 Mar 2015 21:57:47 +0100
+
+xfce4-power-manager (1.4.1-2) unstable; urgency=medium
+
+  * debian/patches:
+    - 0001-Use-translated-device-type-for-unknown-devices-bug-1 added,
+    cherry-picked from upstream to fix extra long battery names when the
+    battery is not recognized by the system.                    closes: #763713
+  * debian/control:
+    - update standards version to 3.9.6.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 30 Oct 2014 23:08:40 +0100
+
+xfce4-power-manager (1.4.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches:
+    - 0001-Fix-handle-lid-switch-with-loginD-Bug-11160 dropped, included
+      upstream.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 30 Sep 2014 21:49:35 +0200
+
+xfce4-power-manager (1.4.0-2) unstable; urgency=medium
+
+  * Upload to unstable
   * debian/patches:
     - 0001-Fix-handle-lid-switch-with-loginD-Bug-11160 added, fix incomplete
       patch reverting the logind xfconf hidden variables.
 
- -- Yves-Alexis Perez <corsac@debian.org>  Wed, 17 Sep 2014 21:51:57 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 21 Sep 2014 22:15:23 +0200
 
 xfce4-power-manager (1.4.0-1) experimental; urgency=medium
 
@@ -67,6 +136,46 @@ xfce4-power-manager (1.3.0-1) experimental; urgency=low
     - remove .la files.
 
  -- Yves-Alexis Perez <corsac@debian.org>  Mon, 23 Jun 2014 23:26:09 +0200
+
+xfce4-power-manager (1.2.0-5) unstable; urgency=medium
+
+  * Add patch to support upower 0.99. Closes: #752428
+  * Bump upower depend to >= 0.99
+
+ -- Jackson Doak <noskcaj@ubuntu.com>  Thu, 17 Jul 2014 06:20:22 +1000
+
+xfce4-power-manager (1.2.0-4) unstable; urgency=medium
+
+  * debian/control:
+    - replace consolekit recommends by libpam-systemd, and add systemd-shim |
+      system-sysv as well in order to not force systemd as init to users for
+      now.
+  * debian/control:
+    - update standards version to 3.9.5.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 11 Jun 2014 21:22:22 +0200
+
+xfce4-power-manager (1.2.0-3) unstable; urgency=medium
+
+  [ Evgeni Golov ]
+  * Correct Vcs-* URLs to point to anonscm.debian.org
+
+  [ Jackson Doak ]
+  * debian/control: 
+    - Bump standards-version to 3.9.4
+    - Build-depend on dh-autoreconf
+    - Drop redandant "Section" category
+  * debian/rules: --with autoreconf
+  * Created debian/source/options
+  * Create manpages for xfce4-power-information 
+    and xfpm-power-backlight-helper
+
+  [ Yves-Alexis Perez ]
+  * debian/patches:
+    - 04_fix-missing-icons-for-non-system-batteries added, fix icon missing in
+      the system tray for non system batteries.                 closes: #728257
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 09 Dec 2013 07:50:25 +0100
 
 xfce4-power-manager (1.2.0-2) unstable; urgency=low
 
