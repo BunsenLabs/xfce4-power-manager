@@ -1,4 +1,4 @@
-xfce4-power-manager (1.6.0-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.6.0-1) experimental; urgency=medium
 
   [ Mateusz Łukasik ]
   * New upstream release:
@@ -18,7 +18,7 @@ xfce4-power-manager (1.6.0-1) UNRELEASED; urgency=medium
   * debian/control:
     - update standards version to 3.9.8.
 
- -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 31 May 2015 22:25:49 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 26 Aug 2016 15:53:07 +0200
 
 xfce4-power-manager (1.4.4-4) unstable; urgency=medium
 
