@@ -1,5 +1,6 @@
 xfce4-power-manager (1.6.0-1) UNRELEASED; urgency=medium
 
+  [ Mateusz Łukasik ]
   * New upstream release:
     - Use GTK+3 from now.
   * Drop 01_fix-light-locker-schema-loading.patch -- included upstream.
@@ -9,9 +10,12 @@ xfce4-power-manager (1.6.0-1) UNRELEASED; urgency=medium
     - Build-Depends on libxfce4panel-2.0-dev instead of xfce4-panel-dev
     - Build-Depends on libglib2.0-dev instead of libdbus-1-dev, libdbus-glib-1-dev
     - Add libsystemd-dev build dep on Linux to use logind for session tracking.
-    - Bump Standards-Version to 3.9.7.
   * debian/watch:
     - Bump version to 4.
+
+  [ Yves-Alexis Perez ]
+  * debian/control:
+    - update standards version to 3.9.8.
 
  -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 31 May 2015 22:25:49 +0200
 
