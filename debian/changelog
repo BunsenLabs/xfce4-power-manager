@@ -4,6 +4,8 @@ xfce4-power-manager (1.6.1-1) UNRELEASED; urgency=medium
   * debian/control:
     - update standards version to 4.1.2.
   * Run wrap-and-sort.
+  * debian/xfce4-power-manager-data.install:
+    - move AppData folder to the AppStream location.
 
  -- Yves-Alexis Perez <corsac@debian.org>  Tue, 19 Dec 2017 13:05:26 +0100
 
