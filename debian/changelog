@@ -1,9 +1,37 @@
-xfce4-power-manager (1.4.4-5) UNRELEASED; urgency=medium
+xfce4-power-manager (1.6.1-1) UNRELEASED; urgency=medium
 
+  * New upstream bugfix release.
+  * debian/control:
+    - update standards version to 4.1.2.
+  * Run wrap-and-sort.
+  * debian/xfce4-power-manager-data.install:
+    - move AppData folder to the AppStream location.
   * Moved the package to git on salsa.debian.org
   * Updated the maintainer address to debian-xfce@lists.debian.org
 
- -- Yves-Alexis Perez <corsac@debian.org>  Wed, 28 Mar 2018 11:20:40 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 19 Dec 2017 13:05:26 +0100
+
+xfce4-power-manager (1.6.0-1) experimental; urgency=medium
+
+  [ Mateusz Łukasik ]
+  * New upstream release:
+    - Use GTK+3 from now.
+  * Drop 01_fix-light-locker-schema-loading.patch -- included upstream.
+  * debian/control:
+    - Build-Depends on gtk3 instead of gtk2
+    - Build-Depends on libxfce4ui-2-dev instead of libxfce4ui-1-dev
+    - Build-Depends on libxfce4panel-2.0-dev instead of xfce4-panel-dev
+    - Build-Depends on libglib2.0-dev instead of libdbus-1-dev,
+      libdbus-glib-1-dev
+    - Add libsystemd-dev build dep on Linux to use logind for session tracking.
+  * debian/watch:
+    - Bump version to 4.
+
+  [ Yves-Alexis Perez ]
+  * debian/control:
+    - update standards version to 3.9.8.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 26 Aug 2016 15:53:07 +0200
 
 xfce4-power-manager (1.4.4-4) unstable; urgency=medium
 

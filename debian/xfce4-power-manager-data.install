@@ -1,4 +1,4 @@
-usr/share/locale
+usr/share/appdata/xfce4-power-manager.appdata.xml usr/share/metainfo
 usr/share/icons
-usr/share/appdata/xfce4-power-manager.appdata.xml
+usr/share/locale
 usr/share/man
