@@ -1,4 +1,4 @@
-xfce4-power-manager (1.6.1-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.6.1-1) unstable; urgency=medium
 
   * New upstream bugfix release.
   * debian/control:
@@ -12,8 +12,9 @@ xfce4-power-manager (1.6.1-1) UNRELEASED; urgency=medium
   * d/control: bump dh build-dep to 10 for compat 10, add xfce4-dev-tools
   * d/rules: drop --parallel, done by compat 10
   * d/rules: call xdt-autogen before autoreconf
+  * Upload to unstable
 
- -- Yves-Alexis Perez <corsac@debian.org>  Wed, 28 Mar 2018 13:00:07 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 28 Mar 2018 13:00:37 +0200
 
 xfce4-power-manager (1.6.0-1) experimental; urgency=medium
 
