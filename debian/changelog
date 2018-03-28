@@ -8,8 +8,12 @@ xfce4-power-manager (1.6.1-1) UNRELEASED; urgency=medium
     - move AppData folder to the AppStream location.
   * Moved the package to git on salsa.debian.org
   * Updated the maintainer address to debian-xfce@lists.debian.org
+  * d/compat bumped to 10
+  * d/control: bump dh build-dep to 10 for compat 10, add xfce4-dev-tools
+  * d/rules: drop --parallel, done by compat 10
+  * d/rules: call xdt-autogen before autoreconf
 
- -- Yves-Alexis Perez <corsac@debian.org>  Tue, 19 Dec 2017 13:05:26 +0100
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 28 Mar 2018 13:00:07 +0200
 
 xfce4-power-manager (1.6.0-1) experimental; urgency=medium
 
