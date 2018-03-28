@@ -1,3 +1,10 @@
+xfce4-power-manager (1.4.4-5) UNRELEASED; urgency=medium
+
+  * Moved the package to git on salsa.debian.org
+  * Updated the maintainer address to debian-xfce@lists.debian.org
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 28 Mar 2018 11:20:40 +0200
+
 xfce4-power-manager (1.4.4-4) unstable; urgency=medium
 
   * debian/rules:
