@@ -1,6 +1,7 @@
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*-
  *
  * * Copyright (C) 2008-2011 Ali <aliov@xfce.org>
+ * * Copyright (C) 2019 Kacper Piwiński
  *
  * Licensed under the GNU General Public License Version 2
  *
@@ -30,8 +31,8 @@
 
 G_BEGIN_DECLS
 
-#define XFPM_CHANNEL_CFG                     "xfce4-power-manager"
-#define PROPERTIES_PREFIX                    "/xfce4-power-manager/"
+#define XFPM_CHANNEL                         "xfce4-power-manager"
+#define XFPM_PROPERTIES_PREFIX               "/xfce4-power-manager/"
 
 #define ON_AC_INACTIVITY_TIMEOUT             "inactivity-on-ac"
 #define ON_BATTERY_INACTIVITY_TIMEOUT        "inactivity-on-battery"
@@ -55,11 +56,13 @@ G_BEGIN_DECLS
 #define PRESENTATION_MODE                    "presentation-mode"
 #define NETWORK_MANAGER_SLEEP                "network-manager-sleep"
 #define HEARTBEAT_COMMAND                    "heartbeat-command"
+#define LOCK_COMMAND                         "LockCommand"
 #define SHOW_TRAY_ICON_CFG                   "show-tray-icon"
 
 #define POWER_SWITCH_CFG                     "power-button-action"
 #define HIBERNATE_SWITCH_CFG                 "hibernate-button-action"
 #define SLEEP_SWITCH_CFG                     "sleep-button-action"
+#define BATTERY_SWITCH_CFG                   "battery-button-action"
 #define LID_SWITCH_ON_AC_CFG                 "lid-action-on-ac"
 #define LID_SWITCH_ON_BATTERY_CFG            "lid-action-on-battery"
 

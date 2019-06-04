@@ -1,5 +1,6 @@
 /*
  * * Copyright (C) 2009-2011 Ali <aliov@xfce.org>
+ * * Copyright (C) 2019 Kacper Piwiński
  *
  * Licensed under the GNU General Public License Version 2
  *
@@ -42,9 +43,6 @@
 
 static void xfpm_xfconf_finalize   (GObject *object);
 
-#define XFPM_XFCONF_GET_PRIVATE(o) \
-(G_TYPE_INSTANCE_GET_PRIVATE ((o), XFPM_TYPE_XFCONF, XfpmXfconfPrivate ))
-
 struct XfpmXfconfPrivate
 {
     XfconfChannel 	*channel;
@@ -65,6 +63,7 @@ enum
     PROP_POWER_BUTTON,
     PROP_HIBERNATE_BUTTON,
     PROP_SLEEP_BUTTON,
+    PROP_BATTERY_BUTTON,
     PROP_LID_ACTION_ON_AC,
     PROP_LID_ACTION_ON_BATTERY,
     PROP_BRIGHTNESS_LEVEL_ON_AC,
@@ -95,9 +94,9 @@ enum
     N_PROPERTIES
 };
 
-G_DEFINE_TYPE(XfpmXfconf, xfpm_xfconf, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (XfpmXfconf, xfpm_xfconf, G_TYPE_OBJECT)
 
-static void 
+static void
 xfpm_xfconf_set_property (GObject *object,
 			  guint prop_id,
 			  const GValue *value,
@@ -105,17 +104,17 @@ xfpm_xfconf_set_property (GObject *object,
 {
     XfpmXfconf *conf;
     GValue *dst;
-    
+
     conf = XFPM_XFCONF (object);
-    
+
     dst = conf->priv->values + prop_id;
-    
+
     if ( !G_IS_VALUE (dst) )
     {
 	g_value_init (dst, pspec->value_type);
 	g_param_value_set_default (pspec, dst);
     }
-    
+
     if ( g_param_values_cmp (pspec, value, dst) != 0)
     {
 	g_value_copy (value, dst);
@@ -123,7 +122,7 @@ xfpm_xfconf_set_property (GObject *object,
     }
 }
 
-static void 
+static void
 xfpm_xfconf_get_property (GObject *object,
 			  guint prop_id,
 			  GValue *value,
@@ -131,9 +130,9 @@ xfpm_xfconf_get_property (GObject *object,
 {
     XfpmXfconf *conf;
     GValue *src;
-    
+
     conf = XFPM_XFCONF (object);
-    
+
     src = conf->priv->values + prop_id;
 
     if ( G_VALUE_HOLDS (src, pspec->value_type) )
@@ -149,15 +148,15 @@ xfpm_xfconf_load (XfpmXfconf *conf, gboolean channel_valid)
     GValue value = { 0, };
     guint nspecs;
     guint i;
-    
+
     specs = g_object_class_list_properties (G_OBJECT_GET_CLASS (conf), &nspecs);
-    
+
     for ( i = 0; i < nspecs; i++)
     {
 	gchar *prop_name;
-	prop_name = g_strdup_printf ("%s%s", PROPERTIES_PREFIX, specs[i]->name);
+	prop_name = g_strdup_printf ("%s%s", XFPM_PROPERTIES_PREFIX, specs[i]->name);
 	g_value_init (&value, specs[i]->value_type);
-	
+
 	if (channel_valid)
 	{
 	    if ( !xfconf_channel_get_property (conf->priv->channel, prop_name, &value) )
@@ -186,23 +185,23 @@ xfpm_xfconf_property_changed_cb (XfconfChannel *channel, gchar *property,
     if ( G_VALUE_TYPE(value) == G_TYPE_INVALID )
         return;
 
-    if ( !g_str_has_prefix (property, PROPERTIES_PREFIX) || strlen (property) <= strlen (PROPERTIES_PREFIX) )
+    if ( !g_str_has_prefix (property, XFPM_PROPERTIES_PREFIX) || strlen (property) <= strlen (XFPM_PROPERTIES_PREFIX) )
 	return;
 
     /* We handle presentation mode and blank-times in xfpm-power directly */
-    if ( g_strcmp0 (property, PROPERTIES_PREFIX PRESENTATION_MODE) == 0 ||
-         g_strcmp0 (property, PROPERTIES_PREFIX ON_AC_BLANK) == 0 ||
-         g_strcmp0 (property, PROPERTIES_PREFIX ON_BATTERY_BLANK) == 0)
+    if ( g_strcmp0 (property, XFPM_PROPERTIES_PREFIX PRESENTATION_MODE) == 0 ||
+         g_strcmp0 (property, XFPM_PROPERTIES_PREFIX ON_AC_BLANK) == 0 ||
+         g_strcmp0 (property, XFPM_PROPERTIES_PREFIX ON_BATTERY_BLANK) == 0)
         return;
 
     /* We handle brightness switch in xfpm-backlight directly */
-    if ( g_strcmp0 (property, PROPERTIES_PREFIX BRIGHTNESS_SWITCH) == 0 ||
-         g_strcmp0 (property, PROPERTIES_PREFIX BRIGHTNESS_SWITCH_SAVE) == 0 )
+    if ( g_strcmp0 (property, XFPM_PROPERTIES_PREFIX BRIGHTNESS_SWITCH) == 0 ||
+         g_strcmp0 (property, XFPM_PROPERTIES_PREFIX BRIGHTNESS_SWITCH_SAVE) == 0 )
         return;
 
     XFPM_DEBUG ("Property modified: %s\n", property);
-    
-    g_object_set_property (G_OBJECT (conf), property + strlen (PROPERTIES_PREFIX), value);
+
+    g_object_set_property (G_OBJECT (conf), property + strlen (XFPM_PROPERTIES_PREFIX), value);
 }
 
 static void
@@ -226,7 +225,7 @@ xfpm_xfsession_property_changed_cb (XfconfChannel *channel, gchar *property,
 
     /* update xfconf which will update xfpm and keep things in sync */
     xfconf_channel_set_bool (conf->priv->channel,
-                             PROPERTIES_PREFIX LOCK_SCREEN_ON_SLEEP,
+                             XFPM_PROPERTIES_PREFIX LOCK_SCREEN_ON_SLEEP,
                              g_value_get_boolean(value));
 }
 
@@ -234,12 +233,12 @@ static void
 xfpm_xfconf_class_init (XfpmXfconfClass *klass)
 {
     GObjectClass *object_class = G_OBJECT_CLASS(klass);
-    
+
     object_class->set_property = xfpm_xfconf_set_property;
     object_class->get_property = xfpm_xfconf_get_property;
-    
+
     object_class->finalize = xfpm_xfconf_finalize;
-    
+
     /**
      * XfpmXfconf::general-notification
      **/
@@ -270,7 +269,7 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
 							20,
 							5,
                                                         G_PARAM_READWRITE));
-	
+
     /**
      * XfpmXfconf::show-brightness-popup
      **/
@@ -280,7 +279,7 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
                                                            NULL, NULL,
                                                            TRUE,
                                                            G_PARAM_READWRITE));
-    
+
     /**
      * XfpmXfconf::handle-brightness-keys
      **/
@@ -301,7 +300,7 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
 							NEVER_SHOW_ICON,
 							SHOW_ICON_WHEN_BATTERY_PRESENT,
                                                         G_PARAM_READWRITE));
-							
+
     /**
      * XfpmXfconf::critical-battery-action
      **/
@@ -324,7 +323,7 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
 							XFPM_DO_SHUTDOWN,
 							XFPM_DO_NOTHING,
                                                         G_PARAM_READWRITE));
-							
+
     /**
      * XfpmXfconf::sleep-switch-action
      **/
@@ -336,7 +335,7 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
 							XFPM_DO_SHUTDOWN,
 							XFPM_DO_NOTHING,
                                                         G_PARAM_READWRITE));
-							
+
     /**
      * XfpmXfconf::hibernate-switch-action
      **/
@@ -348,7 +347,19 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
 							XFPM_DO_SHUTDOWN,
 							XFPM_DO_NOTHING,
                                                         G_PARAM_READWRITE));
-    
+
+    /**
+     * XfpmXfconf::battery-switch-action
+     **/
+    g_object_class_install_property (object_class,
+                                     PROP_BATTERY_BUTTON,
+                                     g_param_spec_uint (BATTERY_SWITCH_CFG,
+                                                        NULL, NULL,
+                                                        XFPM_DO_NOTHING,
+                                                        XFPM_DO_SHUTDOWN,
+                                                        XFPM_DO_NOTHING,
+                                                        G_PARAM_READWRITE));
+
     /**
      * XfpmXfconf::lid-action-on-ac
      **/
@@ -360,7 +371,7 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
 							LID_TRIGGER_LOCK_SCREEN,
 							LID_TRIGGER_LOCK_SCREEN,
                                                         G_PARAM_READWRITE));
-    
+
      /**
      * XfpmXfconf::brightness-level-on-ac
      **/
@@ -372,7 +383,7 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
 							100,
 							80,
                                                         G_PARAM_READWRITE));
-							
+
     /**
      * XfpmXfconf::brightness-level-on-battery
      **/
@@ -384,7 +395,7 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
 							100,
 							20,
                                                         G_PARAM_READWRITE));
-    
+
     /**
      * XfpmXfconf::lid-action-on-battery
      **/
@@ -606,8 +617,6 @@ xfpm_xfconf_class_init (XfpmXfconfClass *klass)
                                                            NULL, NULL,
                                                            NULL,
                                                            G_PARAM_READWRITE));
-
-    g_type_class_add_private (klass, sizeof (XfpmXfconfPrivate));
 }
 
 static void
@@ -616,21 +625,21 @@ xfpm_xfconf_init (XfpmXfconf *conf)
     GError *error = NULL;
     gboolean channel_valid;
     gboolean lock_screen;
-      
-    conf->priv = XFPM_XFCONF_GET_PRIVATE (conf);
-    
+
+    conf->priv = xfpm_xfconf_get_instance_private (conf);
+
     conf->priv->values = g_new0 (GValue, N_PROPERTIES);
-    
+
     if ( !xfconf_init (&error) )
     {
     	g_critical ("xfconf_init failed: %s\n", error->message);
        	g_error_free (error);
 	channel_valid = FALSE;
-    }	
+    }
     else
     {
-	conf->priv->channel = xfconf_channel_new ("xfce4-power-manager");
-    conf->priv->session_channel = xfconf_channel_new ("xfce4-session");
+    conf->priv->channel = xfconf_channel_get (XFPM_CHANNEL);
+    conf->priv->session_channel = xfconf_channel_get ("xfce4-session");
 
     /* if xfce4-session is around, sync to it on startup */
     if ( xfconf_channel_has_property (conf->priv->session_channel, "/shutdown/LockScreen") )
@@ -661,22 +670,16 @@ xfpm_xfconf_finalize(GObject *object)
 {
     XfpmXfconf *conf;
     guint i;
-    
+
     conf = XFPM_XFCONF(object);
-    
+
     for ( i = 0; i < N_PROPERTIES; i++)
     {
 	if ( G_IS_VALUE (conf->priv->values + i) )
 	    g_value_unset (conf->priv->values + i);
     }
-    
-    g_free (conf->priv->values);
-    
-    if (conf->priv->channel )
-	g_object_unref (conf->priv->channel);
 
-    if (conf->priv->session_channel )
-        g_object_unref (conf->priv->session_channel);
+    g_free (conf->priv->values);
 
     G_OBJECT_CLASS(xfpm_xfconf_parent_class)->finalize(object);
 }
@@ -685,11 +688,11 @@ XfpmXfconf *
 xfpm_xfconf_new (void)
 {
     static gpointer xfpm_xfconf_object = NULL;
-    
+
     if ( G_LIKELY (xfpm_xfconf_object != NULL) )
     {
 	g_object_ref (xfpm_xfconf_object);
-    } 
+    }
     else
     {
 	xfpm_xfconf_object = g_object_new (XFPM_TYPE_XFCONF, NULL);

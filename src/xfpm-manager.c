@@ -1,5 +1,6 @@
 /*
  * * Copyright (C) 2008-2011 Ali <aliov@xfce.org>
+ * * Copyright (C) 2019 Kacper Piwiński
  *
  * Licensed under the GNU General Public License Version 2
  *
@@ -82,9 +83,6 @@ static gboolean xfpm_manager_quit (XfpmManager *manager);
 static void xfpm_manager_show_tray_icon (XfpmManager *manager);
 static void xfpm_manager_hide_tray_icon (XfpmManager *manager);
 
-#define XFPM_MANAGER_GET_PRIVATE(o) \
-(G_TYPE_INSTANCE_GET_PRIVATE((o), XFPM_TYPE_MANAGER, XfpmManagerPrivate))
-
 #define SLEEP_KEY_TIMEOUT 6.0f
 
 struct XfpmManagerPrivate
@@ -125,7 +123,7 @@ enum
     PROP_SHOW_TRAY_ICON
 };
 
-G_DEFINE_TYPE (XfpmManager, xfpm_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (XfpmManager, xfpm_manager, G_TYPE_OBJECT)
 
 static void
 xfpm_manager_class_init (XfpmManagerClass *klass)
@@ -135,8 +133,6 @@ xfpm_manager_class_init (XfpmManagerClass *klass)
     object_class->finalize = xfpm_manager_finalize;
     object_class->set_property = xfpm_manager_set_property;
     object_class->get_property = xfpm_manager_get_property;
-
-    g_type_class_add_private (klass, sizeof (XfpmManagerPrivate));
 
 #define XFPM_PARAM_FLAGS  (G_PARAM_READWRITE \
                            | G_PARAM_CONSTRUCT \
@@ -156,7 +152,7 @@ xfpm_manager_class_init (XfpmManagerClass *klass)
 static void
 xfpm_manager_init (XfpmManager *manager)
 {
-    manager->priv = XFPM_MANAGER_GET_PRIVATE (manager);
+    manager->priv = xfpm_manager_get_instance_private (manager);
 
     manager->priv->timer = g_timer_new ();
 
@@ -390,6 +386,12 @@ xfpm_manager_button_pressed_cb (XfpmButton *bt, XfpmButtonKey type, XfpmManager 
     {
         g_object_get (G_OBJECT (manager->priv->conf),
                       HIBERNATE_SWITCH_CFG, &req,
+                      NULL);
+    }
+    else if ( type == BUTTON_BATTERY )
+    {
+        g_object_get (G_OBJECT (manager->priv->conf),
+                      BATTERY_SWITCH_CFG, &req,
                       NULL);
     }
     else
@@ -926,7 +928,7 @@ void xfpm_manager_start (XfpmManager *manager)
 			      G_CALLBACK (xfpm_manager_shutdown), manager);
 
     xfconf_g_property_bind(xfpm_xfconf_get_channel (manager->priv->conf),
-			   PROPERTIES_PREFIX SHOW_TRAY_ICON_CFG,
+			   XFPM_PROPERTIES_PREFIX SHOW_TRAY_ICON_CFG,
 			   G_TYPE_INT,
                            G_OBJECT(manager),
 			   SHOW_TRAY_ICON_CFG);
@@ -945,7 +947,7 @@ GHashTable *xfpm_manager_get_config (XfpmManager *manager)
 {
     GHashTable *hash;
 
-    guint8 mapped_buttons;
+    guint16 mapped_buttons;
     gboolean auth_hibernate = FALSE;
     gboolean auth_suspend = FALSE;
     gboolean can_suspend = FALSE;
@@ -953,6 +955,7 @@ GHashTable *xfpm_manager_get_config (XfpmManager *manager)
     gboolean has_sleep_button = FALSE;
     gboolean has_hibernate_button = FALSE;
     gboolean has_power_button = FALSE;
+    gboolean has_battery_button = FALSE;
     gboolean has_battery = TRUE;
     gboolean has_lcd_brightness = TRUE;
     gboolean can_shutdown = TRUE;
@@ -992,10 +995,13 @@ GHashTable *xfpm_manager_get_config (XfpmManager *manager)
         has_hibernate_button = TRUE;
     if ( mapped_buttons & POWER_KEY )
         has_power_button = TRUE;
+    if ( mapped_buttons & BATTERY_KEY )
+        has_battery_button = TRUE;
 
     g_hash_table_insert (hash, g_strdup ("sleep-button"), g_strdup (xfpm_bool_to_string (has_sleep_button)));
     g_hash_table_insert (hash, g_strdup ("power-button"), g_strdup (xfpm_bool_to_string (has_power_button)));
     g_hash_table_insert (hash, g_strdup ("hibernate-button"), g_strdup (xfpm_bool_to_string (has_hibernate_button)));
+    g_hash_table_insert (hash, g_strdup ("battery-button"), g_strdup (xfpm_bool_to_string (has_battery_button)));
     g_hash_table_insert (hash, g_strdup ("auth-suspend"), g_strdup (xfpm_bool_to_string (auth_suspend)));
     g_hash_table_insert (hash, g_strdup ("auth-hibernate"), g_strdup (xfpm_bool_to_string (auth_hibernate)));
     g_hash_table_insert (hash, g_strdup ("can-suspend"), g_strdup (xfpm_bool_to_string (can_suspend)));

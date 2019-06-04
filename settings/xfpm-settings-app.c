@@ -63,10 +63,8 @@ static void activate_quit                (GSimpleAction  *action,
                                           GVariant       *parameter,
                                           gpointer        data);
 
-G_DEFINE_TYPE(XfpmSettingsApp, xfpm_settings_app, GTK_TYPE_APPLICATION);
+G_DEFINE_TYPE_WITH_PRIVATE(XfpmSettingsApp, xfpm_settings_app, GTK_TYPE_APPLICATION);
 
-
-#define XFPM_SETTINGS_APP_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XFPM_TYPE_SETTINGS_APP, XfpmSettingsAppPrivate))
 
 
 static void
@@ -118,7 +116,7 @@ xfpm_settings_app_activate (GApplication *app)
 static void
 xfpm_settings_app_launch (GApplication *app)
 {
-    XfpmSettingsAppPrivate *priv = XFPM_SETTINGS_APP_GET_PRIVATE (app);
+    XfpmSettingsAppPrivate *priv = xfpm_settings_app_get_instance_private (XFPM_SETTINGS_APP (app));
 
     XfpmPowerManager *manager;
     XfconfChannel    *channel;
@@ -140,6 +138,7 @@ xfpm_settings_app_launch (GApplication *app)
     gboolean has_sleep_button;
     gboolean has_hibernate_button;
     gboolean has_power_button;
+    gboolean has_battery_button;
     gboolean has_lid;
     gint     start_xfpm_if_not_running;
 
@@ -195,7 +194,6 @@ xfpm_settings_app_launch (GApplication *app)
         if (start_xfpm_if_not_running == GTK_RESPONSE_YES)
         {
             GAppInfo *app_info;
-            GError   *error = NULL;
 
             app_info = g_app_info_create_from_commandline ("xfce4-power-manager", "Xfce4 Power Manager",
                                                            G_APP_INFO_CREATE_SUPPORTS_STARTUP_NOTIFICATION, NULL);
@@ -203,6 +201,7 @@ xfpm_settings_app_launch (GApplication *app)
                 if (error != NULL) {
                   g_warning ("xfce4-power-manager could not be launched. %s", error->message);
                   g_error_free (error);
+                  error = NULL;
                 }
             }
             /* wait 2 seconds for xfpm to startup */
@@ -226,7 +225,7 @@ xfpm_settings_app_launch (GApplication *app)
     }
 
 
-    channel = xfconf_channel_new(XFPM_CHANNEL_CFG);
+    channel = xfconf_channel_new(XFPM_CHANNEL);
 
     xfpm_debug_init (priv->debug);
 
@@ -250,6 +249,7 @@ xfpm_settings_app_launch (GApplication *app)
     has_sleep_button = xfpm_string_to_bool (g_hash_table_lookup (hash, "sleep-button"));
     has_power_button = xfpm_string_to_bool (g_hash_table_lookup (hash, "power-button"));
     has_hibernate_button = xfpm_string_to_bool (g_hash_table_lookup (hash, "hibernate-button"));
+    has_battery_button = xfpm_string_to_bool (g_hash_table_lookup (hash, "battery-button"));
     can_shutdown = xfpm_string_to_bool (g_hash_table_lookup (hash, "can-shutdown"));
 
     DBG("socket_id %i", (int)priv->socket_id);
@@ -257,7 +257,7 @@ xfpm_settings_app_launch (GApplication *app)
 
     dialog = xfpm_settings_dialog_new (channel, auth_suspend, auth_hibernate,
                                        can_suspend, can_hibernate, can_shutdown, has_battery, has_lcd_brightness,
-                                       has_lid, has_sleep_button, has_hibernate_button, has_power_button,
+                                       has_lid, has_sleep_button, has_hibernate_button, has_power_button, has_battery_button,
                                        priv->socket_id, priv->device_id, GTK_APPLICATION (app));
 
     g_hash_table_destroy (hash);
@@ -274,7 +274,7 @@ activate_socket (GSimpleAction  *action,
                  gpointer        data)
 {
     XfpmSettingsApp *app = XFPM_SETTINGS_APP (data);
-    XfpmSettingsAppPrivate *priv = XFPM_SETTINGS_APP_GET_PRIVATE (app);
+    XfpmSettingsAppPrivate *priv = xfpm_settings_app_get_instance_private (app);
 
     TRACE ("entering");
 
@@ -289,7 +289,7 @@ activate_device (GSimpleAction  *action,
                  gpointer        data)
 {
     XfpmSettingsApp *app = XFPM_SETTINGS_APP (data);
-    XfpmSettingsAppPrivate *priv = XFPM_SETTINGS_APP_GET_PRIVATE (app);
+    XfpmSettingsAppPrivate *priv = xfpm_settings_app_get_instance_private (app);
 
     TRACE ("entering");
 
@@ -304,7 +304,7 @@ activate_debug (GSimpleAction  *action,
                 gpointer        data)
 {
     XfpmSettingsApp *app = XFPM_SETTINGS_APP (data);
-    XfpmSettingsAppPrivate *priv = XFPM_SETTINGS_APP_GET_PRIVATE (app);
+    XfpmSettingsAppPrivate *priv = xfpm_settings_app_get_instance_private (app);
 
     TRACE ("entering");
 
@@ -416,8 +416,6 @@ xfpm_settings_app_class_init (XfpmSettingsAppClass *class)
     gapplication_class->handle_local_options = xfpm_settings_app_local_options;
     gapplication_class->startup              = xfpm_settings_app_startup;
     gapplication_class->activate             = xfpm_settings_app_activate;
-
-    g_type_class_add_private (class, sizeof (XfpmSettingsAppPrivate));
 }
 
 XfpmSettingsApp *
