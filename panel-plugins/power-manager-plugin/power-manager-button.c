@@ -1,5 +1,6 @@
 /*
  * * Copyright (C) 2014 Eric Koegel <eric@xfce.org>
+ * * Copyright (C) 2019 Kacper Piwiński
  *
  * Licensed under the GNU General Public License Version 2
  *
@@ -50,9 +51,6 @@
 #define SAFE_SLIDER_MIN_LEVEL (5)
 #define PANEL_DEFAULT_ICON ("battery-full-charged")
 #define PANEL_DEFAULT_ICON_SYMBOLIC ("battery-full-charged-symbolic")
-
-#define POWER_MANAGER_BUTTON_GET_PRIVATE(o) \
-(G_TYPE_INSTANCE_GET_PRIVATE ((o), POWER_MANAGER_TYPE_BUTTON, PowerManagerButtonPrivate))
 
 struct PowerManagerButtonPrivate
 {
@@ -134,7 +132,7 @@ enum {
 
 static guint __signals[SIG_N_SIGNALS] = { 0, };
 
-G_DEFINE_TYPE (PowerManagerButton, power_manager_button, GTK_TYPE_TOGGLE_BUTTON)
+G_DEFINE_TYPE_WITH_PRIVATE (PowerManagerButton, power_manager_button, GTK_TYPE_TOGGLE_BUTTON)
 
 static void power_manager_button_finalize   (GObject *object);
 static GList* find_device_in_list (PowerManagerButton *button, const gchar *object_path);
@@ -672,7 +670,11 @@ power_manager_button_add_all_devices (PowerManagerButton *button)
     button->priv->display_device = up_client_get_display_device (button->priv->upower);
     power_manager_button_add_device (button->priv->display_device, button);
 
+#if UP_CHECK_VERSION(0, 99, 8)
+    array = up_client_get_devices2 (button->priv->upower);
+#else
     array = up_client_get_devices (button->priv->upower);
+#endif
 
     if (array)
     {
@@ -856,8 +858,6 @@ power_manager_button_class_init (PowerManagerButtonClass *klass)
     widget_class->button_press_event = power_manager_button_press_event;
     widget_class->scroll_event = power_manager_button_scroll_event;
 
-    g_type_class_add_private (klass, sizeof (PowerManagerButtonPrivate));
-
     __signals[SIG_TOOLTIP_CHANGED] = g_signal_new ("tooltip-changed",
                                                    POWER_MANAGER_TYPE_BUTTON,
                                                    G_SIGNAL_RUN_LAST,
@@ -923,7 +923,7 @@ power_manager_button_init (PowerManagerButton *button)
     GError *error = NULL;
     GtkCssProvider *css_provider;
 
-    button->priv = POWER_MANAGER_BUTTON_GET_PRIVATE (button);
+    button->priv = power_manager_button_get_instance_private (button);
 
     gtk_widget_set_can_default (GTK_WIDGET (button), FALSE);
     gtk_widget_set_can_focus (GTK_WIDGET (button), FALSE);
@@ -947,7 +947,7 @@ power_manager_button_init (PowerManagerButton *button)
     }
     else
     {
-        button->priv->channel = xfconf_channel_get ("xfce4-power-manager");
+        button->priv->channel = xfconf_channel_get (XFPM_CHANNEL);
     }
 
 #ifdef XFCE_PLUGIN
@@ -1032,9 +1032,9 @@ power_manager_button_new (void)
 #endif
 
     xfconf_g_property_bind (button->priv->channel,
-                            PROPERTIES_PREFIX BRIGHTNESS_SLIDER_MIN_LEVEL, G_TYPE_INT,
+                            XFPM_PROPERTIES_PREFIX BRIGHTNESS_SLIDER_MIN_LEVEL, G_TYPE_INT,
                             G_OBJECT (button), BRIGHTNESS_SLIDER_MIN_LEVEL);
-    xfconf_g_property_bind (button->priv->channel, PROPERTIES_PREFIX SHOW_PANEL_LABEL, G_TYPE_INT,
+    xfconf_g_property_bind (button->priv->channel, XFPM_PROPERTIES_PREFIX SHOW_PANEL_LABEL, G_TYPE_INT,
                             G_OBJECT (button), SHOW_PANEL_LABEL);
 
     return GTK_WIDGET (button);
@@ -1651,7 +1651,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
     gtk_widget_show (mi);
     gtk_menu_shell_append(GTK_MENU_SHELL(menu), mi);
     xfconf_g_property_bind(button->priv->channel,
-                           PROPERTIES_PREFIX PRESENTATION_MODE,
+                           XFPM_PROPERTIES_PREFIX PRESENTATION_MODE,
                            G_TYPE_BOOLEAN, G_OBJECT(mi), "active");
 
     /* Show any applications currently inhibiting now */

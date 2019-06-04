@@ -37,23 +37,23 @@ typedef struct
 {
     GObject		  	parent;
     XfpmButtonPrivate          *priv;
-    
+
 } XfpmButton;
 
 typedef struct
 {
     GObjectClass 		parent_class;
-     
+
     void                 	(*button_pressed)		        (XfpmButton *button,
 								         XfpmButtonKey type);
-    
+
 } XfpmButtonClass;
 
 GType                 		xfpm_button_get_type               	(void) G_GNUC_CONST;
 
 XfpmButton       	       *xfpm_button_new             		(void);
 
-guint8                		xfpm_button_get_mapped		     	(XfpmButton *button) G_GNUC_PURE;
+guint16               		xfpm_button_get_mapped		     	(XfpmButton *button) G_GNUC_PURE;
 
 G_END_DECLS
 

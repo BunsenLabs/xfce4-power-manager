@@ -1,5 +1,6 @@
 /*
  * * Copyright (C) 2009-2011 Ali <aliov@xfce.org>
+ * * Copyright (C) 2019 Kacper Piwiński
  *
  * Licensed under the GNU General Public License Version 2
  *
@@ -82,10 +83,6 @@ static void xfpm_update_blank_time (XfpmPower *power);
 static void xfpm_power_dbus_class_init (XfpmPowerClass * klass);
 static void xfpm_power_dbus_init (XfpmPower *power);
 
-
-#define XFPM_POWER_GET_PRIVATE(o) \
-(G_TYPE_INSTANCE_GET_PRIVATE ((o), XFPM_TYPE_POWER, XfpmPowerPrivate))
-
 struct XfpmPowerPrivate
 {
     GDBusConnection *bus;
@@ -167,7 +164,7 @@ enum
 static guint signals [LAST_SIGNAL] = { 0 };
 
 
-G_DEFINE_TYPE (XfpmPower, xfpm_power, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (XfpmPower, xfpm_power, G_TYPE_OBJECT)
 
 
 /* This checks if consolekit returns TRUE for either suspend or
@@ -925,7 +922,11 @@ xfpm_power_get_power_devices (XfpmPower *power)
     GPtrArray *array = NULL;
     guint i;
 
-    array = up_client_get_devices(power->priv->upower);
+#if UP_CHECK_VERSION(0, 99, 8)
+    array = up_client_get_devices2 (power->priv->upower);
+#else
+    array = up_client_get_devices (power->priv->upower);
+#endif
 
     if ( array )
     {
@@ -1167,8 +1168,6 @@ xfpm_power_class_init (XfpmPowerClass *klass)
                                                         XFPM_PARAM_FLAGS));
 #undef XFPM_PARAM_FLAGS
 
-    g_type_class_add_private (klass, sizeof (XfpmPowerPrivate));
-
     xfpm_power_dbus_class_init (klass);
 }
 
@@ -1177,7 +1176,7 @@ xfpm_power_init (XfpmPower *power)
 {
     GError *error = NULL;
 
-    power->priv = XFPM_POWER_GET_PRIVATE (power);
+    power->priv = xfpm_power_get_instance_private (power);
 
     power->priv->hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_object_unref);
     power->priv->lid_is_present  = FALSE;
@@ -1359,15 +1358,15 @@ xfpm_power_new (void)
     XfpmPower *power = XFPM_POWER(g_object_new (XFPM_TYPE_POWER, NULL));
 
     xfconf_g_property_bind (xfpm_xfconf_get_channel(power->priv->conf),
-                            PROPERTIES_PREFIX PRESENTATION_MODE, G_TYPE_BOOLEAN,
+                            XFPM_PROPERTIES_PREFIX PRESENTATION_MODE, G_TYPE_BOOLEAN,
                             G_OBJECT(power), PRESENTATION_MODE);
 
     xfconf_g_property_bind (xfpm_xfconf_get_channel(power->priv->conf),
-                            PROPERTIES_PREFIX ON_BATTERY_BLANK, G_TYPE_INT,
+                            XFPM_PROPERTIES_PREFIX ON_BATTERY_BLANK, G_TYPE_INT,
                             G_OBJECT (power), ON_BATTERY_BLANK);
 
     xfconf_g_property_bind (xfpm_xfconf_get_channel(power->priv->conf),
-                            PROPERTIES_PREFIX ON_AC_BLANK, G_TYPE_INT,
+                            XFPM_PROPERTIES_PREFIX ON_AC_BLANK, G_TYPE_INT,
                             G_OBJECT (power), ON_AC_BLANK);
 
     return power;
@@ -1431,6 +1430,7 @@ gboolean xfpm_power_has_battery (XfpmPower *power)
 static void
 xfpm_update_blank_time (XfpmPower *power)
 {
+    int prev_timeout, prev_interval, prev_prefer_blanking, prev_allow_exposures;
     Display* display = gdk_x11_display_get_xdisplay(gdk_display_get_default ());
     guint screensaver_timeout;
 
@@ -1445,7 +1445,8 @@ xfpm_update_blank_time (XfpmPower *power)
 
     XFPM_DEBUG ("Timeout: %d", screensaver_timeout);
 
-    XSetScreenSaver(display, screensaver_timeout * 60, 0, DefaultBlanking, DefaultExposures);
+    XGetScreenSaver(display, &prev_timeout, &prev_interval, &prev_prefer_blanking, &prev_allow_exposures);
+    XSetScreenSaver(display, screensaver_timeout * 60, prev_interval, prev_prefer_blanking, prev_allow_exposures);
 }
 
 static void

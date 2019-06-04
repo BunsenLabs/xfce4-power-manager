@@ -1,5 +1,6 @@
 /*
  * * Copyright (C) 2016 Eric Koegel <eric@xfce.org>
+ * * Copyright (C) 2019 Kacper Piwiński
  *
  * Licensed under the GNU General Public License Version 2
  *
@@ -41,13 +42,10 @@
 #include <libxfce4util/libxfce4util.h>
 #include <xfconf/xfconf.h>
 
+#include "xfpm-config.h"
 #include "xfce-screensaver.h"
 
 
-#define HEARTBEAT_COMMAND       "heartbeat-command"
-#define LOCK_COMMAND            "LockCommand"
-#define XFPM_CHANNEL            "xfce4-power-manager"
-#define XFPM_PROPERTIES_PREFIX  "/xfce4-power-manager/"
 #define XFSM_CHANNEL            "xfce4-session"
 #define XFSM_PROPERTIES_PREFIX  "/general/"
 
@@ -62,9 +60,6 @@ static void xfce_screensaver_get_property(GObject *object,
                                           GValue *value,
                                           GParamSpec *pspec);
 
-
-#define XFCE_SCREENSAVER_GET_PRIVATE(o) \
-(G_TYPE_INSTANCE_GET_PRIVATE ((o), XFCE_TYPE_SCREENSAVER, XfceScreenSaverPrivate))
 
 
 typedef enum
@@ -98,7 +93,7 @@ struct XfceScreenSaverPrivate
 };
 
 
-G_DEFINE_TYPE (XfceScreenSaver, xfce_screensaver, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (XfceScreenSaver, xfce_screensaver, G_TYPE_OBJECT)
 
 
 static void
@@ -109,8 +104,6 @@ xfce_screensaver_class_init (XfceScreenSaverClass *klass)
     object_class->finalize = xfce_screensvaer_finalize;
     object_class->set_property = xfce_screensaver_set_property;
     object_class->get_property = xfce_screensaver_get_property;
-
-    g_type_class_add_private (klass, sizeof (XfceScreenSaverPrivate));
 
 #define XFCE_PARAM_FLAGS  (G_PARAM_READWRITE \
                          | G_PARAM_CONSTRUCT \
@@ -277,7 +270,7 @@ xfce_screensaver_init (XfceScreenSaver *saver)
 {
     GError *error = NULL;
 
-    saver->priv = XFCE_SCREENSAVER_GET_PRIVATE (saver);
+    saver->priv = xfce_screensaver_get_instance_private (saver);
 
     if ( !xfconf_init (&error) )
     {
@@ -359,7 +352,7 @@ xfce_screensaver_new (void)
                                 G_OBJECT(saver),
                                 LOCK_COMMAND);
     }
-    
+
     return XFCE_SCREENSAVER (saver);
 }
 
@@ -400,7 +393,7 @@ xfce_reset_screen_saver (XfceScreenSaver *saver)
  * Calling this function with inhibit as TRUE will prevent the user's
  * screensaver from activating. This is useful when the user is watching
  * a movie or giving a presentation.
- * 
+ *
  * Calling this function with inhibit as FALSE will remove any current
  * screensaver inhibit the XfceScreenSaver object has.
  *
@@ -551,7 +544,7 @@ xfce_screensaver_lock (XfceScreenSaver *saver)
             {
                 ret = g_spawn_command_line_async ("xdg-screensaver lock", NULL);
             }
-            
+
             if (!ret)
             {
                 ret = g_spawn_command_line_async ("xscreensaver-command -lock", NULL);
