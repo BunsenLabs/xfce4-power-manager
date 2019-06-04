@@ -1,3 +1,9 @@
+xfce4-power-manager (1.6.2-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Tue, 04 Jun 2019 15:21:31 +0200
+
 xfce4-power-manager (1.6.1-1) unstable; urgency=medium
 
   * New upstream bugfix release.
