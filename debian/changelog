@@ -1,6 +1,7 @@
 xfce4-power-manager (1.6.2-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * d/xfce4-power-manager-data.install: Fix location of appdata.
 
  -- Mateusz Łukasik <mati75@linuxmint.pl>  Tue, 04 Jun 2019 15:21:31 +0200
 
