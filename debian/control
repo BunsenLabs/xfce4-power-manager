@@ -23,7 +23,7 @@ Build-Depends: debhelper (>= 10),
 Standards-Version: 4.4.0
 Vcs-Git: https://salsa.debian.org/xfce-team/desktop/xfce4-power-manager.git
 Vcs-Browser: https://salsa.debian.org/xfce-team/desktop/xfce4-power-manager
-Homepage: http://goodies.xfce.org/projects/applications/xfce4-power-manager
+Homepage: https://goodies.xfce.org/projects/applications/xfce4-power-manager
 
 Package: xfce4-power-manager
 Architecture: any
