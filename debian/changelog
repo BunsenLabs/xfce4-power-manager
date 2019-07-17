@@ -1,4 +1,4 @@
-xfce4-power-manager (1.6.3-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.6.3-1) unstable; urgency=medium
 
   [ Mateusz Łukasik ]
   * New upstream release.
@@ -11,7 +11,7 @@ xfce4-power-manager (1.6.3-1) UNRELEASED; urgency=medium
   * New upstream version 1.6.3
   * d/xfce4-power-manager.manpages: fix manpage filename
 
- -- Yves-Alexis Perez <corsac@debian.org>  Wed, 17 Jul 2019 22:31:50 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 17 Jul 2019 22:31:59 +0200
 
 xfce4-power-manager (1.6.1-1) unstable; urgency=medium
 
