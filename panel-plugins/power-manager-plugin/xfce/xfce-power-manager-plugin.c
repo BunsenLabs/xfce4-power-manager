@@ -155,12 +155,13 @@ power_manager_plugin_configure (XfcePanelPlugin      *plugin,
   xfce_panel_plugin_block_menu (plugin);
 
   /* create the dialog */
-  dialog = xfce_titled_dialog_new_with_buttons (_("Power Manager Plugin Settings"),
-                                                GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
-                                                GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                "gtk-help", GTK_RESPONSE_HELP,
-                                                "gtk-close", GTK_RESPONSE_OK,
-                                                NULL);
+  dialog = xfce_titled_dialog_new_with_mixed_buttons (_("Power Manager Plugin Settings"),
+    GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
+    GTK_DIALOG_DESTROY_WITH_PARENT,
+    "help-browser", _("_Help"), GTK_RESPONSE_HELP,
+    "window-close", _("_Close"), GTK_RESPONSE_OK,
+    NULL);
+
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "xfce4-power-manager-settings");
   gtk_widget_show (dialog);
@@ -223,6 +224,7 @@ static PowerManagerPlugin *
 power_manager_plugin_new (XfcePanelPlugin *plugin)
 {
     PowerManagerPlugin *power_manager_plugin;
+    XfconfChannel *channel;
 
     /* allocate memory for the plugin structure */
     power_manager_plugin = panel_slice_new0 (PowerManagerPlugin);
@@ -237,7 +239,14 @@ power_manager_plugin_new (XfcePanelPlugin *plugin)
 
     power_manager_plugin->power_manager_button = power_manager_button_new (plugin);
     gtk_container_add (GTK_CONTAINER (power_manager_plugin->ebox), power_manager_plugin->power_manager_button);
-    power_manager_button_show(POWER_MANAGER_BUTTON(power_manager_plugin->power_manager_button));
+    power_manager_button_show (POWER_MANAGER_BUTTON (power_manager_plugin->power_manager_button));
+
+    /* disable the systray item when the plugin is started, allowing the user to
+    later manually enable it, e.g. for testing purposes. */
+    channel = xfconf_channel_get (XFPM_CHANNEL);
+    if (xfconf_channel_get_bool (channel, "/xfce4-power-manager/show-tray-icon", TRUE))
+        g_warning ("Xfce4-power-manager: The panel plugin is present, so the tray icon gets disabled.");
+    xfconf_channel_set_bool (channel, "/xfce4-power-manager/show-tray-icon", FALSE);
 
     return power_manager_plugin;
 }
