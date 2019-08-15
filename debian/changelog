@@ -1,4 +1,4 @@
-xfce4-power-manager (1.6.5-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.6.5-1) unstable; urgency=medium
 
   * New upstream version 1.6.5
   * d/control: drop Lionel from uploaders, thanks!
@@ -6,7 +6,7 @@ xfce4-power-manager (1.6.5-1) UNRELEASED; urgency=medium
   * d/control: update dh compat level to 11
   * d/rules: drop manual call to xdt-autogen
 
- -- Yves-Alexis Perez <corsac@debian.org>  Thu, 15 Aug 2019 17:08:59 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 15 Aug 2019 17:09:14 +0200
 
 xfce4-power-manager (1.6.3-1) unstable; urgency=medium
 
