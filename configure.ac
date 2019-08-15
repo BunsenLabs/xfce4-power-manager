@@ -6,9 +6,9 @@ dnl
 m4_define([intltool_minimum_version], [0.31])
 m4_define([xfpm_version_major], [1])
 m4_define([xfpm_version_minor], [6])
-m4_define([xfpm_version_micro], [3])
-m4_define([xfpm_version_build], [1490657])
-m4_define([xfpm_version_tag],   [])
+m4_define([xfpm_version_micro], [5])
+m4_define([xfpm_version_build], [cea771df])
+m4_define([xfpm_version_tag], [])
 m4_define([xfpm_version], [xfpm_version_major().xfpm_version_minor().xfpm_version_micro()ifelse(xfpm_version_tag(), [git], [xfpm_version_tag()-xfpm_version_build()], [xfpm_version_tag()])])
 
 AC_INIT([xfce4-power-manager],[xfpm_version],[http://bugzilla.xfce.org/])
