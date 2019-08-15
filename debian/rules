@@ -10,7 +10,7 @@ endif
 
 override_dh_autoreconf:
 	mkdir -p m4
-	NOCONFIGURE=1 dh_autoreconf xdt-autogen
+	NOCONFIGURE=1 dh_autoreconf
 
 override_dh_auto_configure:
 	dh_auto_configure -- --disable-silent-rules --with-backend=$(BACKEND)
