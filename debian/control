@@ -15,7 +15,7 @@ Build-Depends: debhelper-compat (= 11),
                libx11-dev,
                libxext-dev,
                libxfce4panel-2.0-dev (>= 4.12),
-               libxfce4ui-2-dev (>= 4.12),
+               libxfce4ui-2-dev (>= 4.13),
                libxfconf-0-dev (>= 4.10.0),
                pkg-config,
                xfce4-dev-tools
