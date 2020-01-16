@@ -1,6 +1,7 @@
 xfce4-power-manager (1.6.5-3) UNRELEASED; urgency=medium
 
   * Trim trailing whitespace.
+  * Bump debhelper from old 11 to 12.
 
  -- Debian Janitor <janitor@jelmer.uk>  Thu, 16 Jan 2020 20:29:32 +0000
 
