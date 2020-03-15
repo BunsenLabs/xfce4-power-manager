@@ -1,3 +1,77 @@
+commit 058e1a88d8b73d9c8bfd7a1c194c7ebb1e6652db
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Fri Mar 6 00:26:53 2020 +0100
+
+    panel-plugin: Add missing about callback
+    
+    This should have been part of the cherry-picked 299381a5142f20934305741050f003735da0d740
+
+commit b2a20cbe0233f8b96a5d8f59a3bf683b069a0760
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sat Sep 28 00:00:03 2019 +0200
+
+    panel-plugin: Replace deprecated call
+    
+    Preparation for xfce4-panel 4.16
+
+commit 853b94e0a1efd1f07edf1f86c5ecdf939527a94d
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sat Sep 28 00:00:33 2019 +0200
+
+    settings: Move % sign out of spinbutton (Bug #15994)
+
+commit 042d684bf35fcc2033ffcbe3a338a66c6e446bd9
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Thu Nov 7 01:06:14 2019 +0100
+
+    Switch to symbolic window-close icons
+
+commit d2f1c7977dc55bc799e3e715f34282943251aebc
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Mon Nov 11 09:27:03 2019 +0100
+
+    panel-plugin: Toggle presentation mode on middle click
+
+commit 971112acdd22954f2b9d1b690e85ba52cfd73d89
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Mon Jan 27 00:15:18 2020 +0100
+
+    panel-plugin: Properly hook up about signal
+
+commit 0a40699d6ef0fe153a879ab3df69c52de7292547
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Jan 26 23:57:45 2020 +0100
+
+    panel-plugin: Properly show 'About' menu item
+
+commit 26d621a8d30c1c2d0fcf56fd89379ef8f9f8ada6
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sat Jan 11 00:51:48 2020 +0100
+
+    Fix inhibiting xfce4-screensaver (Bug #16364)
+
+commit e131a6626e7d89260de3e8a88629393ecfea4cab
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sat Jan 11 00:59:35 2020 +0100
+
+    Back to development
+
+commit ecee3888bea0468fd8c338efd00359dfcb28bdb0
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Nov 10 00:33:58 2019 +0100
+
+    Dismiss critical notification when connecting to AC
+    
+    We can most likely dismiss the critical notification on all battery state changes,
+    because if there still is one around it means we just connected to a power source
+    (critical notifications always get cleared before new ones are spawned).
+
+commit b9a6d53aabe8bbf79f6a1629616cbf694d4b651a
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sun Aug 11 19:46:19 2019 -0300
+
+    Updates for release
+
 commit cea771dfc4f2662c4fed097f57715de6a365972b
 Author: Kjell Cato Heskjestad <cato@heskjestad.xyz>
 Date:   Sun Aug 11 12:31:02 2019 +0200

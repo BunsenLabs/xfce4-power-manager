@@ -6,8 +6,8 @@ dnl
 m4_define([intltool_minimum_version], [0.31])
 m4_define([xfpm_version_major], [1])
 m4_define([xfpm_version_minor], [6])
-m4_define([xfpm_version_micro], [5])
-m4_define([xfpm_version_build], [cea771df])
+m4_define([xfpm_version_micro], [6])
+m4_define([xfpm_version_build], [058e1a88])
 m4_define([xfpm_version_tag], [])
 m4_define([xfpm_version], [xfpm_version_major().xfpm_version_minor().xfpm_version_micro()ifelse(xfpm_version_tag(), [git], [xfpm_version_tag()-xfpm_version_build()], [xfpm_version_tag()])])
 
@@ -60,7 +60,7 @@ AC_CHECK_LIB([m], [round])
 # 		Check for i18n support 			#
 # ===================================================== #
 
-XDT_I18N([ar ast be bg ca cs da de el en_AU en_GB es et eu fi fr gl he hr hu hy_AM id ie is it ja kk kn ko lt ms nb nl nn oc pa pl pt_BR pt ro ru si sk sl sq sr sv te th tr ug uk ur_PK ur vi zh_CN zh_HK zh_TW ])
+XDT_I18N([ar ast be bg ca cs da de el en_AU en_GB es et eu fi fr gl he hr hu hy_AM id ie is it ja kk kn ko lt ms nb nl nn oc pa pl pt pt_BR ro ru si sk sl sq sr sv te th tr ug uk ur ur_PK vi zh_CN zh_HK zh_TW ])
 
 # ===================================================== #
 # 		Check for X11 support 			#
