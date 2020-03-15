@@ -1,62 +1,596 @@
-commit 058e1a88d8b73d9c8bfd7a1c194c7ebb1e6652db
-Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
-Date:   Fri Mar 6 00:26:53 2020 +0100
+commit e2fc93cc981b7ea61a48998cd2c9bbd60ac609b5
+Author: Zmicer Turok <nashtlumach@gmail.com>
+Date:   Fri Feb 28 06:30:49 2020 +0100
 
-    panel-plugin: Add missing about callback
+    I18n: Update translation be (100%).
     
-    This should have been part of the cherry-picked 299381a5142f20934305741050f003735da0d740
-
-commit b2a20cbe0233f8b96a5d8f59a3bf683b069a0760
-Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
-Date:   Sat Sep 28 00:00:03 2019 +0200
-
-    panel-plugin: Replace deprecated call
+    213 translated messages.
     
-    Preparation for xfce4-panel 4.16
+    Transifex (https://www.transifex.com/xfce/public/).
 
-commit 853b94e0a1efd1f07edf1f86c5ecdf939527a94d
+commit 4d886f6397c36efc94f9cfa6592ff323ae6ec8d2
+Author: Zmicer Turok <nashtlumach@gmail.com>
+Date:   Thu Feb 27 12:30:53 2020 +0100
+
+    I18n: Update translation be (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 4ee099308b10533b6e1d29dbe2de74a3cdef2453
+Author: abuyop <abuyop@gmail.com>
+Date:   Mon Feb 10 06:30:56 2020 +0100
+
+    I18n: Update translation ms (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit a83e5f68871c111b48f539907c08bbdac5e74c4e
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Feb 4 00:31:29 2020 +0100
+
+    I18n: Update translation fi (99%).
+    
+    212 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit f7a75468f17e446f98b20bdfc858a5e29e1e33e2
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Mon Feb 3 00:31:29 2020 +0100
+
+    I18n: Update translation he (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 5a9650d4926c0e6d87bd78c022243faf5a7c5fb5
+Author: Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+Date:   Sat Feb 1 18:31:33 2020 +0100
+
+    I18n: Update translation kk (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 2ac3f1439c1b79a5c5e5ef7eba59dcc853864636
+Author: Besnik <besnik@programeshqip.org>
+Date:   Fri Jan 31 18:31:57 2020 +0100
+
+    I18n: Update translation sq (99%).
+    
+    211 translated messages, 2 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 7d49ab33826d58edffba7f316a3b6b30e0fa4438
+Author: Arnold Marko <arnold.marko@gmail.com>
+Date:   Thu Jan 30 12:31:39 2020 +0100
+
+    I18n: Update translation sl (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 6a0ccfa1da1c73c31cebbde2260c271a08aa5b5a
+Author: Kjell Cato Heskjestad <cato@heskjestad.xyz>
+Date:   Tue Jan 28 06:30:56 2020 +0100
+
+    I18n: Update translation nb (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 299381a5142f20934305741050f003735da0d740
 Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
-Date:   Sat Sep 28 00:00:33 2019 +0200
+Date:   Mon Jan 27 00:14:29 2020 +0100
 
-    settings: Move % sign out of spinbutton (Bug #15994)
+    panel-plugin: Properly hook up about signal
 
-commit 042d684bf35fcc2033ffcbe3a338a66c6e446bd9
+commit 2d0ce72ee7f8e5f117041450fcc0f274dbbe49ec
 Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
-Date:   Thu Nov 7 01:06:14 2019 +0100
+Date:   Sun Jan 26 23:52:39 2020 +0100
 
-    Switch to symbolic window-close icons
+    panel-plugin: Properly show 'About' menu item
 
-commit d2f1c7977dc55bc799e3e715f34282943251aebc
+commit a07a8cde286b037c1ceb375b69188a8b56b4eac6
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Tue Jan 21 18:31:18 2020 +0100
+
+    I18n: Update translation sr (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit deb2590574c51a694283c96dc6661767a995b58b
+Author: José Vieira <jvieira33@sapo.pt>
+Date:   Mon Jan 20 12:31:08 2020 +0100
+
+    I18n: Update translation pt (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 62f932207f69035bff50bfe6355a415d4d2a497b
+Author: 玉堂白鹤 <yjwork@qq.com>
+Date:   Mon Jan 20 06:31:11 2020 +0100
+
+    I18n: Update translation zh_CN (99%).
+    
+    213 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 5fde4b2aac1beda23b1b6c391773a67515ca45eb
+Author: Michael Weiser <michael@weiser.dinsnail.net>
+Date:   Sat Jan 11 01:02:03 2020 +0100
+
+    Fix inhibiting xfce4-screensaver (Bug #16364)
+
+commit 2360f2acebad7553dffddc437c52d069988b531d
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Jan 10 00:30:59 2020 +0100
+
+    I18n: Update translation da (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit dd4084f912881fca76262d5790624555641218f9
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Jan 9 18:31:25 2020 +0100
+
+    I18n: Update translation es (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit fc29586405bc4180989b89138a5dab96e98a08e4
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Jan 9 00:31:44 2020 +0100
+
+    I18n: Update translation da (99%).
+    
+    213 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 15fd4d47cb655a925238617a04cb416f8564d102
+Author: Yannick Le Guen <leguen.yannick@gmail.com>
+Date:   Wed Jan 8 12:30:57 2020 +0100
+
+    I18n: Update translation fr (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 6d7527d17a9456f8f63d77388691889073eed5ec
+Author: Besnik <besnik@programeshqip.org>
+Date:   Wed Jan 8 00:32:04 2020 +0100
+
+    I18n: Update translation sq (94%).
+    
+    202 translated messages, 12 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit e5cba23395346c39bdc083df20c8633e51879fab
+Author: Igor <f2404@yandex.ru>
+Date:   Wed Jan 8 00:32:04 2020 +0100
+
+    I18n: Update translation ru (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 00e652c12feda1bd02cdd5d88d132e429852d3fa
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Tue Jan 7 22:29:20 2020 +0100
+
+    systray: Ensure presentation mode can be toggled (Bug #16337)
+
+commit a00e5360d6658fc3e76019622f5219a1cc59b4bd
+Author: Besnik <besnik@programeshqip.org>
+Date:   Tue Jan 7 18:30:57 2020 +0100
+
+    I18n: Update translation sq (92%).
+    
+    198 translated messages, 16 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 7cbe1b0a793cfed4035301396bd4b70c1139487a
+Author: Daniel Muñiz Fontoira <dani@damufo.com>
+Date:   Tue Jan 7 12:31:06 2020 +0100
+
+    I18n: Update translation gl (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit be182c5571ec2ee045710955eafa155cb327930b
+Author: Besnik <besnik@programeshqip.org>
+Date:   Tue Jan 7 00:31:09 2020 +0100
+
+    I18n: Update translation sq (91%).
+    
+    196 translated messages, 18 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit eb38efa316bfd56e4fe80364c72ec6ce14bee296
+Author: José Vieira <jvieira33@sapo.pt>
+Date:   Tue Jan 7 00:31:09 2020 +0100
+
+    I18n: Update translation pt (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 12a32b8aecee2c51b28e95899e350601881086f6
+Author: UTUMI Hirosi <utuhiro78@yahoo.co.jp>
+Date:   Tue Jan 7 00:31:09 2020 +0100
+
+    I18n: Update translation ja (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 94deea66d374a337504b0b2569d4cdb39832b81b
+Author: Edin Veskovic <edin.lockedin@gmail.com>
+Date:   Tue Jan 7 00:31:09 2020 +0100
+
+    I18n: Update translation hr (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 4478c051b7a7f1caf49e92d5744b7a03209ab39b
+Author: Andreas Eitel <github-aneitel@online.de>
+Date:   Tue Jan 7 00:31:09 2020 +0100
+
+    I18n: Update translation de (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 9e29202687817f098d2c13ba0b6644dd858d744c
+Author: Besnik <besnik@programeshqip.org>
+Date:   Mon Jan 6 18:30:59 2020 +0100
+
+    I18n: Update translation sq (91%).
+    
+    195 translated messages, 19 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 8e766868d9d1cc1034788b464b16185c5bb5af42
+Author: Pjotr <pjotrvertaalt@gmail.com>
+Date:   Mon Jan 6 18:30:59 2020 +0100
+
+    I18n: Update translation nl (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit fcf85e2a68f7cf487ff5feefd96e4343e387a6c5
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Jan 6 18:30:59 2020 +0100
+
+    I18n: Update translation lt (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 8bf2be4671d17a2a13758afffd7c1935a3376960
+Author: Emanuele Petriglia <transifex@emanuelepetriglia.com>
+Date:   Mon Jan 6 18:30:59 2020 +0100
+
+    I18n: Update translation it (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 9d32685806792f7d133bdf3e0f16a3c3a68a17ea
+Author: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>
+Date:   Mon Jan 6 18:30:59 2020 +0100
+
+    I18n: Update translation ca (100%).
+    
+    214 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit c866cf9faec6333e60f6b55a56b92ec9494747f3
+Author: Timothy Lee <timothy.ty.lee@gmail.com>
+Date:   Mon Jan 6 00:43:14 2020 +0100
+
+    Make brightness steps configurable (Bug #12062)
+    
+    This commit introduces two new options:
+    1) Configuring the amount of brightness steps
+    2) Whether to distribute the steps in a linear or exponential way
+    
+    Both options are presented in the settings dialog and affect the
+    brightness keys and the panel plugin.
+
+commit 5a32cb254f0cfdf0b2a35067a435ab1d2b3c50b8
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Jan 5 19:14:28 2020 +0100
+
+    Fix indentation
+
+commit f99bb81f636e93f180b93011eba6714e7df0c25b
+Author: Ivica  Kolić <ikoli@yahoo.com>
+Date:   Tue Dec 24 00:31:04 2019 +0100
+
+    I18n: Update translation hr (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit b3bdc29e06d75ab484e399664ddde7d0f6734ce6
+Author: Michael Martins <michaelfm21@gmail.com>
+Date:   Thu Dec 19 00:31:03 2019 +0100
+
+    I18n: Update translation pt_BR (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 9080164c83109dbe92fe6af3188184238d302d11
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Wed Dec 11 12:31:15 2019 +0100
+
+    I18n: Update translation sr (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit a5ac32aa07bb8ffd474787f8f5de66371f1191ef
+Author: Michael Martins <michaelfm21@gmail.com>
+Date:   Wed Dec 11 00:31:01 2019 +0100
+
+    I18n: Update translation pt_BR (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 769109ee2b7bf66d696da16c34e28cca5ddaec89
+Author: Programy1 Programy1 <programy1.borec.cz@gmail.com>
+Date:   Tue Dec 3 18:31:32 2019 +0100
+
+    I18n: Update translation cs (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit e42eaadf752e720ca1801d3c9a48523d0f411db8
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Sat Nov 23 00:31:30 2019 +0100
+
+    I18n: Update translation pt (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 94f4049051c5087bebdbdc6335e96764d56634dc
+Author: Arnold Marko <arnold.marko@gmail.com>
+Date:   Wed Nov 20 18:30:49 2019 +0100
+
+    I18n: Update translation sl (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit fc5f3a338570d5969980019d4454975578f6ac3e
+Author: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
+Date:   Wed Nov 20 12:30:48 2019 +0100
+
+    I18n: Update translation ja (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 90dc136450cc2878619a19aaca0357bee016dd1f
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Mon Nov 11 10:26:01 2019 +0100
+
+    Fix indentation
+
+commit 552e4289ae9a5d7054369adf40313e75ea939830
+Author: 玉堂白鹤 <yjwork@qq.com>
+Date:   Wed Nov 13 06:30:47 2019 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 396a10aaa8a172f2ef7ac12855d805d8bb77c143
+Author: Emanuele Petriglia <transifex@emanuelepetriglia.com>
+Date:   Tue Nov 12 12:30:59 2019 +0100
+
+    I18n: Update translation it (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 49d7e5224b09f3222255b2a4d2ad484e6810c44e
+Author: Hüseyin Fahri Uzun <mail@fahriuzun.com>
+Date:   Mon Nov 11 12:31:01 2019 +0100
+
+    I18n: Update translation tr (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 36a3b6302b232fb0341e04cc83bc736866d58e9b
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Nov 11 12:31:01 2019 +0100
+
+    I18n: Update translation lt (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 76ae6cd24984926b179d80997ef204b3685cd2c5
+Author: Daniel Muñiz Fontoira <dani@damufo.com>
+Date:   Mon Nov 11 12:31:01 2019 +0100
+
+    I18n: Update translation gl (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 24d9db15858017c97c74c7b6ed26cae81605ced0
 Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
 Date:   Mon Nov 11 09:27:03 2019 +0100
 
     panel-plugin: Toggle presentation mode on middle click
 
-commit 971112acdd22954f2b9d1b690e85ba52cfd73d89
+commit c09dd87e9de77fe9632364ccd8575d55fca0a33c
+Author: 黃柏諺 <s8321414@gmail.com>
+Date:   Mon Nov 11 06:30:57 2019 +0100
+
+    I18n: Update translation zh_TW (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit cbd5f26c1e8bf41f4698aecb2012b6304bb50849
 Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
-Date:   Mon Jan 27 00:15:18 2020 +0100
+Date:   Mon Nov 11 01:06:05 2019 +0100
 
-    panel-plugin: Properly hook up about signal
+    panel-plugin: Add warning color to presentation mode indicator
+    
+    This hopefully makes the icon stand out a little more.
 
-commit 0a40699d6ef0fe153a879ab3df69c52de7292547
+commit 5d7c7dace23b478c62462cb766a7f018f17318a9
 Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
-Date:   Sun Jan 26 23:57:45 2020 +0100
+Date:   Mon Nov 11 00:49:34 2019 +0100
 
-    panel-plugin: Properly show 'About' menu item
+    panel-plugin: Use GtkSwitch for Presentation mode
+    
+    This means we're now consistent with other panel plugins like pulseaudio or
+    notifyd.
 
-commit 26d621a8d30c1c2d0fcf56fd89379ef8f9f8ada6
-Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
-Date:   Sat Jan 11 00:51:48 2020 +0100
+commit 2058731433299bb0d287ab0b68ffbde6aaa4ec9a
+Author: Igor <f2404@yandex.ru>
+Date:   Mon Nov 11 00:31:08 2019 +0100
 
-    Fix inhibiting xfce4-screensaver (Bug #16364)
+    I18n: Update translation ru (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
 
-commit e131a6626e7d89260de3e8a88629393ecfea4cab
-Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
-Date:   Sat Jan 11 00:59:35 2020 +0100
+commit f276d8f5f9053280884a680bb333c1eef536758f
+Author: Pjotr <pjotrvertaalt@gmail.com>
+Date:   Mon Nov 11 00:31:08 2019 +0100
 
-    Back to development
+    I18n: Update translation nl (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
 
-commit ecee3888bea0468fd8c338efd00359dfcb28bdb0
+commit b1095e744ab0ae3618b6a5a50148119d7f80692a
+Author: Edin Veskovic <edin.lockedin@gmail.com>
+Date:   Mon Nov 11 00:31:08 2019 +0100
+
+    I18n: Update translation hr (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 719e18362a0004069ed276b62fb2f59a9db9eaae
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Nov 11 00:31:08 2019 +0100
+
+    I18n: Update translation es (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 8dfa20755a2f0d9e7b677a341d6f3523eba1c92b
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Sun Nov 10 18:31:00 2019 +0100
+
+    I18n: Update translation pt (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 359af1dda807f03bf92be6df7d8439924d711ee0
+Author: Yannick Le Guen <leguen.yannick@gmail.com>
+Date:   Sun Nov 10 18:30:59 2019 +0100
+
+    I18n: Update translation fr (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 3d022b2b23687a7d139c1a0a69ae618af59bbe0d
+Author: Anonymous <noreply@xfce.org>
+Date:   Sun Nov 10 18:30:59 2019 +0100
+
+    I18n: Update translation da (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 4e9060311bf7d5e38bee1232e4927dc6878862b5
+Author: Zmicer Turok <nashtlumach@gmail.com>
+Date:   Sun Nov 10 18:30:59 2019 +0100
+
+    I18n: Update translation be (100%).
+    
+    211 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit df7c0ae1ea7d7c25e28bbb0b34aba3a9ad2faa05
 Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
 Date:   Sun Nov 10 00:33:58 2019 +0100
 
@@ -65,6 +599,174 @@ Date:   Sun Nov 10 00:33:58 2019 +0100
     We can most likely dismiss the critical notification on all battery state changes,
     because if there still is one around it means we just connected to a power source
     (critical notifications always get cleared before new ones are spawned).
+
+commit 2969f0b1ddb60ccda2989c6da6977ab51c75dfd7
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sat Nov 9 00:56:35 2019 +0100
+
+    panel-plugin: Add (optional) Presentation mode indicator (Bug #15773)
+
+commit e252b4b6a04ac9efe2ff78cdc5b6a500a8dd1cb4
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Thu Nov 7 01:06:14 2019 +0100
+
+    Switch to symbolic window-close icons
+
+commit cb27c423148f6bfc8d8c25bd823a18447f625cb1
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Thu Nov 7 01:04:29 2019 +0100
+
+    settings: Unclutter system and display tabs
+    
+    Both tabs now use Stackswitchers to allow users to switch between the
+    "on battery" and "on ac" settings. This gets rid of the huge table we
+    used to have and makes it easier to hide all "on battery" settings.
+
+commit 49a7556b43a07bbb8aeaa68767656d85a324e098
+Author: Arnold Marko <arnold.marko@gmail.com>
+Date:   Fri Nov 1 12:31:07 2019 +0100
+
+    I18n: Update translation sl (100%).
+    
+    210 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 1f845e2f1b6c824ea14f1f568eed1c3018c15e52
+Author: Arnold Marko <arnold.marko@gmail.com>
+Date:   Fri Oct 25 00:31:09 2019 +0200
+
+    I18n: Update translation sl (97%).
+    
+    204 translated messages, 6 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit f7b87542556f773eb2dba1c5a53f0a0bdcf3e854
+Author: Πέτρος Σαμαράς <psamaras1@gmail.com>
+Date:   Fri Oct 25 00:31:08 2019 +0200
+
+    I18n: Update translation el (100%).
+    
+    210 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit cb4f8a904e26ec020a4eddc12ef61f891de508a1
+Author: Seong-ho Cho <darkcircle.0426@gmail.com>
+Date:   Thu Oct 17 12:31:17 2019 +0200
+
+    I18n: Update translation ko (100%).
+    
+    210 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit da4ff1ea169d14cd781fde4e147e40982153e62e
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Fri Oct 4 00:54:36 2019 -0300
+
+    Allow compilation with panel 4.15
+
+commit eb65ee821f3b2bd5a3dfeed23a234f53caa92270
+Author: Ivica  Kolić <ikoli@yahoo.com>
+Date:   Mon Sep 30 12:32:46 2019 +0200
+
+    I18n: Update translation hr (100%).
+    
+    210 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 417816e371a14265d312e6c36f80bb0762f30d3c
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sat Sep 28 00:00:33 2019 +0200
+
+    settings: Move % sign out of spinbutton (Bug #15994)
+
+commit 57c54a63a4e591a558056ac7a9f00e3b519e7e62
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sat Sep 28 00:00:03 2019 +0200
+
+    panel-plugin: Replace deprecated call
+    
+    Preparation for xfce4-panel 4.16
+
+commit 2df8bbac4a398ef6d2c78293fc2b6a254a4943cf
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:   Fri Sep 20 12:30:42 2019 +0200
+
+    I18n: Update translation sk (100%).
+    
+    210 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit b5f3d1011ff14347e5d4606d993726d109a8f9e3
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:   Thu Sep 19 00:30:37 2019 +0200
+
+    I18n: Update translation sk (99%).
+    
+    209 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 06d1ab3cb6953781374beef38da285872eef3e5f
+Author: Walter Cheuk <wwycheuk@gmail.com>
+Date:   Wed Sep 11 06:30:37 2019 +0200
+
+    I18n: Update translation zh_TW (100%).
+    
+    210 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 88be31781b6b07a06f0c13cb5be490cd8923a710
+Author: Daniel Muñiz Fontoira <dani@damufo.com>
+Date:   Fri Aug 30 12:31:36 2019 +0200
+
+    I18n: Update translation gl (100%).
+    
+    210 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit c43da8ae60ff5b1a0202949eb7ff04e986833213
+Author: Daniel Muñiz Fontoira <dani@damufo.com>
+Date:   Fri Aug 23 18:31:41 2019 +0200
+
+    I18n: Update translation gl (100%).
+    
+    210 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 8c89d8898ad938ca099459b3c7604181d02019a5
+Author: Daniel Muñiz Fontoira <dani@damufo.com>
+Date:   Sat Aug 17 18:31:28 2019 +0200
+
+    I18n: Update translation gl (100%).
+    
+    210 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 923ee730c908acb31510ae6192899d4815f8b2ca
+Author: clmmbs <msreywel@hotmail.com>
+Date:   Sat Aug 17 18:31:28 2019 +0200
+
+    I18n: Update translation ar (84%).
+    
+    178 translated messages, 32 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 0bcbe68f9c40fd500088255bcf4ae9b3729805c0
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sun Aug 11 19:50:27 2019 -0300
+
+    Back to development
 
 commit b9a6d53aabe8bbf79f6a1629616cbf694d4b651a
 Author: Andre Miranda <andreldm@xfce.org>
