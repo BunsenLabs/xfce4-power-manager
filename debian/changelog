@@ -1,11 +1,17 @@
-xfce4-power-manager (1.6.5-3) UNRELEASED; urgency=medium
+xfce4-power-manager (1.6.6-1) UNRELEASED; urgency=medium
 
+  [ Debian Janitor ]
   * Trim trailing whitespace.
   * Bump debhelper from old 11 to 12.
   * Set upstream metadata fields: Name (from ./configure), Repository.
   * Update standards version to 4.4.1, no changes needed.
 
- -- Debian Janitor <janitor@jelmer.uk>  Thu, 16 Jan 2020 20:29:32 +0000
+  [ Yves-Alexis Perez ]
+  * d/watch: use uscan special strings
+  * New upstream version 1.6.6
+  * d/control: update standards version to 4.5.0
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 15 Mar 2020 10:48:27 +0100
 
 xfce4-power-manager (1.6.5-2) unstable; urgency=medium
 
