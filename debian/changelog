@@ -1,4 +1,4 @@
-xfce4-power-manager (1.6.6-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.6.6-1) unstable; urgency=medium
 
   [ Debian Janitor ]
   * Trim trailing whitespace.
@@ -11,7 +11,7 @@ xfce4-power-manager (1.6.6-1) UNRELEASED; urgency=medium
   * New upstream version 1.6.6
   * d/control: update standards version to 4.5.0
 
- -- Yves-Alexis Perez <corsac@debian.org>  Sun, 15 Mar 2020 10:48:27 +0100
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 15 Mar 2020 10:48:42 +0100
 
 xfce4-power-manager (1.6.5-2) unstable; urgency=medium
 
