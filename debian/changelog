@@ -1,8 +1,8 @@
-xfce4-power-manager (1.7.0-1) UNRELEASED; urgency=medium
+xfce4-power-manager (1.7.0-1) experimental; urgency=medium
 
   * New upstream version 1.7.0
 
- -- Yves-Alexis Perez <corsac@debian.org>  Sun, 15 Mar 2020 10:58:03 +0100
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 15 Mar 2020 11:45:36 +0100
 
 xfce4-power-manager (1.6.6-1) unstable; urgency=medium
 
