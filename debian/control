@@ -30,7 +30,7 @@ Depends: upower (>= 0.99),
          xfce4-power-manager-data (=${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: libpam-systemd [linux-any], xfce4-power-manager-plugins
+Recommends: default-logind | logind, xfce4-power-manager-plugins
 Description: power manager for Xfce desktop
  This power manager for the Xfce desktop enables laptop users to set up
  a power profile for two different modes "on battery power" and "on ac
