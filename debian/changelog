@@ -1,3 +1,17 @@
+xfce4-power-manager (1.7.1-1) experimental; urgency=medium
+
+  * Team upload.
+  * New upstream version 1.7.1.
+  * d/control:
+    - Replace Recommend on 'libpam-systemd' with 'default-logind | logind'.
+      Closes: #925339
+    - Update 'Homepage' field, goodies.xfce → docs.xfce.
+    - Drop old versioned build-depend on dpkg-dev.
+    - R³: no.
+  * d/rules: Drop '--disable-silent-rules' as that's passed by default now.
+
+ -- Unit 193 <unit193@debian.org>  Fri, 13 Nov 2020 19:46:59 -0500
+
 xfce4-power-manager (1.7.0-1) experimental; urgency=medium
 
   * New upstream version 1.7.0
