@@ -3,17 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Elishai Eliyahu <e1907@mm.st>, 2016-2017,2019-2020
+# Elishai Eliyahu <elishai@mailfence.com>, 2016-2017,2019-2020
 # GenghisKhan <genghiskhan@gmx.ca>, 2015-2016
+# Omer I.S., 2020
+# Omer I.S., 2020
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2013-2014
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce4-power-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-27 00:30+0100\n"
-"PO-Revision-Date: 2020-02-02 19:04+0000\n"
-"Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
+"POT-Creation-Date: 2020-05-27 12:47+0200\n"
+"PO-Revision-Date: 2020-06-23 21:18+0000\n"
+"Last-Translator: Omer I.S.\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/xfce4-power-manager/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,7 +155,7 @@ msgstr "<b>חשמל קריטי</b>"
 
 #: ../data/interfaces/xfpm-settings.ui.h:33
 msgid "Lock screen when system is going to sleep"
-msgstr "נעל מסך כאשר המערכת נכנסת לשינה"
+msgstr "נעל את המסך כשהמערכת נכנסת למצב שינה"
 
 #: ../data/interfaces/xfpm-settings.ui.h:34
 msgid "<b>Security</b>"
@@ -428,11 +430,11 @@ msgstr "הצג מידע גרסה"
 
 #: ../settings/xfpm-settings-app.c:78
 msgid "Cause xfce4-power-manager-settings to quit"
-msgstr "גרום ל-xfce4-power-manager-settings להפסיק"
+msgstr "אלץ את xfce4-power-manager-settings להפסיק"
 
 #: ../settings/xfpm-settings-app.c:176
 msgid "Failed to connect to power manager"
-msgstr "נכשל להתחבר אל מנהל ההספק"
+msgstr "נכשלה ההתחברות אל מנהל ההספק"
 
 #: ../settings/xfpm-settings-app.c:190
 msgid "Xfce4 Power Manager is not running, do you want to launch it now?"
@@ -463,6 +465,12 @@ msgstr "מנהל צריכת חשמל"
 #: ../settings/xfce4-power-manager-settings.desktop.in.h:2
 msgid "Settings for the Xfce Power Manager"
 msgstr "הגדרות עבור מנהל צריכת חשמל Xfce"
+
+#: ../settings/xfce4-power-manager-settings.desktop.in.h:3
+msgid ""
+"settings;preferences;buttons;sleep;hibernate;battery;suspend;shutdown;brightness;laptop"
+" lid;lock screen;plugged in;saving;critical;"
+msgstr "settings;preferences;buttons;sleep;hibernate;battery;suspend;shutdown;brightness;laptop lid;lock screen;plugged in;saving;critical;"
 
 #: ../common/xfpm-common.c:116
 msgid "translator-credits"
@@ -534,8 +542,8 @@ msgid "Nickel cadmium"
 msgstr "ניקל קדמיום"
 
 #: ../common/xfpm-power-common.c:93
-msgid "Nickel metal hybride"
-msgstr "הכלאת ניקל ומתכת"
+msgid "Nickel metal hydride"
+msgstr "ניקל מתכת היידרייד"
 
 #: ../common/xfpm-power-common.c:114
 msgid "Unknown time"
@@ -682,7 +690,7 @@ msgstr "פועל כעת יישום המונע ביצוע של שינה אוטו�
 msgid ""
 "None of the screen lock tools ran successfully, the screen will not be locked.\n"
 "Do you still want to continue to suspend the system?"
-msgstr "אף אחד מהכלים לנעילת מסך לא פעל בהצלחה, המסך לא יינעל.\nהאם אתה עדיין רוצה להמשיך להשעות את המערכת?"
+msgstr "אף אחד מהכלים לנעילת מסך לא פעל בהצלחה, המסך לא יינעל.\nהאם אתה עדיין רוצה להמשיך להשהות את המערכת?"
 
 #: ../src/xfpm-power.c:599
 msgid "Hibernate the system"
@@ -956,7 +964,7 @@ msgstr "ה_גדרות מנהל צריכת חשמל…"
 #: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:78
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "לא יכול לפתוח את הכתובת הבאה: %s"
+msgstr "לא יכול לפתוח את הכתובת להלן: %s"
 
 #: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:150
 msgid "None"
@@ -982,7 +990,7 @@ msgstr "הגדרות תוסף מנהל הספק"
 #. show-panel-label setting
 #: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:181
 msgid "Show label:"
-msgstr "הצג תוית:"
+msgstr "הצג תווית:"
 
 #: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:214
 msgid "Show 'Presentation mode' indicator:"

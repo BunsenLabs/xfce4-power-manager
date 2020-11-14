@@ -49,9 +49,6 @@
 
 #define SET_LEVEL_TIMEOUT (50)
 #define SAFE_SLIDER_MIN_LEVEL (5)
-#define PANEL_DEFAULT_ICON ("battery-full-charged")
-#define PANEL_DEFAULT_ICON_SYMBOLIC ("battery-full-charged-symbolic")
-#define PRESENTATION_MODE_ICON ("x-office-presentation-symbolic")
 
 struct PowerManagerButtonPrivate
 {
@@ -79,6 +76,7 @@ struct PowerManagerButtonPrivate
   GtkWidget       *hbox;
   /* Keep track of icon name to redisplay during size changes */
   gchar           *panel_icon_name;
+  gchar           *panel_fallback_icon_name;
   /* Keep track of the last icon size for use during updates */
   gint             panel_icon_width;
   /* Keep track of the tooltip */
@@ -150,7 +148,11 @@ static void       power_manager_button_set_icon                         (PowerMa
 static void       power_manager_button_set_label                        (PowerManagerButton *button,
                                                                          gdouble percentage,
                                                                          guint64 time_to_empty_or_full);
+#ifdef XFCE_PLUGIN
+static void       power_manager_button_toggle_presentation_mode         (GtkMenuItem *mi,
+                                                                         GtkSwitch *sw);
 static void       power_manager_button_update_presentation_indicator    (PowerManagerButton *button);
+#endif
 static void       power_manager_button_update_label                     (PowerManagerButton *button,
                                                                          UpDevice *device);
 static gboolean   power_manager_button_press_event                      (GtkWidget *widget,
@@ -244,7 +246,10 @@ power_manager_button_set_icon (PowerManagerButton *button)
 {
   g_return_if_fail (GTK_IS_WIDGET (button->priv->panel_presentation_mode));
 
-  gtk_image_set_from_icon_name (GTK_IMAGE (button->priv->panel_icon_image), button->priv->panel_icon_name, GTK_ICON_SIZE_BUTTON);
+  if (gtk_icon_theme_has_icon (gtk_icon_theme_get_default(), button->priv->panel_icon_name))
+    gtk_image_set_from_icon_name (GTK_IMAGE (button->priv->panel_icon_image), button->priv->panel_icon_name, GTK_ICON_SIZE_BUTTON);
+  else
+    gtk_image_set_from_icon_name (GTK_IMAGE (button->priv->panel_icon_image), button->priv->panel_fallback_icon_name, GTK_ICON_SIZE_BUTTON);
   gtk_image_set_pixel_size (GTK_IMAGE (button->priv->panel_icon_image), button->priv->panel_icon_width);
 
   gtk_image_set_pixel_size (GTK_IMAGE (button->priv->panel_presentation_mode), button->priv->panel_icon_width);
@@ -295,13 +300,13 @@ power_manager_button_set_tooltip (PowerManagerButton *button)
 const gchar *
 power_manager_button_get_icon_name (PowerManagerButton *button)
 {
-    return button->priv->panel_icon_name;
+  return button->priv->panel_icon_name;
 }
 
 const gchar *
 power_manager_button_get_tooltip (PowerManagerButton *button)
 {
-    return button->priv->tooltip;
+  return button->priv->tooltip;
 }
 
 static void
@@ -458,6 +463,7 @@ power_manager_button_update_device_icon_and_details (PowerManagerButton *button,
   const gchar    *object_path = up_device_get_object_path(device);
   gchar          *details;
   gchar          *icon_name;
+  gchar          *menu_icon_name;
   GdkPixbuf      *pix = NULL;
 
   XFPM_DEBUG("entering for %s", object_path);
@@ -472,22 +478,23 @@ power_manager_button_update_device_icon_and_details (PowerManagerButton *button,
 
   battery_device = item->data;
 
-  icon_name = get_device_icon_name (button->priv->upower, device);
+  icon_name = get_device_icon_name (button->priv->upower, device, TRUE);
+  menu_icon_name = get_device_icon_name (button->priv->upower, device, FALSE);
   details = get_device_description (button->priv->upower, device);
 
   /* If UPower doesn't give us an icon, just use the default */
-  if (g_strcmp0(icon_name, "") == 0)
+  if (g_strcmp0(menu_icon_name, "") == 0)
   {
     /* ignore empty icon names */
-    g_free (icon_name);
-    icon_name = NULL;
+    g_free (menu_icon_name);
+    menu_icon_name = NULL;
   }
 
-  if (icon_name == NULL)
-    icon_name = g_strdup (PANEL_DEFAULT_ICON);
+  if (menu_icon_name == NULL)
+    menu_icon_name = g_strdup (PANEL_DEFAULT_ICON);
 
   pix = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (),
-                                  icon_name,
+                                  menu_icon_name,
                                   32,
                                   GTK_ICON_LOOKUP_USE_BUILTIN,
                                   NULL);
@@ -510,9 +517,11 @@ power_manager_button_update_device_icon_and_details (PowerManagerButton *button,
     /* update the icon */
     g_free (button->priv->panel_icon_name);
 #ifdef XFCE_PLUGIN
-    button->priv->panel_icon_name = g_strdup_printf ("%s-%s", icon_name, "symbolic");
+    button->priv->panel_icon_name = g_strdup (icon_name);
+    button->priv->panel_fallback_icon_name = g_strdup_printf ("%s-%s", menu_icon_name, "symbolic");
 #else
     button->priv->panel_icon_name = g_strdup (icon_name);
+    button->priv->panel_fallback_icon_name = g_strdup (menu_icon_name);
 #endif
     power_manager_button_set_icon (button);
     /* update the tooltip */
@@ -521,6 +530,7 @@ power_manager_button_update_device_icon_and_details (PowerManagerButton *button,
     power_manager_button_update_label (button, device);
   }
   g_free (icon_name);
+  g_free (menu_icon_name);
 
   /* If the menu is being displayed, update it */
   if (button->priv->menu && battery_device->menu_item)
@@ -991,8 +1001,11 @@ power_manager_button_init (PowerManagerButton *button)
   button->priv->upower  = up_client_new ();
   if ( !xfconf_init (&error) )
   {
-    g_critical ("xfconf_init failed: %s\n", error->message);
-    g_error_free (error);
+    if (error)
+    {
+      g_critical ("xfconf_init failed: %s\n", error->message);
+      g_error_free (error);
+    }
   }
   else
   {
@@ -1016,8 +1029,10 @@ power_manager_button_init (PowerManagerButton *button)
   /* Sane defaults for the systray and panel icon */
 #ifdef XFCE_PLUGIN
   button->priv->panel_icon_name = g_strdup (PANEL_DEFAULT_ICON_SYMBOLIC);
+  button->priv->panel_fallback_icon_name = g_strdup (PANEL_DEFAULT_ICON_SYMBOLIC);
 #else
   button->priv->panel_icon_name = g_strdup (PANEL_DEFAULT_ICON);
+  button->priv->panel_fallback_icon_name = g_strdup (PANEL_DEFAULT_ICON);
 #endif
   button->priv->panel_icon_width = 24;
 
@@ -1046,7 +1061,8 @@ power_manager_button_finalize (GObject *object)
 
   button = POWER_MANAGER_BUTTON (object);
 
-  g_free(button->priv->panel_icon_name);
+  g_free (button->priv->panel_icon_name);
+  g_free (button->priv->panel_fallback_icon_name);
 
   if (button->priv->set_level_timeout)
   {
@@ -1190,7 +1206,6 @@ about_cb (GtkMenuItem *menuitem, gpointer user_data)
 void
 power_manager_button_show (PowerManagerButton *button)
 {
-  GtkWidget *mi;
   GtkWidget *hbox;
   GtkStyleContext *context;
   GtkCssProvider *css_provider;
@@ -1248,6 +1263,7 @@ power_manager_button_show (PowerManagerButton *button)
   power_manager_button_add_all_devices (button);
 }
 
+#ifdef XFCE_PLUGIN
 static void
 power_manager_button_update_presentation_indicator (PowerManagerButton *button)
 {
@@ -1256,6 +1272,7 @@ power_manager_button_update_presentation_indicator (PowerManagerButton *button)
   gtk_widget_set_visible (button->priv->panel_presentation_mode, button->priv->presentation_mode &&
                                                                  button->priv->show_presentation_indicator);
 }
+#endif
 
 static void
 power_manager_button_update_label (PowerManagerButton *button, UpDevice *device)
@@ -1295,7 +1312,8 @@ power_manager_button_update_label (PowerManagerButton *button, UpDevice *device)
     power_manager_button_set_label (button, percentage, time_to_full);
   else if (state == UP_DEVICE_STATE_FULLY_CHARGED
            || state == UP_DEVICE_STATE_UNKNOWN
-           || g_strcmp0 (button->priv->panel_icon_name, "ac-adapter-symbolic") == 0)
+           || g_strcmp0 (button->priv->panel_icon_name, "ac-adapter-symbolic") == 0
+           || g_strcmp0 (button->priv->panel_fallback_icon_name, "ac-adapter-symbolic") == 0)
     gtk_widget_hide (GTK_WIDGET (button->priv->panel_label));
   else
     power_manager_button_set_label (button, percentage, time_to_empty);
@@ -1645,20 +1663,24 @@ range_show_cb (GtkWidget *widget, PowerManagerButton *button)
   gtk_grab_remove (widget);
 }
 
-void
+#ifdef XFCE_PLUGIN
+static void
 power_manager_button_toggle_presentation_mode (GtkMenuItem *mi, GtkSwitch *sw)
 {
   g_return_if_fail (GTK_IS_SWITCH (sw));
 
   gtk_switch_set_active (sw, !gtk_switch_get_active (sw));
 }
+#endif
 
 
 void
 power_manager_button_show_menu (PowerManagerButton *button)
 {
   GtkWidget *menu, *mi, *img = NULL;
+#ifdef XFCE_PLUGIN
   GtkWidget *box, *label, *sw;
+#endif
   GdkScreen *gscreen;
   GList *item;
   gboolean show_separator_flag = FALSE;
@@ -1702,14 +1724,17 @@ power_manager_button_show_menu (PowerManagerButton *button)
   /* Display brightness slider - show if there's hardware support for it */
   if ( xfpm_brightness_has_hw (button->priv->brightness) )
   {
+    guint brightness_step_count;
+    gboolean brightness_exponential;
+
     max_level = xfpm_brightness_get_max_level (button->priv->brightness);
 
     /* Setup brightness steps */
-    guint brightness_step_count =
+    brightness_step_count =
       xfconf_channel_get_uint (button->priv->channel,
                                XFPM_PROPERTIES_PREFIX BRIGHTNESS_STEP_COUNT,
                                10);
-    gboolean brightness_exponential =
+    brightness_exponential =
       xfconf_channel_get_bool (button->priv->channel,
                                XFPM_PROPERTIES_PREFIX BRIGHTNESS_EXPONENTIAL,
                                FALSE);
@@ -1770,7 +1795,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   display_inhibitors (button, menu);
 
   /* Power manager settings */
-  mi = gtk_menu_item_new_with_mnemonic (_("_Power manager settings..."));
+  mi = gtk_menu_item_new_with_mnemonic (_("_Settings..."));
   gtk_widget_show (mi);
   gtk_menu_shell_append (GTK_MENU_SHELL(menu), mi);
   g_signal_connect (G_OBJECT(mi), "activate", G_CALLBACK(xfpm_preferences), NULL);

@@ -227,8 +227,11 @@ xfpm_start (GDBusConnection *bus, const gchar *client_id, gboolean dump)
   }
   else
   {
-    g_warning ("Unable to set up POSIX signal handlers: %s", error->message);
-    g_error_free (error);
+    if (error)
+    {
+      g_warning ("Unable to set up POSIX signal handlers: %s", error->message);
+      g_error_free (error);
+    }
   }
 
   xfpm_manager_start (manager);
@@ -261,7 +264,7 @@ int main (int argc, char **argv)
   gboolean config     = FALSE;
   gboolean version    = FALSE;
   gboolean reload     = FALSE;
-  gboolean no_daemon  = FALSE;
+  gboolean daemonize  = FALSE;
   gboolean debug      = FALSE;
   gboolean dump       = FALSE;
   gchar   *client_id  = NULL;
@@ -269,7 +272,7 @@ int main (int argc, char **argv)
   GOptionEntry option_entries[] =
   {
     { "run",'r', G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_NONE, &run, NULL, NULL },
-    { "no-daemon",'\0' , G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &no_daemon, N_("Do not daemonize"), NULL },
+    { "daemon",'\0' , G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &daemonize, N_("Daemonize"), NULL },
     { "debug",'\0' , G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &debug, N_("Enable debugging"), NULL },
     { "dump",'\0' , G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &dump, N_("Dump all information"), NULL },
     { "restart", '\0', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &reload, N_("Restart the running instance of Xfce power manager"), NULL},
@@ -292,9 +295,12 @@ int main (int argc, char **argv)
 
   if (!g_option_context_parse(octx, &argc, &argv, &error))
   {
-    g_printerr(_("Failed to parse arguments: %s\n"), error->message);
+    if (error)
+    {
+      g_printerr(_("Failed to parse arguments: %s\n"), error->message);
+      g_error_free(error);
+    }
     g_option_context_free(octx);
-    g_error_free(error);
 
     return EXIT_FAILURE;
   }
@@ -305,7 +311,7 @@ int main (int argc, char **argv)
     show_version ();
 
   /* Fork if needed */
-  if ( dump == FALSE && debug == FALSE && no_daemon == FALSE && daemon(0,0) )
+  if ( dump == FALSE && debug == FALSE && daemonize == TRUE && daemon(0,0) )
   {
     g_critical ("Could not daemonize");
   }

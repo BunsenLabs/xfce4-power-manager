@@ -358,7 +358,6 @@ xfpm_power_report_error (XfpmPower *power, const gchar *error, const gchar *icon
                                  _("Power Manager"),
                                  error,
                                  icon_name,
-                                 10000,
                                  XFPM_NOTIFY_CRITICAL);
 }
 
@@ -635,7 +634,6 @@ xfpm_power_show_critical_action_notification (XfpmPower *power, XfpmBattery *bat
                                 _("Power Manager"),
                                 message,
                                 xfpm_battery_get_icon_name (battery),
-                                20000,
                                 XFPM_NOTIFY_CRITICAL);
 
   xfpm_power_add_actions_to_notification (power, n);
@@ -841,7 +839,6 @@ xfpm_power_battery_charge_changed_cb (XfpmBattery *battery, XfpmPower *power)
                        _("Power Manager"),
                        _("System is running on low power"),
                        xfpm_battery_get_icon_name (battery),
-                       10000,
                        XFPM_NOTIFY_NORMAL);
 
      }
@@ -863,7 +860,6 @@ xfpm_power_battery_charge_changed_cb (XfpmBattery *battery, XfpmPower *power)
                        _("Power Manager"),
                        msg,
                        xfpm_battery_get_icon_name (battery),
-                       10000,
                        XFPM_NOTIFY_NORMAL);
         g_free (msg);
         g_free (time_str);
@@ -1289,10 +1285,11 @@ xfpm_power_get_property (GObject *object,
   }
 }
 
-static void xfpm_power_set_property (GObject *object,
-             guint prop_id,
-             const GValue *value,
-             GParamSpec *pspec)
+static void
+xfpm_power_set_property (GObject *object,
+                         guint prop_id,
+                         const GValue *value,
+                         GParamSpec *pspec)
 {
   XfpmPower *power = XFPM_POWER (object);
   gint on_ac_blank, on_battery_blank;
@@ -1305,12 +1302,14 @@ static void xfpm_power_set_property (GObject *object,
     case PROP_ON_AC_BLANK:
       on_ac_blank = g_value_get_int (value);
       power->priv->on_ac_blank = on_ac_blank;
-      xfpm_update_blank_time (power);
+      if (!power->priv->on_battery)
+        xfpm_update_blank_time (power);
       break;
     case PROP_ON_BATTERY_BLANK:
       on_battery_blank = g_value_get_int (value);
       power->priv->on_battery_blank = on_battery_blank;
-      xfpm_update_blank_time (power);
+      if (power->priv->on_battery)
+        xfpm_update_blank_time (power);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1441,10 +1440,12 @@ xfpm_update_blank_time (XfpmPower *power)
   if (power->priv->presentation_mode)
     screensaver_timeout = 0;
 
-  XFPM_DEBUG ("Timeout: %d", screensaver_timeout);
+  screensaver_timeout = screensaver_timeout * 60;
 
   XGetScreenSaver(display, &prev_timeout, &prev_interval, &prev_prefer_blanking, &prev_allow_exposures);
-  XSetScreenSaver(display, screensaver_timeout * 60, prev_interval, prev_prefer_blanking, prev_allow_exposures);
+  XFPM_DEBUG ("Prev Timeout: %d / New Timeout: %d", prev_timeout, screensaver_timeout);
+  XSetScreenSaver(display, screensaver_timeout, prev_interval, prev_prefer_blanking, prev_allow_exposures);
+  XSync (display, FALSE);
 }
 
 static void

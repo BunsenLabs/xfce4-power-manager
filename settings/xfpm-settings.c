@@ -138,7 +138,7 @@ void        button_battery_changed_cb                  (GtkWidget *w,
                                                         XfconfChannel *channel);
 void        on_sleep_mode_changed_cb                   (GtkWidget *w,
                                                         XfconfChannel *channel);
-void        dpms_toggled_cb                            (GtkWidget *w,
+gboolean    dpms_toggled_cb                            (GtkWidget *w,
                                                         gboolean is_active,
                                                         XfconfChannel *channel);
 void        sleep_on_battery_value_changed_cb          (GtkWidget *w,
@@ -175,7 +175,7 @@ void        on_ac_sleep_mode_changed_cb                (GtkWidget *w,
                                                         XfconfChannel *channel);
 void        on_battery_sleep_mode_changed_cb           (GtkWidget *w,
                                                         XfconfChannel *channel);
-void        handle_brightness_keys_toggled_cb          (GtkWidget *w,
+gboolean    handle_brightness_keys_toggled_cb          (GtkWidget *w,
                                                         gboolean is_active,
                                                         XfconfChannel *channel);
 void        brightness_step_count_value_changed_cb     (GtkSpinButton *w,
@@ -419,7 +419,7 @@ on_battery_sleep_mode_changed_cb (GtkWidget *w, XfconfChannel *channel)
   }
 }
 
-void
+gboolean
 dpms_toggled_cb (GtkWidget *w, gboolean is_active, XfconfChannel *channel)
 {
   xfconf_channel_set_bool (channel, XFPM_PROPERTIES_PREFIX DPMS_ENABLED_CFG, is_active);
@@ -434,6 +434,8 @@ dpms_toggled_cb (GtkWidget *w, gboolean is_active, XfconfChannel *channel)
     gtk_widget_set_sensitive (on_battery_dpms_off, is_active);
     gtk_widget_set_sensitive (on_battery_dpms_sleep, is_active);
   }
+
+  return FALSE;
 }
 
 void
@@ -801,12 +803,14 @@ critical_level_value_changed_cb (GtkSpinButton *w, XfconfChannel *channel)
   }
 }
 
-void
+gboolean
 handle_brightness_keys_toggled_cb (GtkWidget *w, gboolean is_active, XfconfChannel *channel)
 {
   gtk_widget_set_sensitive (brightness_step_count, is_active);
   gtk_widget_set_sensitive (brightness_exponential, is_active);
   gtk_widget_set_sensitive (GTK_WIDGET (gtk_builder_get_object (xml, "brightness-step-count-label")), is_active);
+
+  return FALSE;
 }
 
 void
@@ -868,8 +872,8 @@ xfpm_update_logind_handle_lid_switch (XfconfChannel *channel)
   guint lid_switch_on_ac = xfconf_channel_get_uint (channel, XFPM_PROPERTIES_PREFIX LID_SWITCH_ON_AC_CFG, LID_TRIGGER_LOCK_SCREEN);
   guint lid_switch_on_battery = xfconf_channel_get_uint (channel, XFPM_PROPERTIES_PREFIX LID_SWITCH_ON_BATTERY_CFG, LID_TRIGGER_LOCK_SCREEN);
 
-  // logind-handle-lid-switch = true when: lock_on_suspend == true and (lid_switch_on_ac == suspend or lid_switch_on_battery == suspend)
-  xfconf_channel_set_bool (channel, XFPM_PROPERTIES_PREFIX LOGIND_HANDLE_LID_SWITCH, lock_on_suspend && (lid_switch_on_ac == 1 || lid_switch_on_battery == 1));
+  // logind-handle-lid-switch = true when: lock_on_suspend == true and (lid_switch_on_ac == suspend and lid_switch_on_battery == suspend)
+  xfconf_channel_set_bool (channel, XFPM_PROPERTIES_PREFIX LOGIND_HANDLE_LID_SWITCH, lock_on_suspend && (lid_switch_on_ac == 1 && lid_switch_on_battery == 1));
 }
 /* END Light Locker Integration */
 
@@ -1964,7 +1968,7 @@ update_sideview_icon (UpDevice *device)
 
 
   name = get_device_description (upower, device);
-  icon_name = get_device_icon_name (upower, device);
+  icon_name = get_device_icon_name (upower, device, FALSE);
 
   pix = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (),
                                   icon_name,

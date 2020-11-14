@@ -362,9 +362,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu data/interfaces/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign data/interfaces/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu data/interfaces/Makefile
+	  $(AUTOMAKE) --foreign data/interfaces/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -550,7 +550,7 @@ uninstall-am:
 
 
 @MAINTAINER_MODE_TRUE@xfpm-settings_ui.h: xfpm-settings.ui
-@MAINTAINER_MODE_TRUE@	exo-csource --static --strip-comments --strip-content --name=xfpm_settings_ui $< > $@
+@MAINTAINER_MODE_TRUE@	xdt-csource --static --strip-comments --strip-content --name=xfpm_settings_ui $< > $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

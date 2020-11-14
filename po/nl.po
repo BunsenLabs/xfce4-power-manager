@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce4-power-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-06 06:31+0100\n"
-"PO-Revision-Date: 2020-01-06 12:03+0000\n"
+"POT-Creation-Date: 2020-05-27 12:47+0200\n"
+"PO-Revision-Date: 2020-05-27 14:55+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/xfce/xfce4-power-manager/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -47,9 +47,7 @@ msgstr "Xfce-energiebeheerder"
 msgid "Power manager settings"
 msgstr "Energiebeheer-instellingen"
 
-#. help dialog
 #: ../data/interfaces/xfpm-settings.ui.h:7
-#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1233
 #: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:161
 msgid "_Help"
 msgstr "_Hulp"
@@ -73,7 +71,7 @@ msgstr "Wanneer de slaapstandknop wordt ingedrukt:"
 
 #: ../data/interfaces/xfpm-settings.ui.h:12
 msgid "When battery button is pressed:"
-msgstr "Wanneer accuknop is ingedrukt:"
+msgstr "Wanneer de accuknop wordt ingedrukt:"
 
 #: ../data/interfaces/xfpm-settings.ui.h:13
 msgid "Exponential"
@@ -463,6 +461,12 @@ msgstr "Energiebeheerder"
 msgid "Settings for the Xfce Power Manager"
 msgstr "Instellingen voor de Xfce-energiebeheerder"
 
+#: ../settings/xfce4-power-manager-settings.desktop.in.h:3
+msgid ""
+"settings;preferences;buttons;sleep;hibernate;battery;suspend;shutdown;brightness;laptop"
+" lid;lock screen;plugged in;saving;critical;"
+msgstr "instellingen;voorkeuren;knoppen;slaapstand;pauzestand;accu;afsluiten;helderheid;deksel;schermvergrendeling;netstroom;opslaan;kritiek;"
+
 #: ../common/xfpm-common.c:116
 msgid "translator-credits"
 msgstr "Vincent Tunru <projects@vinnl.nl>\nPjotr <pjotrvertaalt@gmail.com>"
@@ -533,7 +537,7 @@ msgid "Nickel cadmium"
 msgstr "Nikkel-cadmium"
 
 #: ../common/xfpm-power-common.c:93
-msgid "Nickel metal hybride"
+msgid "Nickel metal hydride"
 msgstr "Nikkel-metaalhydride"
 
 #: ../common/xfpm-power-common.c:114
@@ -675,7 +679,7 @@ msgstr "Een toepassing belemmert thans de automatische slaapstand. Deze actie nu
 msgid ""
 "None of the screen lock tools ran successfully, the screen will not be locked.\n"
 "Do you still want to continue to suspend the system?"
-msgstr "Geen der schermvergrendelingsgereedschappen had succes, het scherm zal niet worden vergrendeld.\nWilt u nog steeds doorgaan met het in pauzestand brengen van het systeem?"
+msgstr "Geen der gereedschappen voor schermvergrendeling had succes, het scherm zal niet worden vergrendeld.\nWilt u nog steeds doorgaan met het in pauzestand brengen van het systeem?"
 
 #: ../src/xfpm-power.c:599
 msgid "Hibernate the system"
@@ -794,12 +798,12 @@ msgstr "Zonder ondersteuning voor policykit\n"
 #: ../src/xfpm-main.c:117
 #, c-format
 msgid "With network manager support\n"
-msgstr "Met ondersteuning voor netwerkbeheerder\n"
+msgstr "Met ondersteuning voor netwerkbeheer\n"
 
 #: ../src/xfpm-main.c:119
 #, c-format
 msgid "Without network manager support\n"
-msgstr "Zonder ondersteuning voor netwerkbeheerder\n"
+msgstr "Zonder ondersteuning voor netwerkbeheer\n"
 
 #: ../src/xfpm-main.c:134
 msgid "Can suspend"
@@ -859,7 +863,7 @@ msgstr "Produceer alle informatie"
 
 #: ../src/xfpm-main.c:275
 msgid "Restart the running instance of Xfce power manager"
-msgstr "Herstart de draaiende functie van Xfce-energiebeheerder"
+msgstr "Herstart de draaiende instantie van Xfce-energiebeheerder"
 
 #: ../src/xfpm-main.c:276
 msgid "Show the configuration dialog"
@@ -867,7 +871,7 @@ msgstr "Toon de instellingendialoog"
 
 #: ../src/xfpm-main.c:277
 msgid "Quit any running xfce power manager"
-msgstr "Sluit elke draaiende Xfce-energiebeheerdersfunctie"
+msgstr "Sluit elke draaiende instantie van Xfce-energiebeheerder"
 
 #: ../src/xfpm-main.c:278
 msgid "Version information"
@@ -924,29 +928,25 @@ msgstr "Energiebeheer voor de Xfce-werkomgeving"
 msgid "Display battery levels for attached devices"
 msgstr "Toon acculadingniveaus voor aangesloten apparaten"
 
-#. about dialog
-#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1239
-msgid "_About"
-msgstr "_Over"
-
 #. Translators this is to display which app is inhibiting
 #. * power in the plugin menu. Example:
 #. * VLC is currently inhibiting power management
-#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1442
+#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1425
 #, c-format
 msgid "%s is currently inhibiting power management"
 msgstr "%s belemmert thans het energiebeheer"
 
-#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1739
+#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1722
 msgid "<b>Display brightness</b>"
 msgstr "<b>Schermhelderheid</b>"
 
-#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1765
+#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1749
+#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1760
 msgid "Presentation _mode"
 msgstr "Presentatie_modus"
 
 #. Power manager settings
-#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1782
+#: ../panel-plugins/power-manager-plugin/power-manager-button.c:1773
 msgid "_Power manager settings..."
 msgstr "Instellingen van energiebeheerder..."
 

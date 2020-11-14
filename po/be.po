@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce4-power-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-27 00:30+0100\n"
-"PO-Revision-Date: 2020-02-28 04:14+0000\n"
+"POT-Creation-Date: 2020-05-27 12:47+0200\n"
+"PO-Revision-Date: 2020-10-12 09:58+0000\n"
 "Last-Translator: Zmicer Turok <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce4-power-manager/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -311,7 +311,7 @@ msgstr "Заблакаваць экран"
 
 #: ../settings/xfpm-settings.c:1551
 msgid "Number of brightness steps available using keys"
-msgstr "Колькасць крокаў яркасці, даступных для змены клавішамі"
+msgstr "Колькасць крокаў яркасці, даступных для змены з клавіятуры"
 
 #: ../settings/xfpm-settings.c:1591
 msgid "When all the power sources of the computer reach this charge level"
@@ -462,6 +462,12 @@ msgstr "Кіраўнік сілкавання"
 msgid "Settings for the Xfce Power Manager"
 msgstr "Налады кіраўніка сілкавання Xfce"
 
+#: ../settings/xfce4-power-manager-settings.desktop.in.h:3
+msgid ""
+"settings;preferences;buttons;sleep;hibernate;battery;suspend;shutdown;brightness;laptop"
+" lid;lock screen;plugged in;saving;critical;"
+msgstr "налады;кнопкі;рэжым сну;гібернацыя;батарэя;прыпыненне;выключэнне;яркасць;вечка ноўтбука;блакаванне экрана;падлучана;энергазберажэнне;крытычны ўзровень;"
+
 #: ../common/xfpm-common.c:116
 msgid "translator-credits"
 msgstr "Zmicer Turok zmicerturok@gmail.com"
@@ -532,7 +538,7 @@ msgid "Nickel cadmium"
 msgstr "Нікеля-кадміевая"
 
 #: ../common/xfpm-power-common.c:93
-msgid "Nickel metal hybride"
+msgid "Nickel metal hydride"
 msgstr "Нікеля-металагібрыдная"
 
 #: ../common/xfpm-power-common.c:114
