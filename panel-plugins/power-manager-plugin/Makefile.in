@@ -411,9 +411,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu panel-plugins/power-manager-plugin/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign panel-plugins/power-manager-plugin/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu panel-plugins/power-manager-plugin/Makefile
+	  $(AUTOMAKE) --foreign panel-plugins/power-manager-plugin/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

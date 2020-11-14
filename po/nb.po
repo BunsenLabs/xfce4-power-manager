@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce4-power-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-27 00:30+0100\n"
-"PO-Revision-Date: 2020-01-28 04:43+0000\n"
+"POT-Creation-Date: 2020-05-27 12:47+0200\n"
+"PO-Revision-Date: 2020-05-30 04:13+0000\n"
 "Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce4-power-manager/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -463,6 +463,12 @@ msgstr "Strømstyring"
 msgid "Settings for the Xfce Power Manager"
 msgstr "Innstillinger for Xfce-strømstyring"
 
+#: ../settings/xfce4-power-manager-settings.desktop.in.h:3
+msgid ""
+"settings;preferences;buttons;sleep;hibernate;battery;suspend;shutdown;brightness;laptop"
+" lid;lock screen;plugged in;saving;critical;"
+msgstr "oppsett;innstillinger;knapper;hvilemodus;dvale;batteri;strømsparing;lysstyrke;lokk;skjermlås;strømnett;lagre;kritisk;"
+
 #: ../common/xfpm-common.c:116
 msgid "translator-credits"
 msgstr "haarek - Harald <https://www.transifex.com/accounts/profile/haarek/>\nkingu - Allan Nordhøy <https://www.transifex.com/accounts/profile/kingu/>\npapparonny - Ronny K. M. Olufsen <https://www.transifex.com/accounts/profile/papparonny/>\nTerje Uriansrud <terje@uriansrud.net>"
@@ -533,7 +539,7 @@ msgid "Nickel cadmium"
 msgstr "Nikkel-kadmium"
 
 #: ../common/xfpm-power-common.c:93
-msgid "Nickel metal hybride"
+msgid "Nickel metal hydride"
 msgstr "Nikkel-metalhydrid"
 
 #: ../common/xfpm-power-common.c:114

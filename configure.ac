@@ -6,8 +6,8 @@ dnl
 m4_define([intltool_minimum_version], [0.31])
 m4_define([xfpm_version_major], [1])
 m4_define([xfpm_version_minor], [7])
-m4_define([xfpm_version_micro], [0])
-m4_define([xfpm_version_build], [e2fc93cc])
+m4_define([xfpm_version_micro], [1])
+m4_define([xfpm_version_build], [b7d2cf9c])
 m4_define([xfpm_version_tag], [])
 m4_define([xfpm_version], [xfpm_version_major().xfpm_version_minor().xfpm_version_micro()ifelse(xfpm_version_tag(), [git], [xfpm_version_tag()-xfpm_version_build()], [xfpm_version_tag()])])
 
@@ -17,7 +17,7 @@ AC_CONFIG_MACRO_DIR([m4])
 
 # subdir-objects is currently broken, see
 # http://debbugs.gnu.org/cgi/bugreport.cgi?bug=13928
-AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip])
+AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE()
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -60,7 +60,7 @@ AC_CHECK_LIB([m], [round])
 # 		Check for i18n support 			#
 # ===================================================== #
 
-XDT_I18N([ar ast be bg ca cs da de el en_AU en_GB es et eu fi fr gl he hr hu hy_AM id ie is it ja kk kn ko lt ms nb nl nn oc pa pl pt_BR pt ro ru si sk sl sq sr sv te th tr ug uk ur_PK ur vi zh_CN zh_HK zh_TW ])
+XDT_I18N([ar ast be bg ca cs da de el en_AU en_CA en_GB es et eu fi fr gl he hr hu hy_AM hye id ie is it ja kk kn ko lt ms nb nl nn oc pa pl pt_BR pt ro ru si sk sl sq sr sv te th tr ug uk ur_PK ur vi zh_CN zh_HK zh_TW ])
 
 # ===================================================== #
 # 		Check for X11 support 			#
@@ -231,8 +231,10 @@ panel-plugins/power-manager-plugin/Makefile
 panel-plugins/power-manager-plugin/xfce/Makefile
 data/Makefile
 data/icons/Makefile
+data/icons/16x16/Makefile
 data/icons/32x32/Makefile
 data/icons/48x48/Makefile
+data/icons/128x128/Makefile
 data/icons/scalable/Makefile
 data/interfaces/Makefile
 data/appdata/Makefile

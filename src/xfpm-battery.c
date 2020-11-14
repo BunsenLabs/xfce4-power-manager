@@ -190,7 +190,6 @@ xfpm_battery_notify (XfpmBattery *battery)
                                  _("Power Manager"),
                                  message,
                                  xfpm_battery_get_icon_name (battery),
-                                 8000,
                                  XFPM_NOTIFY_NORMAL);
 
   g_free (message);
@@ -515,5 +514,5 @@ xfpm_battery_get_icon_name (XfpmBattery *battery)
 {
   g_return_val_if_fail (XFPM_IS_BATTERY (battery), NULL);
 
-  return get_device_icon_name (battery->priv->client, battery->priv->device);
+  return get_device_icon_name (battery->priv->client, battery->priv->device, TRUE);
 }
