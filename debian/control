@@ -18,6 +18,7 @@ Build-Depends: debhelper-compat (= 12),
                libxfconf-0-dev (>= 4.10.0),
                pkg-config,
                xfce4-dev-tools
+Rules-Requires-Root: no
 Standards-Version: 4.5.0
 Homepage: https://docs.xfce.org/xfce/xfce4-power-manager/start
 Vcs-Git: https://salsa.debian.org/xfce-team/desktop/xfce4-power-manager.git
