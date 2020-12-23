@@ -397,6 +397,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = \
 	16x16		\
+	24x24       \
 	32x32		\
 	48x48		\
 	128x128	\

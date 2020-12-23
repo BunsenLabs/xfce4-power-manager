@@ -4,10 +4,10 @@ dnl Edit that file instead!
 dnl
 
 m4_define([intltool_minimum_version], [0.31])
-m4_define([xfpm_version_major], [1])
-m4_define([xfpm_version_minor], [7])
-m4_define([xfpm_version_micro], [1])
-m4_define([xfpm_version_build], [b7d2cf9c])
+m4_define([xfpm_version_major], [4])
+m4_define([xfpm_version_minor], [16])
+m4_define([xfpm_version_micro], [0])
+m4_define([xfpm_version_build], [8efac3fc])
 m4_define([xfpm_version_tag], [])
 m4_define([xfpm_version], [xfpm_version_major().xfpm_version_minor().xfpm_version_micro()ifelse(xfpm_version_tag(), [git], [xfpm_version_tag()-xfpm_version_build()], [xfpm_version_tag()])])
 
@@ -60,7 +60,7 @@ AC_CHECK_LIB([m], [round])
 # 		Check for i18n support 			#
 # ===================================================== #
 
-XDT_I18N([ar ast be bg ca cs da de el en_AU en_CA en_GB es et eu fi fr gl he hr hu hy_AM hye id ie is it ja kk kn ko lt ms nb nl nn oc pa pl pt_BR pt ro ru si sk sl sq sr sv te th tr ug uk ur_PK ur vi zh_CN zh_HK zh_TW ])
+XDT_I18N([en_GB ca zh_CN nb tr en_CA en_AU fr eu gl be zh_TW th sr fi pl ast it he et pt_BR de sl pa zh_HK nl hy_AM ja hu nn si ar ko es kk ur sk te kn hr sq pt cs is uk hye ur_PK id vi da ug el sv ru ie lt ms ro bg oc ])
 
 # ===================================================== #
 # 		Check for X11 support 			#
@@ -71,7 +71,7 @@ XDT_CHECK_LIBX11_REQUIRE()
 #          Check for required packages 		      #
 #=====================================================#
 m4_define([gtk_minimum_version], [3.14.0])
-m4_define([glib_minimum_version], [2.42.0])
+m4_define([glib_minimum_version], [2.50.0])
 
 m4_define([xfconf_minimum_version], [4.12.0])
 m4_define([libxfce4ui_minimum_version],[4.12.0])
@@ -232,6 +232,7 @@ panel-plugins/power-manager-plugin/xfce/Makefile
 data/Makefile
 data/icons/Makefile
 data/icons/16x16/Makefile
+data/icons/24x24/Makefile
 data/icons/32x32/Makefile
 data/icons/48x48/Makefile
 data/icons/128x128/Makefile
