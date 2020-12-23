@@ -1,3 +1,226 @@
+commit 8efac3fc083391b012ddb6610b985695dd460a75
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Dec 17 00:46:24 2020 +0100
+
+    I18n: Update translation eu (96%).
+    
+    205 translated messages, 8 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit e318a50d9f044a8032ac59a4455831b87865df7b
+Author: Alexander Schwinn <alexxcons@xfce.org>
+Date:   Wed Dec 9 09:41:13 2020 +0100
+
+    bump glib (and gio, gthread, etc) minimum to 2.50.0
+    
+    In order to unify dependencies for core components.
+    (See 4.16 roadmap)
+
+commit e43c0354d91ab19ec31a96e639b3363b69d840a5
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Mon Nov 30 12:46:59 2020 +0100
+
+    I18n: Update translation sr (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 55a301f778d3f52b3c7bc008149ecc7a73e9ee99
+Author: Elishai Eliyahu <elishai@mailfence.com>
+Date:   Sun Nov 29 00:45:53 2020 +0100
+
+    I18n: Update translation he (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit b6d6bf8b55ecce11d0c00b1267ce03fe9b9df44e
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Tue Nov 24 00:47:27 2020 +0100
+
+    panel-plugin: Prefer ac-adapter-symbolic (Fixes #103)
+
+commit 232ad9df5b02c2260bb40da124225059c90c3ed0
+Author: Triyan W. Nugroho <triyan.wn@gmail.com>
+Date:   Sat Nov 21 12:46:47 2020 +0100
+
+    I18n: Update translation id (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 6871b27df4cecb0a266c381a5fe508ac7527e7e6
+Author: Александр <avfill@outlook.com>
+Date:   Fri Nov 20 00:47:46 2020 +0100
+
+    I18n: Update translation ru (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 6c542c683eefcfc108cade3bd311a213cd356c2b
+Author: Priit Jõerüüt <transifex@joeruut.com>
+Date:   Fri Nov 20 00:47:46 2020 +0100
+
+    I18n: Update translation et (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 1444946f28b46ffbdfdd147cd92c648f83750db7
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Nov 19 00:45:54 2020 +0100
+
+    I18n: Update translation ru (99%).
+    
+    212 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 2394ac0d81d16c0808b7140f572830da1679eb0b
+Author: Michael Martins <michaelfm21@gmail.com>
+Date:   Thu Nov 19 00:45:53 2020 +0100
+
+    I18n: Update translation pt_BR (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 1918112ec862307643fcae21f61ef3d67b0e2e3f
+Author: Besnik Bleta <besnik@programeshqip.org>
+Date:   Wed Nov 18 00:45:53 2020 +0100
+
+    I18n: Update translation sq (99%).
+    
+    211 translated messages, 2 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit f3941a7199b5c61a3d7ed568e452151f2a0be4a7
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Nov 17 00:46:12 2020 +0100
+
+    I18n: Update translation da (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 00fc5206111d56be87377fe92ff1ef403d000a22
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Thu Nov 12 00:45:51 2020 +0100
+
+    I18n: Update translation pt (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 0a999d6a358fd1b605afa379e61e2f450cb2949e
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Nov 12 00:45:51 2020 +0100
+
+    I18n: Update translation pt_BR (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 55eccb07f307bc93ca6f1a3726f587bb770f5213
+Author: Maurizio Galli (m4u9) <maurizio.galli@gmail.com>
+Date:   Wed Nov 11 11:43:26 2020 +0100
+
+    Add new icons in size 24x24 and 32x32
+
+commit a83afc4cc7697cc8744d353313b2517e7243a5cc
+Author: Luna Jernberg <bittin@cafe8bitar.se>
+Date:   Tue Nov 10 12:46:54 2020 +0100
+
+    I18n: Update translation sv (98%).
+    
+    210 translated messages, 3 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 99ac35afbb07e2543f124a416ae986d6cd35135d
+Author: Arnold Marko <arnold.marko@gmail.com>
+Date:   Tue Nov 10 00:46:23 2020 +0100
+
+    I18n: Update translation sl (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 138f5b942ef6c9a9e70626887f6a932366ecaba0
+Author: Daniel Muñiz Fontoira <dani@damufo.com>
+Date:   Mon Nov 9 12:47:00 2020 +0100
+
+    I18n: Update translation gl (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 60e729a628cbc093cc8c813abfa1cab1d3987ea5
+Author: Emin Tufan <etcetin@gmail.com>
+Date:   Mon Nov 9 00:45:47 2020 +0100
+
+    I18n: Update translation tr (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 85934e5ace87875ef94de312b98294c20ce950dd
+Author: Kjell Cato Heskjestad <cato@heskjestad.xyz>
+Date:   Sat Nov 7 12:46:29 2020 +0100
+
+    I18n: Update translation nb (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit cda5fb7de795e96c661155a85c3c1fd21cbbfc27
+Author: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>
+Date:   Sat Nov 7 12:46:29 2020 +0100
+
+    I18n: Update translation ca (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit eed232f2b5050276b6b8495e1c6be2136144e762
+Author: Yannick Le Guen <leguen.yannick@gmail.com>
+Date:   Sat Nov 7 00:45:42 2020 +0100
+
+    I18n: Update translation fr (100%).
+    
+    213 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 6752322bef91e10ae2d0426306946905c17d0905
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Fri Nov 6 23:50:18 2020 +0100
+
+    Back to development
+
+commit ffdd43709b846d3c0f1c4eb3b1b9892d4824e6c5
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Fri Nov 6 23:46:37 2020 +0100
+
+    Updates for release
+
 commit b7d2cf9c43d3a6f2113ed4cf580e76b510145cf8
 Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
 Date:   Fri Nov 6 23:17:52 2020 +0100

@@ -88,7 +88,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = data/icons/32x32
+subdir = data/icons/24x24
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -144,9 +144,8 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(appicondir)" \
-	"$(DESTDIR)$(statusiconsdir)"
-DATA = $(appicon_DATA) $(statusicons_DATA)
+am__installdirs = "$(DESTDIR)$(appicondir)"
+DATA = $(appicon_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/Makefile.in
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -366,36 +365,11 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-appicondir = $(datadir)/icons/hicolor/48x48/apps
+appicondir = $(datadir)/icons/hicolor/24x24/apps
 appicon_DATA = \
     org.xfce.powermanager.png
 
-statusiconsdir = $(datadir)/icons/hicolor/48x48/status
-statusicons_DATA = \
-    ac-adapter.png                      \
-    battery-caution-charging.png        \
-    battery-caution.png                 \
-    battery-empty-charging.png          \
-    battery-empty.png                   \
-    battery-full-charged.png            \
-    battery-full-charging.png           \
-    battery-full.png                    \
-    battery-good-charging.png           \
-    battery-good.png                    \
-    battery-low-charging.png            \
-    battery-low.png                     \
-    battery-missing.png                 \
-    computer.png                        \
-    input-keyboard.png                  \
-    input-mouse.png                     \
-    multimedia-player.png               \
-    pda.png                             \
-    phone.png                           \
-    tablet.png                          \
-    uninterruptible-power-supply.png    \
-    video-display.png
-
-EXTRA_DIST = $(appicon_DATA) $(statusicons_DATA)
+EXTRA_DIST = $(appicon_DATA)
 all: all-am
 
 .SUFFIXES:
@@ -408,9 +382,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign data/icons/32x32/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign data/icons/24x24/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign data/icons/32x32/Makefile
+	  $(AUTOMAKE) --foreign data/icons/24x24/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -455,27 +429,6 @@ uninstall-appiconDATA:
 	@list='$(appicon_DATA)'; test -n "$(appicondir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(appicondir)'; $(am__uninstall_files_from_dir)
-install-statusiconsDATA: $(statusicons_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(statusicons_DATA)'; test -n "$(statusiconsdir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(statusiconsdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(statusiconsdir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(statusiconsdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(statusiconsdir)" || exit $$?; \
-	done
-
-uninstall-statusiconsDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(statusicons_DATA)'; test -n "$(statusiconsdir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(statusiconsdir)'; $(am__uninstall_files_from_dir)
 tags TAGS:
 
 ctags CTAGS:
@@ -520,7 +473,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(appicondir)" "$(DESTDIR)$(statusiconsdir)"; do \
+	for dir in "$(DESTDIR)$(appicondir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -573,7 +526,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-appiconDATA install-statusiconsDATA
+install-data-am: install-appiconDATA
 
 install-dvi: install-dvi-am
 
@@ -617,7 +570,7 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-appiconDATA uninstall-statusiconsDATA
+uninstall-am: uninstall-appiconDATA
 
 .MAKE: install-am install-strip
 
@@ -628,11 +581,11 @@ uninstall-am: uninstall-appiconDATA uninstall-statusiconsDATA
 	install-data-am install-dvi install-dvi-am install-exec \
 	install-exec-am install-html install-html-am install-info \
 	install-info-am install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-statusiconsDATA install-strip \
-	installcheck installcheck-am installdirs maintainer-clean \
+	install-ps install-ps-am install-strip installcheck \
+	installcheck-am installdirs maintainer-clean \
 	maintainer-clean-generic mostlyclean mostlyclean-generic \
 	mostlyclean-libtool pdf pdf-am ps ps-am tags-am uninstall \
-	uninstall-am uninstall-appiconDATA uninstall-statusiconsDATA
+	uninstall-am uninstall-appiconDATA
 
 .PRECIOUS: Makefile
 
