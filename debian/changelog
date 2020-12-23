@@ -1,12 +1,13 @@
-xfce4-power-manager (4.16.0-1) UNRELEASED; urgency=medium
+xfce4-power-manager (4.16.0-1) unstable; urgency=medium
 
   * New upstream version 4.16.0
   * d/control: version xfce4-dev-tools b-dep for 4.16
   * d/control: update standards version to 4.5.1
   * d/xfce4-power-information.1 removed (binary is gone)
   * d/watch: use standards version 4
+  * Upload to unstable
 
- -- Yves-Alexis Perez <corsac@debian.org>  Wed, 23 Dec 2020 15:11:32 +0100
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 23 Dec 2020 15:11:37 +0100
 
 xfce4-power-manager (1.7.1-1) experimental; urgency=medium
 
