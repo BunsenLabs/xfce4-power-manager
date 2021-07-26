@@ -1,3 +1,11 @@
+xfce4-power-manager (4.16.0-1+x.bl.iconpatch3) beryllium; urgency=medium
+
+  * Non-maintainer upload.
+  * Revert commits which improved battery status display and symbolic icons.
+     This was causing issues with icons in legacy system trays.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 26 Jul 2021 16:45:19 +0900
+
 xfce4-power-manager (4.16.0-1) unstable; urgency=medium
 
   * New upstream version 4.16.0
