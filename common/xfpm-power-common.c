@@ -233,13 +233,9 @@ get_device_icon_name (UpClient *upower, UpDevice *device, gboolean is_panel)
   if ( type == UP_DEVICE_KIND_BATTERY && is_panel )
   {
     if ( state == UP_DEVICE_STATE_CHARGING || state == UP_DEVICE_STATE_PENDING_CHARGE)
-      icon_name = g_strdup_printf ("%s-%s-%s", XFPM_BATTERY_LEVEL_ICON, xfpm_battery_get_icon_index (type, percentage), "charging-symbolic");
+      icon_name = g_strdup_printf ("%s-%s-%s", XFPM_BATTERY_LEVEL_ICON, xfpm_battery_get_icon_index (type, percentage), "charging");
     else if ( state == UP_DEVICE_STATE_DISCHARGING || state == UP_DEVICE_STATE_PENDING_DISCHARGE)
-      icon_name = g_strdup_printf ("%s-%s-%s", XFPM_BATTERY_LEVEL_ICON, xfpm_battery_get_icon_index (type, percentage), "symbolic");
-    else if ( state == UP_DEVICE_STATE_FULLY_CHARGED)
-      icon_name = g_strdup_printf ("%s-%s", XFPM_BATTERY_LEVEL_ICON, "100-charged-symbolic");
-    else
-      icon_name = g_strdup ("battery-missing-symbolic");
+      icon_name = g_strdup_printf ("%s-%s", XFPM_BATTERY_LEVEL_ICON, xfpm_battery_get_icon_index (type, percentage));
   }
   else if ( type == UP_DEVICE_KIND_UPS )
     icon_name = g_strdup (XFPM_UPS_ICON);
