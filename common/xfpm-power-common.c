@@ -96,33 +96,6 @@ xfpm_power_translate_technology (guint value)
   return _("Unknown");
 }
 
-const gchar * G_GNUC_CONST
-xfpm_battery_get_icon_index (UpDeviceKind type, guint percent)
-{
-  if (percent < 10)
-    return "0";
-  else if (percent < 20)
-    return "10";
-  else if (percent < 30)
-    return "20";
-  else if (percent < 40)
-    return "30";
-  else if (percent < 50)
-    return "40";
-  else if (percent < 60)
-    return "50";
-  else if (percent < 70)
-    return "60";
-  else if (percent < 80)
-    return "70";
-  else if (percent < 90)
-    return "80";
-  else if (percent < 100)
-    return "90";
-  else
-    return "100";
-}
-
 /*
  * Taken from gpm
  */
@@ -187,28 +160,18 @@ is_display_device (UpClient *upower, UpDevice *device)
 }
 
 gchar*
-get_device_panel_icon_name (UpClient *upower, UpDevice *device)
-{
-  return get_device_icon_name (upower, device, TRUE);
-}
-
-
-gchar*
-get_device_icon_name (UpClient *upower, UpDevice *device, gboolean is_panel)
+get_device_icon_name (UpClient *upower, UpDevice *device)
 {
   gchar *icon_name = NULL;
   gchar *icon_suffix;
   gsize icon_base_length;
   gchar *upower_icon;
-  guint type = 0, state = 0;
-  gdouble percentage;
+  guint type = 0;
 
   /* hack, this depends on XFPM_DEVICE_TYPE_* being in sync with UP_DEVICE_KIND_* */
   g_object_get (device,
                 "kind", &type,
-                "state", &state,
                 "icon-name", &upower_icon,
-                "percentage", &percentage,
                 NULL);
 
   /* Strip away the symbolic suffix for the device icons for the devices tab
@@ -230,14 +193,7 @@ get_device_icon_name (UpClient *upower, UpDevice *device, gboolean is_panel)
    * http://cgit.freedesktop.org/upower/tree/libupower-glib/up-types.h
    * because UPower doesn't return device-specific icon-names
    */
-  if ( type == UP_DEVICE_KIND_BATTERY && is_panel )
-  {
-    if ( state == UP_DEVICE_STATE_CHARGING || state == UP_DEVICE_STATE_PENDING_CHARGE)
-      icon_name = g_strdup_printf ("%s-%s-%s", XFPM_BATTERY_LEVEL_ICON, xfpm_battery_get_icon_index (type, percentage), "charging");
-    else if ( state == UP_DEVICE_STATE_DISCHARGING || state == UP_DEVICE_STATE_PENDING_DISCHARGE)
-      icon_name = g_strdup_printf ("%s-%s", XFPM_BATTERY_LEVEL_ICON, xfpm_battery_get_icon_index (type, percentage));
-  }
-  else if ( type == UP_DEVICE_KIND_UPS )
+  if ( type == UP_DEVICE_KIND_UPS )
     icon_name = g_strdup (XFPM_UPS_ICON);
   else if ( type == UP_DEVICE_KIND_MOUSE )
     icon_name = g_strdup (XFPM_MOUSE_ICON);
