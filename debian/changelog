@@ -1,3 +1,10 @@
+xfce4-power-manager (4.16.0-1+x.bl11.iconpatch3) beryllium; urgency=medium
+
+  * Non-maintainer upload.
+  * Version bump to assist migration to BunsenLabs repository.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 27 Dec 2021 18:09:29 +0900
+
 xfce4-power-manager (4.16.0-1+x.bl1.iconpatch3) beryllium; urgency=medium
 
   * Non-maintainer upload.
