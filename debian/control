@@ -50,6 +50,7 @@ Architecture: all
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Recommends: librsvg2-common, xfce4-power-manager
 Replaces: xfce4-power-manager (<< 0.8.0~beta2-1)
+Multi-Arch: foreign
 Description: power manager for Xfce desktop, arch-indep files
  This power manager for the Xfce desktop enables laptop users to set up
  a power profile for two different modes "on battery power" and "on ac
