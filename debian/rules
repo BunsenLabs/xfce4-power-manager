@@ -15,9 +15,8 @@ override_dh_autoreconf:
 override_dh_auto_configure:
 	dh_auto_configure -- --with-backend=$(BACKEND)
 
-override_dh_install:
-	find debian/tmp/usr/lib -name 'lib*.la' -delete
-	dh_install
+execute_after_dh_auto_install:
+	find debian -name '*.la' -delete
 
 %:
 	dh $@
