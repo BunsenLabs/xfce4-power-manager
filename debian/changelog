@@ -1,3 +1,22 @@
+xfce4-power-manager (4.17.0-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+    - xfce4-power-manager-data: Add Multi-Arch: foreign.
+
+  [ Unit 193 ]
+  * New upstream version 4.17.0.
+  * d/control, d/rules: Bump DH compat to 13, drop dh_missing override.
+  * d/control: Drop old version constraints and replaces.
+  * d/rules:
+    - Drop --as-needed from LDFLAGS, default now.
+    - Replace dh_install override with execute_after for removing .la files.
+  * Update Standards-Version to 4.6.1.
+
+ -- Unit 193 <unit193@debian.org>  Tue, 08 Nov 2022 19:20:28 -0500
+
 xfce4-power-manager (4.16.0-1) unstable; urgency=medium
 
   * New upstream version 4.16.0
