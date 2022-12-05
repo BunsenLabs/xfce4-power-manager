@@ -6,14 +6,14 @@ dnl
 m4_define([intltool_minimum_version], [0.31])
 m4_define([xfpm_version_major], [4])
 m4_define([xfpm_version_minor], [17])
-m4_define([xfpm_version_micro], [0])
-m4_define([xfpm_version_build], [af9f89c8])
+m4_define([xfpm_version_micro], [1])
+m4_define([xfpm_version_build], [cc9c0192])
 m4_define([xfpm_version_tag], [])
 m4_define([xfpm_version], [xfpm_version_major().xfpm_version_minor().xfpm_version_micro()ifelse(xfpm_version_tag(), [git], [xfpm_version_tag()-xfpm_version_build()], [xfpm_version_tag()])])
 
 AC_INIT([xfce4-power-manager],[xfpm_version],[http://bugzilla.xfce.org/])
 AC_PREREQ([2.60])
-AC_CONFIG_MACRO_DIR([m4])
+AC_CONFIG_MACRO_DIRS([m4])
 
 # subdir-objects is currently broken, see
 # http://debbugs.gnu.org/cgi/bugreport.cgi?bug=13928

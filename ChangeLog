@@ -1,3 +1,37 @@
+commit cc9c019226cb6fadbe40648f009e6870d8cc4628
+Author: Alexander Schwinn <alexxcons@xfce.org>
+Date:   Sat Nov 12 21:43:39 2022 +0100
+
+    bump copyright year to 2022
+
+commit 4e1e9450e03564d5fa38e4efad032b248deb7ef1
+Author: Akbarkhon Variskhanov <akbarkhon.variskhanov@gmail.com>
+Date:   Wed Nov 9 07:55:23 2022 +0000
+
+    autoconf: Use AC_CONFIG_MACRO_DIRS
+    
+    MR !26
+
+commit bc9bb2569ec9fa2fc7d52783cf14170fd5905e2d
+Author: Gaël Bonithon <gael@xfce.org>
+Date:   Wed Nov 9 07:47:55 2022 +0000
+
+    Do not include `config.h` in headers
+    
+    MR !27
+
+commit 27e4b3792e87d3787e0fe8dcf803da43fc88964f
+Author: Alexander Schwinn <alexxcons@xfce.org>
+Date:   Tue Nov 1 10:26:54 2022 +0100
+
+    Back to development
+
+commit f132e4894ee68aa67e561b25e131aaa957c23447
+Author: Alexander Schwinn <alexxcons@xfce.org>
+Date:   Tue Nov 1 10:25:23 2022 +0100
+
+    Updates for release
+
 commit af9f89c8498c83c7c8ca2efc7ce97014fe782455
 Author: Anonymous <noreply@xfce.org>
 Date:   Wed Oct 19 00:46:10 2022 +0200
