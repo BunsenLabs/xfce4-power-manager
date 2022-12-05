@@ -8,10 +8,6 @@ ifeq ($(DEB_BUILD_ARCH_OS),kfreebsd)
 	BACKEND=freebsd
 endif
 
-override_dh_autoreconf:
-	mkdir -p m4
-	NOCONFIGURE=1 dh_autoreconf
-
 override_dh_auto_configure:
 	dh_auto_configure -- --with-backend=$(BACKEND)
 
