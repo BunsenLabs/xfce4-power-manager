@@ -5,9 +5,9 @@ dnl
 
 m4_define([intltool_minimum_version], [0.31])
 m4_define([xfpm_version_major], [4])
-m4_define([xfpm_version_minor], [17])
-m4_define([xfpm_version_micro], [1])
-m4_define([xfpm_version_build], [cc9c0192])
+m4_define([xfpm_version_minor], [18])
+m4_define([xfpm_version_micro], [0])
+m4_define([xfpm_version_build], [4cec7d44])
 m4_define([xfpm_version_tag], [])
 m4_define([xfpm_version], [xfpm_version_major().xfpm_version_minor().xfpm_version_micro()ifelse(xfpm_version_tag(), [git], [xfpm_version_tag()-xfpm_version_build()], [xfpm_version_tag()])])
 
@@ -70,8 +70,8 @@ XDT_CHECK_LIBX11_REQUIRE()
 #==================================================== #
 #          Check for required packages 		      #
 #=====================================================#
-m4_define([gtk_minimum_version], [3.14.0])
-m4_define([glib_minimum_version], [2.50.0])
+m4_define([gtk_minimum_version], [3.24.0])
+m4_define([glib_minimum_version], [2.66.0])
 
 m4_define([xfconf_minimum_version], [4.12.0])
 m4_define([libxfce4ui_minimum_version],[4.12.0])
