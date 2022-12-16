@@ -24,10 +24,10 @@
 /* Name of default gettext domain */
 #undef GETTEXT_PACKAGE
 
-/* Prevent post 2_50 APIs */
+/* Prevent post 2_66 APIs */
 #undef GLIB_VERSION_MAX_ALLOWED
 
-/* Ignore post 2_50 APIs */
+/* Ignore post 2_66 APIs */
 #undef GLIB_VERSION_MIN_REQUIRED
 
 /* Use GLib structured logging */

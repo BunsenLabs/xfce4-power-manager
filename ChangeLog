@@ -1,3 +1,71 @@
+commit 4cec7d44c02349b11f62285eba383025a851b858
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Dec 13 12:47:11 2022 +0100
+
+    I18n: Update translation lt (100%).
+    
+    212 translated messages.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit 06809928111e6b81f6fe5847f56e5790f9744f27
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Dec 13 00:51:40 2022 +0100
+
+    I18n: Update translation ru (100%).
+    
+    212 translated messages.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit b4928b4fcd5c9febb11bd43493a2bd923942f814
+Author: Anonymous <noreply@xfce.org>
+Date:   Wed Dec 7 00:46:03 2022 +0100
+
+    I18n: Update translation ru (100%).
+    
+    212 translated messages.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit 69103d9f0d006927f6200990f04f34a49f0e804d
+Author: Gaël Bonithon <gael@xfce.org>
+Date:   Mon Dec 5 21:22:52 2022 +0100
+
+    build: Bump requirements for Xfce 4.18
+
+commit 8c0a896e499e7e34c88630aa0f7233f073c4ba71
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Dec 3 12:46:46 2022 +0100
+
+    I18n: Update translation el (99%).
+    
+    211 translated messages, 1 untranslated message.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit d5eb69effd088115f9e7dd7c80513b30c1cfadbd
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Dec 1 12:47:20 2022 +0100
+
+    I18n: Update translation tr (100%).
+    
+    212 translated messages.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit f251492112aa923e378e33bcadec74866e2cfaf6
+Author: Alexander Schwinn <alexxcons@xfce.org>
+Date:   Thu Dec 1 09:25:44 2022 +0100
+
+    Back to development
+
+commit 5aad07677dac14cd63ee61c8260accd1fed0b0f0
+Author: Alexander Schwinn <alexxcons@xfce.org>
+Date:   Thu Dec 1 09:24:02 2022 +0100
+
+    Updates for release
+
 commit cc9c019226cb6fadbe40648f009e6870d8cc4628
 Author: Alexander Schwinn <alexxcons@xfce.org>
 Date:   Sat Nov 12 21:43:39 2022 +0100
