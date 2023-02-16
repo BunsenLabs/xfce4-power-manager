@@ -1,17 +1,37 @@
-xfce4-power-manager (4.16.0-1+x.bl11.iconpatch3) beryllium; urgency=medium
+xfce4-power-manager (4.18.0-1) unstable; urgency=medium
 
-  * Non-maintainer upload.
-  * Version bump to assist migration to BunsenLabs repository.
+  * Team upload.
+  * New upstream version 4.18.0.
+  * d/rules: Opt-out of trimmed changelogs, install NEWS as changelog.
 
- -- John Crawley <john@bunsenlabs.org>  Mon, 27 Dec 2021 18:09:29 +0900
+ -- Unit 193 <unit193@debian.org>  Thu, 15 Dec 2022 19:46:45 -0500
 
-xfce4-power-manager (4.16.0-1+x.bl1.iconpatch3) beryllium; urgency=medium
+xfce4-power-manager (4.17.1-1) experimental; urgency=medium
 
-  * Non-maintainer upload.
-  * Revert commits which improved battery status display and symbolic icons.
-     This was causing issues with icons in legacy system trays.
+  * Team upload.
+  * New upstream version 4.17.1.
+  * d/rules: Drop dh_autoreconf override, no longer needed.
 
- -- John Crawley <john@bunsenlabs.org>  Mon, 26 Jul 2021 16:45:19 +0900
+ -- Unit 193 <unit193@debian.org>  Mon, 05 Dec 2022 03:11:53 -0500
+
+xfce4-power-manager (4.17.0-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+    - xfce4-power-manager-data: Add Multi-Arch: foreign.
+
+  [ Unit 193 ]
+  * New upstream version 4.17.0.
+  * d/control, d/rules: Bump DH compat to 13, drop dh_missing override.
+  * d/control: Drop old version constraints and replaces.
+  * d/rules:
+    - Drop --as-needed from LDFLAGS, default now.
+    - Replace dh_install override with execute_after for removing .la files.
+  * Update Standards-Version to 4.6.1.
+
+ -- Unit 193 <unit193@debian.org>  Tue, 08 Nov 2022 19:20:28 -0500
 
 xfce4-power-manager (4.16.0-1) unstable; urgency=medium
 

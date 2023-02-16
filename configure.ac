@@ -5,19 +5,19 @@ dnl
 
 m4_define([intltool_minimum_version], [0.31])
 m4_define([xfpm_version_major], [4])
-m4_define([xfpm_version_minor], [16])
+m4_define([xfpm_version_minor], [18])
 m4_define([xfpm_version_micro], [0])
-m4_define([xfpm_version_build], [8efac3fc])
+m4_define([xfpm_version_build], [4cec7d44])
 m4_define([xfpm_version_tag], [])
 m4_define([xfpm_version], [xfpm_version_major().xfpm_version_minor().xfpm_version_micro()ifelse(xfpm_version_tag(), [git], [xfpm_version_tag()-xfpm_version_build()], [xfpm_version_tag()])])
 
 AC_INIT([xfce4-power-manager],[xfpm_version],[http://bugzilla.xfce.org/])
 AC_PREREQ([2.60])
-AC_CONFIG_MACRO_DIR([m4])
+AC_CONFIG_MACRO_DIRS([m4])
 
 # subdir-objects is currently broken, see
 # http://debbugs.gnu.org/cgi/bugreport.cgi?bug=13928
-AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
+AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign subdir-objects])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE()
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -60,7 +60,7 @@ AC_CHECK_LIB([m], [round])
 # 		Check for i18n support 			#
 # ===================================================== #
 
-XDT_I18N([en_GB ca zh_CN nb tr en_CA en_AU fr eu gl be zh_TW th sr fi pl ast it he et pt_BR de sl pa zh_HK nl hy_AM ja hu nn si ar ko es kk ur sk te kn hr sq pt cs is uk hye ur_PK id vi da ug el sv ru ie lt ms ro bg oc ])
+XDT_I18N([])
 
 # ===================================================== #
 # 		Check for X11 support 			#
@@ -70,8 +70,8 @@ XDT_CHECK_LIBX11_REQUIRE()
 #==================================================== #
 #          Check for required packages 		      #
 #=====================================================#
-m4_define([gtk_minimum_version], [3.14.0])
-m4_define([glib_minimum_version], [2.50.0])
+m4_define([gtk_minimum_version], [3.24.0])
+m4_define([glib_minimum_version], [2.66.0])
 
 m4_define([xfconf_minimum_version], [4.12.0])
 m4_define([libxfce4ui_minimum_version],[4.12.0])

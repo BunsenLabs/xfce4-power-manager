@@ -96,6 +96,33 @@ xfpm_power_translate_technology (guint value)
   return _("Unknown");
 }
 
+static const gchar *
+xfpm_battery_get_icon_index (guint percent)
+{
+  if (percent < 10)
+    return "0";
+  if (percent < 20)
+    return "10";
+  if (percent < 30)
+    return "20";
+  if (percent < 40)
+    return "30";
+  if (percent < 50)
+    return "40";
+  if (percent < 60)
+    return "50";
+  if (percent < 70)
+    return "60";
+  if (percent < 80)
+    return "70";
+  if (percent < 90)
+    return "80";
+  if (percent < 100)
+    return "90";
+  else
+    return "100";
+}
+
 /*
  * Taken from gpm
  */
@@ -146,11 +173,7 @@ is_display_device (UpClient *upower, UpDevice *device)
   UpDevice *display_device = NULL;
   gboolean ret = FALSE;
 
-#if UP_CHECK_VERSION(0, 99, 0)
   display_device = up_client_get_display_device (upower);
-#else
-  return FALSE;
-#endif
 
   ret = g_strcmp0 (up_device_get_object_path(device), up_device_get_object_path(display_device)) == 0 ? TRUE : FALSE;
 
@@ -292,17 +315,15 @@ get_device_description (UpClient *upower, UpDevice *device)
     if ( time_to_empty > 0 )
     {
       est_time_str = xfpm_battery_get_time_string (time_to_empty);
-      tip = g_strdup_printf (_("<b>%s %s</b>\nFully charged (%0.0f%%, %s runtime)"),
+      tip = g_strdup_printf (_("<b>%s %s</b>\nFully charged - %s remaining"),
                              vendor, model,
-                             percentage,
                              est_time_str);
       g_free (est_time_str);
     }
     else
     {
-      tip = g_strdup_printf (_("<b>%s %s</b>\nFully charged (%0.0f%%)"),
-                             vendor, model,
-                             percentage);
+      tip = g_strdup_printf (_("<b>%s %s</b>\nFully charged"),
+                             vendor, model);
     }
   }
   else if ( state == UP_DEVICE_STATE_CHARGING )
@@ -310,7 +331,7 @@ get_device_description (UpClient *upower, UpDevice *device)
     if ( time_to_full != 0 )
     {
       est_time_str = xfpm_battery_get_time_string (time_to_full);
-      tip = g_strdup_printf (_("<b>%s %s</b>\nCharging (%0.0f%%, %s)"),
+      tip = g_strdup_printf (_("<b>%s %s</b>\n%0.0f%% - %s until full"),
                              vendor, model,
                              percentage,
                              est_time_str);
@@ -318,7 +339,7 @@ get_device_description (UpClient *upower, UpDevice *device)
     }
     else
     {
-      tip = g_strdup_printf (_("<b>%s %s</b>\nCharging (%0.0f%%)"),
+      tip = g_strdup_printf (_("<b>%s %s</b>\n%0.0f%%"),
                              vendor, model,
                              percentage);
     }
@@ -328,7 +349,7 @@ get_device_description (UpClient *upower, UpDevice *device)
     if ( time_to_empty != 0 )
     {
       est_time_str = xfpm_battery_get_time_string (time_to_empty);
-      tip = g_strdup_printf (_("<b>%s %s</b>\nDischarging (%0.0f%%, %s)"),
+      tip = g_strdup_printf (_("<b>%s %s</b>\n%0.0f%% - %s remaining"),
                              vendor, model,
                              percentage,
                              est_time_str);
@@ -336,7 +357,7 @@ get_device_description (UpClient *upower, UpDevice *device)
     }
     else
     {
-      tip = g_strdup_printf (_("<b>%s %s</b>\nDischarging (%0.0f%%)"),
+      tip = g_strdup_printf (_("<b>%s %s</b>\n%0.0f%%"),
                              vendor, model,
                              percentage);
     }

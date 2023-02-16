@@ -229,13 +229,9 @@ out:
 
 
 #ifdef ENABLE_POLKIT
-static gboolean
-xfpm_polkit_free_data (gpointer data)
+static void
+xfpm_polkit_free_data (XfpmPolkit *polkit)
 {
-  XfpmPolkit *polkit;
-
-  polkit = XFPM_POLKIT (data);
-
   g_assert (polkit->priv->subject_valid);
 
   XFPM_DEBUG ("Destroying Polkit data");
@@ -248,6 +244,15 @@ xfpm_polkit_free_data (gpointer data)
 
   polkit->priv->destroy_id = 0;
   polkit->priv->subject_valid = FALSE;
+}
+
+static gboolean
+xfpm_polkit_free_data_cb (gpointer user_data)
+{
+  XfpmPolkit *polkit;
+
+  polkit = XFPM_POLKIT (user_data);
+  xfpm_polkit_free_data (polkit);
 
   return FALSE;
 }
@@ -301,9 +306,7 @@ xfpm_polkit_init_data (XfpmPolkit *polkit)
                                               &builder));
 
   /*Clean these data after 1 minute*/
-  polkit->priv->destroy_id = g_timeout_add_seconds (60,
-                                                    (GSourceFunc) xfpm_polkit_free_data,
-                                                    polkit);
+  polkit->priv->destroy_id = g_timeout_add_seconds (60, xfpm_polkit_free_data_cb, polkit);
 
   polkit->priv->subject_valid = TRUE;
 }
@@ -369,10 +372,17 @@ xfpm_polkit_check_auth_intern (XfpmPolkit *polkit, const gchar *action_id)
 
 #ifdef ENABLE_POLKIT
 static void
-xfpm_polkit_changed_cb (GDBusProxy *proxy, XfpmPolkit *polkit)
+xfpm_polkit_changed_cb (GDBusProxy *proxy,
+                        gchar      *sender_name,
+                        gchar      *signal_name,
+                        GVariant   *parameters,
+                        XfpmPolkit *polkit)
 {
-  XFPM_DEBUG ("Auth changed");
-  g_signal_emit (G_OBJECT (polkit), signals [AUTH_CHANGED], 0);
+  if (g_strcmp0 (signal_name, "Changed") == 0)
+  {
+    XFPM_DEBUG ("Auth changed");
+    g_signal_emit (G_OBJECT (polkit), signals [AUTH_CHANGED], 0);
+  }
 }
 #endif
 
@@ -430,7 +440,7 @@ xfpm_polkit_init (XfpmPolkit *polkit)
 
   if (G_LIKELY (polkit->priv->proxy) )
   {
-    g_signal_connect (polkit->priv->proxy, "Changed",
+    g_signal_connect (polkit->priv->proxy, "g-signal",
     G_CALLBACK (xfpm_polkit_changed_cb), polkit);
   }
   else
