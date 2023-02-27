@@ -1,3 +1,10 @@
+xfce4-power-manager (4.18.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 4.18.1.
+
+ -- Unit 193 <unit193@debian.org>  Mon, 27 Feb 2023 00:20:48 -0500
+
 xfce4-power-manager (4.18.0-1) unstable; urgency=medium
 
   * Team upload.
