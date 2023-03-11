@@ -1,4 +1,4 @@
-xfce4-power-manager (4.18.1+bl12.iconpatch1-1) boron; urgency=medium
+xfce4-power-manager (4.18.1+bl12.iconpatch1-1) bookworm-backports; urgency=medium
 
   * Non-maintainer upload.
   * Revert commits which improved battery status display and symbolic icons.
