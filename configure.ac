@@ -6,11 +6,12 @@ dnl
 m4_define([intltool_minimum_version], [0.31])
 m4_define([xfpm_version_major], [4])
 m4_define([xfpm_version_minor], [18])
-m4_define([xfpm_version_micro], [0])
-m4_define([xfpm_version_build], [4cec7d44])
+m4_define([xfpm_version_micro], [1])
+m4_define([xfpm_version_build], [7f53edf2])
 m4_define([xfpm_version_tag], [])
 m4_define([xfpm_version], [xfpm_version_major().xfpm_version_minor().xfpm_version_micro()ifelse(xfpm_version_tag(), [git], [xfpm_version_tag()-xfpm_version_build()], [xfpm_version_tag()])])
 
+AC_COPYRIGHT([Copyright (c) 2008-2023 The Xfce development team. All rights reserved.])
 AC_INIT([xfce4-power-manager],[xfpm_version],[http://bugzilla.xfce.org/])
 AC_PREREQ([2.60])
 AC_CONFIG_MACRO_DIRS([m4])
@@ -42,7 +43,6 @@ LT_INIT([disable-static])
 # ==================================================== #
 #   Check for headers needed for standard interfaces   #
 # ==================================================== #
-AC_HEADER_STDC()
 AC_CHECK_HEADERS([errno.h signal.h stddef.h sys/types.h memory.h stdlib.h   \
                   string.h sys/stat.h sys/user.h sys/wait.h time.h math.h   \
                   unistd.h sys/resource.h sys/socket.h sys/sysctl.h fcntl.h \
@@ -74,7 +74,7 @@ m4_define([gtk_minimum_version], [3.24.0])
 m4_define([glib_minimum_version], [2.66.0])
 
 m4_define([xfconf_minimum_version], [4.12.0])
-m4_define([libxfce4ui_minimum_version],[4.12.0])
+m4_define([libxfce4ui_minimum_version],[4.18.2])
 m4_define([libxfce4util_minimum_version],[4.12.0])
 m4_define([libxfce4panel_minimum_version],[4.12.0])
 

@@ -1,3 +1,171 @@
+commit 7f53edf2f585dd550c0ecaa305dd29e1cd7cd993
+Author: Gaël Bonithon <gael@xfce.org>
+Date:   Thu Feb 9 13:06:27 2023 +0100
+
+    Update copyright year
+    
+    (cherry picked from commit a83ad1c714dfd37b10cf5ae9c7aa734b47e31737)
+
+commit 13dade4d0a9e49551dbcb37bbc92185abb765b32
+Author: Gaël Bonithon <gael@xfce.org>
+Date:   Tue Feb 7 23:39:07 2023 +0100
+
+    Use XfceScreensaver from Libxfce4ui
+    
+    Related: libxfce4ui!89, xfce4-session#149
+    (cherry picked from commit ec7cc4ac3c9948c8e8c5dd6dc609a8ecc753f229)
+
+commit dd77cc0cbeba0c6f6a1c8ba1d0e07c1ffd9ae648
+Author: Marcel Partap <mpartap@gmx.net>
+Date:   Sat Aug 20 03:30:22 2022 +0200
+
+    screensaver: Fall back on lock command if D-Bus call failed
+    
+    Fixes: #142
+    MR: !24
+    (cherry picked from commit 8b2578c0c71f1c6bb88f43fa0caa7a99d9965ae5)
+
+commit 15de607ad9637451b623df073f134538b1561f94
+Author: Gaël Bonithon <gael@xfce.org>
+Date:   Sun Feb 5 12:35:06 2023 +0100
+
+    panel-plugin: Properly disconnect signal handler
+    
+    Fixes criticals when closing/reopening the plugin prefs dialog and
+    playing with the combo box.
+
+commit 51faec675eb98b6450aca45c1b39ff87e8eb70a0
+Author: Gaël Bonithon <gael@xfce.org>
+Date:   Sat Feb 4 21:40:15 2023 +0100
+
+    build: Fix autotools warnings
+
+commit fc10f3ab37affd7fca59613958d311c8e6a471ab
+Author: Gaël Bonithon <gael@xfce.org>
+Date:   Sat Feb 4 21:31:27 2023 +0100
+
+    Fix management of source ids
+    
+    Fixes criticals "Source ID 123 was not found when attempting to remove
+    it".
+
+commit 62b741b21d704417d0ee1172ccae50237b096869
+Author: Gaël Bonithon <gael@xfce.org>
+Date:   Sat Feb 4 21:23:18 2023 +0100
+
+    panel-plugin: Add missing ref on image
+    
+    Fixes various critical especially when switching from plugged to
+    battery.
+
+commit 4449cc8a468f737104072b465c21d47b08cbda6d
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Feb 4 00:46:49 2023 +0100
+
+    I18n: Update translation el (99%).
+    
+    211 translated messages, 1 untranslated message.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit c8d747659bdb708177fdd66d39e2510ff4d874cf
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Feb 2 12:48:57 2023 +0100
+
+    I18n: Update translation en_CA (100%).
+    
+    212 translated messages.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit 818cabd5b841e0bcad3be1cfbbfdf6ec0e47bac8
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Jan 31 09:48:01 2023 +0100
+
+    I18n: Update translation tr (100%).
+    
+    212 translated messages.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit 70871a7bda17305af1a88b93fc23f3a65a3ebc26
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Jan 21 00:48:37 2023 +0100
+
+    I18n: Update translation el (99%).
+    
+    211 translated messages, 1 untranslated message.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit 50a7372aca880f477b6cf49de00af7e28665d8a6
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Jan 7 12:47:46 2023 +0100
+
+    I18n: Update translation el (99%).
+    
+    211 translated messages, 1 untranslated message.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit b1e103c8b52cfbca03d330f84a80443cb3a494e3
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Jan 5 12:48:24 2023 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    212 translated messages.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit e5e7fb7f322ce6e4b636113c90b7223650e00707
+Author: Brian J. Tarricone <brian@tarricone.org>
+Date:   Fri Dec 30 22:01:21 2022 -0800
+
+    Fix blurriness in icons when UI scale factor > 1
+
+commit 79095207d76a247a586aeaf77ceac0508ec5c755
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Dec 30 12:54:55 2022 +0100
+
+    I18n: Update translation ko (100%).
+    
+    212 translated messages.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit 7074f9ee04ebe152af9226dfd10c2fef74cdc939
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Dec 26 12:49:58 2022 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    212 translated messages.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit 2eb3b942f137d5a318adc089608425507a776288
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Dec 19 12:47:19 2022 +0100
+
+    I18n: Update translation el (99%).
+    
+    211 translated messages, 1 untranslated message.
+    
+    Transifex (https://explore.transifex.com/xfce/).
+
+commit 818f7ed968c65ac724b727bca1429a47d51a4b2e
+Author: Alexander Schwinn <alexxcons@xfce.org>
+Date:   Thu Dec 15 10:35:55 2022 +0100
+
+    Back to development
+
+commit a45ac6b441a035030616179ec843f0fa21cd9d0f
+Author: Alexander Schwinn <alexxcons@xfce.org>
+Date:   Thu Dec 15 10:34:34 2022 +0100
+
+    Updates for release
+
 commit 4cec7d44c02349b11f62285eba383025a851b858
 Author: Anonymous <noreply@xfce.org>
 Date:   Tue Dec 13 12:47:11 2022 +0100
