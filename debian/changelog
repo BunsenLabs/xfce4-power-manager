@@ -1,4 +1,4 @@
-xfce4-power-manager (4.18.1+bl12.iconpatch1-1.1) boron; urgency=medium
+xfce4-power-manager (4.18.1+bl12.iconpatch1.1-1) boron; urgency=medium
 
   * Non-maintainer upload.
   * Version bump: move from backports to Boron, no other changes.
