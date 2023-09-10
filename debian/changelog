@@ -1,3 +1,10 @@
+xfce4-power-manager (4.18.1+bl12.iconpatch1-2) boron; urgency=medium
+
+  * Non-maintainer upload.
+  * Version bump: move from backports to Boron, no other changes.
+
+ -- John Crawley <john@bunsenlabs.org>  Sun, 10 Sep 2023 14:38:40 +0900
+
 xfce4-power-manager (4.18.1+bl12.iconpatch1-1) bookworm-backports; urgency=medium
 
   * Non-maintainer upload.
